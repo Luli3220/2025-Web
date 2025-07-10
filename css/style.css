@@ -644,7 +644,7 @@ body {
 
 .ztjjbox .swiper-slide {
     width: 300px;
-    height: 400px;
+    height: 380px;
     background-position: center;
     background-size: cover;
     transform-origin: center;
@@ -662,13 +662,13 @@ body {
 .ztjjbox .swiper-slide img {
     display: block;
     width: 100%;
-    height: 320px; /* 增加图片高度，原来是250px */
+    height: 320px; 
     object-fit: cover;
 }
 
 .ztjjbox .swiper-slide p {
     text-align: center;
-    padding: 15px 0; /* 减少内边距，原来是20px */
+    padding: 15px 0; 
     margin: 0;
     color: #333;
     font-size: 18px;
@@ -835,6 +835,15 @@ body {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
+#welcome {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
 .text-gradient {
     background: linear-gradient(45deg, #2937f0, #9f1ae2);
     -webkit-background-clip: text;
@@ -854,19 +863,25 @@ body {
 .welcome-image-wrapper {
     position: relative;
     padding: 1rem;
-}
-
-.welcome-image-wrapper img {
+    background-image: url('../images/campus-life.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-height: 400px;
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.welcome-image-wrapper:hover img {
+.welcome-image-wrapper:hover {
     transform: translateY(-5px);
 }
 
 .floating-card {
     bottom: 2rem;
-    right: -2rem;
+    right: 2rem;
     max-width: 300px;
     transition: transform 0.3s ease;
 }
@@ -981,6 +996,15 @@ body {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
+#welcome {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
 .text-gradient {
     background: linear-gradient(45deg, #2937f0, #9f1ae2);
     -webkit-background-clip: text;
@@ -1000,19 +1024,25 @@ body {
 .welcome-image-wrapper {
     position: relative;
     padding: 1rem;
-}
-
-.welcome-image-wrapper img {
+    background-image: url('../images/campus-life.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-height: 400px;
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.welcome-image-wrapper:hover img {
+.welcome-image-wrapper:hover {
     transform: translateY(-5px);
 }
 
 .floating-card {
     bottom: 2rem;
-    right: -2rem;
+    right: 2rem;
     max-width: 300px;
     transition: transform 0.3s ease;
 }
