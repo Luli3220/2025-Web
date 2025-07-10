@@ -134,16 +134,34 @@ body {
     filter: brightness(0.7);
 }
 
+/* 轮播图文字位置调整 */
 .carousel-caption {
-    bottom: 25%;
+    bottom: auto;
+    top: 10%;  /* 调整到顶部25%的位置 */
+    transform: translateY(-10%);
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 800px;
+    padding-left: 20%;
 }
 
 .carousel-caption h1 {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    text-shadow: none;
+}
+
 
 .carousel-caption p {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
@@ -236,6 +254,7 @@ body {
     overflow: hidden;
 }
 
+/* 学长学姐说样式 */
 .testimonial-item {
     position: relative;
     padding: 2rem;
@@ -245,8 +264,32 @@ body {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border: 5px solid var(--light-color);
+    border-radius: 50%;  /* 将图片改为圆形 */
+    border: 4px solid var(--primary-color);  /* 添加主题色边框 */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 0 auto 1.5rem;  /* 居中显示并添加底部间距 */
+}
+
+/* 查看更多按钮样式 */
+.view-more-btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 160px;
+    border-radius: 50px;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-more-btn:hover {
+    background: var(--dark-color);
+    transform: translateY(-2px);
+    color: #fff;
 }
 
 .testimonial-text {
@@ -257,27 +300,97 @@ body {
     border-radius: 1rem;
 }
 
-/* 数据统计样式 */
+/* 数据统计样式优化 */
 .stat-item {
-    padding: 2rem 1rem;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
 }
 
 .counter {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.stat-item h4 {
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
+.stat-item p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
 /* 常见问题样式 */
+.faq-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+}
+
+.accordion-item {
+    border: none;
+    background: transparent;
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-button {
+    background: white;
+    border-radius: 1rem !important;
+    padding: 1.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
 .accordion-button:not(.collapsed) {
-    background-color: rgba(78, 115, 223, 0.1);
+    background: white;
     color: var(--primary-color);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+.accordion-button::after {
+    background-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:hover {
+    transform: translateY(-2px);
+}
+
+.accordion-body {
+    background: white;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1.5rem;
+    color: #666;
+    line-height: 1.6;
 }
 
 .accordion-button:focus {
     box-shadow: none;
-    border-color: rgba(78, 115, 223, 0.25);
+    border: none;
 }
 
 /* 联系我们样式 */
@@ -633,7 +746,35 @@ body {
     border-radius: 2px;
 }
 
-/* 轮播图导航按钮样式 */
+/* 学长学姐说轮播导航按钮样式 */
+#testimonialCarousel .custom-nav-btn {
+    width: 8%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    border: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#testimonialCarousel .custom-nav-btn:hover {
+    opacity: 1 !important;
+}
+
+#testimonialCarousel .carousel-control-next.custom-nav-btn {
+    background: linear-gradient(-90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+}
+
+#testimonialCarousel:hover .custom-nav-btn {
+    opacity: 0.7;
+}
+
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    width: 32px;
+    height: 32px;
+    background-size: 100%;
+    opacity: 0.8;
+}
+
 .custom-carousel-control {
     width: 5%;
     opacity: 0.7;
@@ -648,26 +789,259 @@ body {
 .carousel-control-next-icon {
     width: 35px;
     height: 35px;
-    background-color: transparent;  /* 移除背景色 */
+    background-color: transparent;  
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));  /* 添加阴影效果 */
 }
 
 /* 轮播图指示器样式 */
 .carousel-indicators {
     margin-bottom: 2rem;
+    gap: 8px;  /* 设置指示器之间的间距 */
 }
 
 .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    width: 24px !important;  /* 加宽指示器 */
+    height: 3px !important;  /* 降低高度 */
+    border-radius: 0;  /* 移除圆角 */
+    background-color: rgba(255, 255, 255, 0.5);
     border: none;
-    margin: 0 5px;
+    margin: 0;
+    opacity: 0.6;
     transition: all 0.3s ease;
 }
 
 .carousel-indicators button.active {
+    width: 24px !important;
     background-color: #fff;
-    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* 轮播图按钮样式 */
+.carousel .btn-light {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel .btn-light:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* 欢迎区样式 */
+.bg-gradient {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #2937f0, #9f1ae2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+    color: #0d6efd;
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-content {
+    padding-right: 2rem;
+}
+
+.welcome-image-wrapper {
+    position: relative;
+    padding: 1rem;
+}
+
+.welcome-image-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.welcome-image-wrapper:hover img {
+    transform: translateY(-5px);
+}
+
+.floating-card {
+    bottom: 2rem;
+    right: -2rem;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 欢迎区按钮样式调整 */
+.welcome-content .d-flex.flex-wrap {
+    gap: 2rem !important;  /* 增加按钮之间的间距 */
+}
+
+.welcome-content .btn-lg {
+    padding: 0.8rem 1.8rem;  /* 减小按钮内边距 */
+    font-size: 1rem;  /* 减小字体大小 */
+    font-weight: 500;
+}
+
+.welcome-content .btn {
+    min-width: 160px;  /* 设置按钮最小宽度，保持整齐 */
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+.badge {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 轮播图导航按钮样式 */
+#mainCarousel .carousel-control-prev,
+#mainCarousel .carousel-control-next {
+    width: 8%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    border: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#mainCarousel .carousel-control-next {
+    background: linear-gradient(-90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+}
+
+#mainCarousel:hover .carousel-control-prev,
+#mainCarousel:hover .carousel-control-next {
+    opacity: 0.7;
+}
+
+#mainCarousel .carousel-control-prev:hover,
+#mainCarousel .carousel-control-next:hover {
+    opacity: 1 !important;
+}
+
+#mainCarousel .carousel-control-prev-icon,
+#mainCarousel .carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;  
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));  /* 添加阴影效果 */
+}
+
+/* 轮播图指示器样式 */
+.carousel-indicators {
+    margin-bottom: 2rem;
+    gap: 8px;  /* 设置指示器之间的间距 */
+}
+
+.carousel-indicators button {
+    width: 24px !important;  /* 加宽指示器 */
+    height: 3px !important;  /* 降低高度 */
+    border-radius: 0;  /* 移除圆角 */
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin: 0;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    width: 24px !important;
+    background-color: #fff;
+    opacity: 1;
+}
+
+/* 轮播图按钮样式 */
+.carousel .btn-light {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel .btn-light:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* 欢迎区样式 */
+.bg-gradient {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #2937f0, #9f1ae2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+    color: #0d6efd;
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-content {
+    padding-right: 2rem;
+}
+
+.welcome-image-wrapper {
+    position: relative;
+    padding: 1rem;
+}
+
+.welcome-image-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.welcome-image-wrapper:hover img {
+    transform: translateY(-5px);
+}
+
+.floating-card {
+    bottom: 2rem;
+    right: -2rem;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 欢迎区按钮样式调整 */
+.welcome-content .d-flex.flex-wrap {
+    gap: 2rem !important;  /* 增加按钮之间的间距 */
+}
+
+.welcome-content .btn-lg {
+    padding: 0.8rem 1.8rem;  /* 减小按钮内边距 */
+    font-size: 1rem;  /* 减小字体大小 */
+    font-weight: 500;
+}
+
+.welcome-content .btn {
+    min-width: 160px;  /* 设置按钮最小宽度，保持整齐 */
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+.badge {
+    font-size: 0.9rem;
+    font-weight: 500;
 }
