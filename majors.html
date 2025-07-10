@@ -53,108 +53,38 @@
     <section class="py-5">
         <div class="container">
             <div class="search-bl clearfix">
-                <ul>
-                    <li class="active">全部</li>
-                    <li>工学</li>
-                    <li>理学</li>
-                    <li>经济学</li>
-                    <li>医学</li>
-                    <li>文学</li>
-                    <li>法学</li>
-                    <li>教育学</li>
-                    <li>管理学</li>
-                    <li>艺术学</li>
-                    <li>农学</li>
+                <ul id="category-filter">
+                    <li class="active" data-category="全部">全部</li>
+                    <li data-category="工学">工学</li>
+                    <li data-category="理学">理学</li>
+                    <li data-category="经济学">经济学</li>
+                    <li data-category="医学">医学</li>
+                    <li data-category="文学">文学</li>
+                    <li data-category="法学">法学</li>
+                    <li data-category="教育学">教育学</li>
+                    <li data-category="管理学">管理学</li>
+                    <li data-category="艺术学">艺术学</li>
+                    <li data-category="农学">农学</li>
+                    <li data-category="哲学">哲学</li>
+                    <li data-category="历史学">历史学</li>
                 </ul>
             </div>
     
             <!-- 专业列表 -->
             <div class="row g-4" id="majors-container">
-                <!-- 计算机科学与技术 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card major-card h-100">
-                        <div class="major-category">工学</div>
-                        <div class="card-body">
-                            <h3 class="card-title">计算机科学与技术</h3>
-                            <p class="card-text">培养具备计算机系统设计、开发与应用能力的高级专门人才。</p>
-                            <a href="major-detail.html?id=1" class="btn btn-outline-primary">查看详情</a>
-                        </div>
+                <!-- 专业卡片将通过 JavaScript 动态加载 -->
+                <div class="text-center py-5 w-100">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">加载中...</span>
                     </div>
-                </div>
-                
-                <!-- 软件工程 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card major-card h-100">
-                        <div class="major-category">工学</div>
-                        <div class="card-body">
-                            <h3 class="card-title">软件工程</h3>
-                            <p class="card-text">培养能够从事软件开发、测试、维护和项目管理的专业人才。</p>
-                            <a href="major-detail.html?id=4" class="btn btn-outline-primary">查看详情</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 金融学 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card major-card h-100">
-                        <div class="major-category">经济学</div>
-                        <div class="card-body">
-                            <h3 class="card-title">金融学</h3>
-                            <p class="card-text">培养具备金融理论知识和实践技能，能在金融机构和企业从事相关工作的专门人才。</p>
-                            <a href="major-detail.html?id=2" class="btn btn-outline-primary">查看详情</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 临床医学 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card major-card h-100">
-                        <div class="major-category">医学</div>
-                        <div class="card-body">
-                            <h3 class="card-title">临床医学</h3>
-                            <p class="card-text">培养具有扎实医学理论知识和临床实践能力的医学专门人才。</p>
-                            <a href="major-detail.html?id=3" class="btn btn-outline-primary">查看详情</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 数学与应用数学 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card major-card h-100">
-                        <div class="major-category">理学</div>
-                        <div class="card-body">
-                            <h3 class="card-title">数学与应用数学</h3>
-                            <p class="card-text">培养具备扎实数学基础和应用能力的专业人才。</p>
-                            <a href="major-detail.html?id=5" class="btn btn-outline-primary">查看详情</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 法学 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card major-card h-100">
-                        <div class="major-category">法学</div>
-                        <div class="card-body">
-                            <h3 class="card-title">法学</h3>
-                            <p class="card-text">培养具备法律专业知识，能在司法机关、行政机关和企事业单位从事法律工作的专门人才。</p>
-                            <a href="major-detail.html?id=6" class="btn btn-outline-primary">查看详情</a>
-                        </div>
-                    </div>
+                    <p class="mt-2">正在加载专业数据...</p>
                 </div>
             </div>
             
             <!-- 分页 -->
             <nav class="mt-5">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">下一页</a>
-                    </li>
+                <ul class="pagination justify-content-center" id="pagination">
+                    <!-- 分页将通过 JavaScript 动态生成 -->
                 </ul>
             </nav>
         </div>
@@ -213,7 +143,7 @@
     </button>
 
     <!-- Bootstrap JS 和其他脚本 -->
-    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
     <script>
         // 导航栏滚动效果
         window.addEventListener('scroll', function() {
@@ -224,12 +154,145 @@
                 navbar.classList.remove('scrolled');
             }
         });
-    </script>
 
-    <!-- 在页面底部添加 -->
-    <script>
+        // 全局变量
+        let currentPage = 1;
+        const itemsPerPage = 12;
+        let allMajors = [];
+        let filteredMajors = [];
+
+        // 加载专业数据
+        async function loadMajors(category = '全部') {
+            try {
+                const response = await fetch(`/api/majors${category !== '全部' ? `?category=${category}` : ''}`);
+                if (!response.ok) {
+                    throw new Error('网络响应不正常');
+                }
+                
+                const data = await response.json();
+                allMajors = data;
+                filteredMajors = data;
+                
+                renderMajors();
+                renderPagination();
+            } catch (error) {
+                console.error('获取专业数据失败:', error);
+                document.getElementById('majors-container').innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            加载专业数据失败，请稍后再试
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 渲染专业卡片
+        // 渲染专业卡片
+        function renderMajors() {
+            const container = document.getElementById('majors-container');
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const majorsToShow = filteredMajors.slice(startIndex, endIndex);
+            
+            if (majorsToShow.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            没有找到相关专业
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            majorsToShow.forEach(major => {
+                html += `
+                    <div class="col-lg-4 col-md-6">
+                        <a href="${major.source_url}" class="text-decoration-none" target="_blank">
+                            <div class="card major-card h-100">
+                                <div class="major-category">${major.category_name}</div>
+                                <div class="card-body">
+                                    <h3 class="card-title">${major.major_name}</h3>
+                                    <p class="card-text">${major.summary ? major.summary.substring(0, 100) + '...' : '暂无简介'}</p>
+                                    <div class="mt-auto">
+                                        <button class="btn btn-outline-primary w-100">查看详情</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // 渲染分页
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredMajors.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            
+            let html = '';
+            
+            // 上一页按钮
+            html += `
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" data-page="${currentPage - 1}" aria-disabled="${currentPage === 1}">上一页</a>
+                </li>
+            `;
+            
+            // 页码按钮
+            for (let i = 1; i <= totalPages; i++) {
+                if (
+                    i === 1 || 
+                    i === totalPages || 
+                    (i >= currentPage - 1 && i <= currentPage + 1)
+                ) {
+                    html += `
+                        <li class="page-item ${i === currentPage ? 'active' : ''}">
+                            <a class="page-link" href="#" data-page="${i}">${i}</a>
+                        </li>
+                    `;
+                } else if (
+                    i === currentPage - 2 || 
+                    i === currentPage + 2
+                ) {
+                    html += `<li class="page-item disabled"><a class="page-link" href="#">...</a></li>`;
+                }
+            }
+            
+            // 下一页按钮
+            html += `
+                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#" data-page="${currentPage + 1}" aria-disabled="${currentPage === totalPages}">下一页</a>
+                </li>
+            `;
+            
+            pagination.innerHTML = html;
+            
+            // 添加分页事件监听
+            document.querySelectorAll('#pagination .page-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (this.getAttribute('aria-disabled') === 'true') return;
+                    
+                    currentPage = parseInt(this.getAttribute('data-page'));
+                    renderMajors();
+                    renderPagination();
+                    
+                    // 滚动到专业列表顶部
+                    document.querySelector('.search-bl').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        }
+
+        // 分类筛选事件
         document.addEventListener('DOMContentLoaded', function() {
-            const categoryItems = document.querySelectorAll('.search-bl li');
+            const categoryItems = document.querySelectorAll('#category-filter li');
             
             categoryItems.forEach(item => {
                 item.addEventListener('click', function() {
@@ -238,11 +301,15 @@
                     // 添加当前项的激活状态
                     this.classList.add('active');
                     
-                    // 这里可以添加筛选逻辑
-                    const category = this.textContent;
-                    // TODO: 根据分类筛选专业卡片
+                    // 根据分类筛选专业
+                    const category = this.getAttribute('data-category');
+                    currentPage = 1;
+                    loadMajors(category);
                 });
             });
+            
+            // 初始加载所有专业
+            loadMajors();
         });
     </script>
 </body>

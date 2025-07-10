@@ -341,3 +341,31 @@
         font-size: 14px;
     }
 }
+
+.major-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+a:hover .major-card {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.major-card .card-title {
+    color: #333;
+}
+
+.major-card .card-text {
+    color: #666;
+}
+
+.major-category {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #007bff;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+}
