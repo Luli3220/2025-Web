@@ -1,0 +1,502 @@
+{
+    "navList": [
+        {
+            "url": "/gkzt/xzy",
+            "wapUrl": "/gkzt/xzy",
+            "title": "高考如何选专业"
+        },
+        {
+            "url": "/gkzt/tbzyzn",
+            "wapUrl": "/gkzt/tbzyzn",
+            "title": "高考如何填报志愿"
+        },
+        {
+            "url": "/gkzt/gkts",
+            "wapUrl": "/gkzt/gkts",
+            "title": "图说专业"
+        },
+        {
+            "url": "/gkxx/zt/spkzy.shtml",
+            "wapUrl": "/gkxx/zt/spkzy.shtml",
+            "title": "视频解读专业"
+        },
+        {
+            "url": "/zyk/zybk/",
+            "wapUrl": "/zyk/zybk/",
+            "title": "专业知识库"
+        },
+        {
+            "url": "/gkxx/zcdh/202504/20250422/2293377006.html",
+            "wapUrl": "/gkxx/zcdh/202504/20250422/2293377006.html",
+            "title": "本科专业目录"
+        },
+        {
+            "url": "/zyk/pub/myd/specAppraisalTop.action",
+            "wapUrl": "/zyk/pub/myd/specAppraisalTop.action",
+            "title": "专业满意度"
+        }
+    ],
+    "zyList": [],
+    "xkmlList": [
+        {
+            "xkmlName": "哲学",
+            "xkzyList": [
+                {
+                    "zymc": "哲学",
+                    "zylj": "/gkxx/zybk/zt/201411/20141118/1407072826.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "经济学",
+            "xkzyList": [
+                {
+                    "zymc": "金融学",
+                    "zylj": "/gkxx/zybk/zt/201401/20140115/725980700.html"
+                },
+                {
+                    "zymc": "保险学",
+                    "zylj": "/gkxx/zybk/zt/201403/20140317/826015266.html"
+                },
+                {
+                    "zymc": "国际经济与贸易",
+                    "zylj": "/gkxx/zybk/zt/201403/20140320/833660671.html"
+                },
+                {
+                    "zymc": "经济学",
+                    "zylj": "/gkxx/zybk/zt/201703/20170317/1591507804.html"
+                },
+                {
+                    "zymc": "税收学",
+                    "zylj": "/gkxx/zybk/zt/201704/20170406/1595131118.html"
+                },
+                {
+                    "zymc": "投资学",
+                    "zylj": "/gkxx/zybk/zt/201712/20171219/1644917483.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "法学",
+            "xkzyList": [
+                {
+                    "zymc": "法学",
+                    "zylj": "/gkxx/zybk/zt/201401/20140122/740620575.html"
+                },
+                {
+                    "zymc": "知识产权",
+                    "zylj": "/gkxx/zybk/zt/201707/20170724/1620295837.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "教育学",
+            "xkzyList": [
+                {
+                    "zymc": "特殊教育",
+                    "zylj": "/gkxx/zybk/zt/201408/20140807/1210221545.html"
+                },
+                {
+                    "zymc": "学前教育",
+                    "zylj": "/gkxx/zybk/zt/201812/20181217/1747395019.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "文学",
+            "xkzyList": [
+                {
+                    "zymc": "中国语言文学类",
+                    "zylj": "/gkxx/zybk/zt/201402/20140212/760556082.html"
+                },
+                {
+                    "zymc": "英语",
+                    "zylj": "/gkxx/zybk/zt/201303/20130305/394071953.html"
+                },
+                {
+                    "zymc": "小语种",
+                    "zylj": "/gkxx/zybk/zt/201402/20140228/790227180.html"
+                },
+                {
+                    "zymc": "新闻学",
+                    "zylj": "/gkxx/zybk/zt/201411/20141119/1407339578.html"
+                },
+                {
+                    "zymc": "编辑出版学",
+                    "zylj": "/gkxx/zybk/zt/201607/20160725/1545551070.html"
+                },
+                {
+                    "zymc": "传播学",
+                    "zylj": "/gkxx/zybk/zt/201809/20180913/1720581935.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "历史学",
+            "xkzyList": [
+                {
+                    "zymc": "历史学",
+                    "zylj": "/gkxx/zybk/zt/201512/20151207/1513365055.html"
+                },
+                {
+                    "zymc": "文物与博物馆学",
+                    "zylj": "/gkxx/zybk/zt/201611/20161114/1566649931.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "理学",
+            "xkzyList": [
+                {
+                    "zymc": "数学",
+                    "zylj": "/gkxx/zybk/zt/201509/20150928/1506301937.html"
+                },
+                {
+                    "zymc": "生物科学",
+                    "zylj": "/gkxx/zybk/zt/201510/20151014/1508023452.html"
+                },
+                {
+                    "zymc": "物理学",
+                    "zylj": "/gkxx/zybk/zt/201510/20151027/1508390131.html"
+                },
+                {
+                    "zymc": "海洋科学",
+                    "zylj": "/gkxx/zybk/zt/201512/20151208/1513449843.html"
+                },
+                {
+                    "zymc": "天文学",
+                    "zylj": "/gkxx/zybk/zt/201512/20151223/1515251283.html"
+                },
+                {
+                    "zymc": "地质学",
+                    "zylj": "/gkxx/zybk/zt/201608/20160823/1549725080.html"
+                },
+                {
+                    "zymc": "应用化学",
+                    "zylj": "/gkxx/zybk/zt/201608/20160826/1551180660.html"
+                },
+                {
+                    "zymc": "化学",
+                    "zylj": "/gkxx/zybk/zt/201702/20170224/1586874805.html"
+                },
+                {
+                    "zymc": "地理信息科学",
+                    "zylj": "/gkxx/zybk/zt/201705/20170525/1607431170.html"
+                },
+                {
+                    "zymc": "统计学",
+                    "zylj": "/gkxx/zybk/zt/201711/20171129/1642912530.html"
+                },
+                {
+                    "zymc": "地理科学",
+                    "zylj": "/gkxx/zybk/zt/201712/20171214/1644284267.html"
+                },
+                {
+                    "zymc": "心理学",
+                    "zylj": "/gkxx/zybk/zt/201801/20180117/1647973720.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "工学",
+            "xkzyList": [
+                {
+                    "zymc": "车辆工程",
+                    "zylj": "/gkxx/zybk/zt/201401/20140122/740654689.html"
+                },
+                {
+                    "zymc": "自动化",
+                    "zylj": "/gkxx/zybk/zt/201303/20130329/406328297.html"
+                },
+                {
+                    "zymc": "物联网工程",
+                    "zylj": "/gkxx/zybk/zt/201212/20121207/373453679.html"
+                },
+                {
+                    "zymc": "纳米材料与技术",
+                    "zylj": "/gkxx/zybk/zt/201304/20130419/414986615.html"
+                },
+                {
+                    "zymc": "通信工程",
+                    "zylj": "/gkxx/zybk/zt/201305/20130513/422702615.html"
+                },
+                {
+                    "zymc": "计算机类",
+                    "zylj": "/gkxx/zybk/zt/201401/20140122/740700997.html"
+                },
+                {
+                    "zymc": "土木工程",
+                    "zylj": "/gkxx/zybk/zt/201402/20140227/787758118.html"
+                },
+                {
+                    "zymc": "材料科学与工程",
+                    "zylj": "/gkxx/zybk/zt/201403/20140312/813431782.html"
+                },
+                {
+                    "zymc": "机械设计制造及其自动化",
+                    "zylj": "/gkxx/zybk/zt/201403/20140312/813920226.html"
+                },
+                {
+                    "zymc": "航空航天类",
+                    "zylj": "/gkxx/zybk/zt/201403/20140327/852511321.html"
+                },
+                {
+                    "zymc": "建筑学",
+                    "zylj": "/gkxx/zybk/zt/201404/20140417/896231631.html"
+                },
+                {
+                    "zymc": "城乡规划",
+                    "zylj": "/gkxx/zybk/zt/201407/20140707/1093744773.html"
+                },
+                {
+                    "zymc": "测绘工程",
+                    "zylj": "/gkxx/zybk/zt/201406/20140605/1007188122.html"
+                },
+                {
+                    "zymc": "电气工程及其自动化",
+                    "zylj": "/gkxx/zybk/zt/201406/20140623/1054942478.html"
+                },
+                {
+                    "zymc": "交通运输",
+                    "zylj": "/gkxx/zybk/zt/201406/20140624/1059240783.html"
+                },
+                {
+                    "zymc": "遥感科学与技术",
+                    "zylj": "/gkxx/zybk/zt/201409/20140905/1265478675.html"
+                },
+                {
+                    "zymc": "化学工程与工艺",
+                    "zylj": "/gkxx/zybk/zt/201411/20141117/1406682672.html"
+                },
+                {
+                    "zymc": "宝石及材料工艺学",
+                    "zylj": "/gkxx/zybk/zt/201504/20150421/1450570582.html"
+                },
+                {
+                    "zymc": "船舶与海洋工程",
+                    "zylj": "/gkxx/zybk/zt/201509/20150918/1504511251.html"
+                },
+                {
+                    "zymc": "智能电网信息工程",
+                    "zylj": "/gkxx/zybk/zt/201511/20151123/1510339644.html"
+                },
+                {
+                    "zymc": "能源与动力工程",
+                    "zylj": "/gkxx/zybk/zt/201512/20151209/1514104717.html"
+                },
+                {
+                    "zymc": "智能科学与技术",
+                    "zylj": "/gkxx/zybk/zt/201601/20160126/1519239058.html"
+                },
+                {
+                    "zymc": "新能源科学与工程",
+                    "zylj": "/gkxx/zybk/zt/201603/20160325/1527524919.html"
+                },
+                {
+                    "zymc": "道路桥梁与渡河工程",
+                    "zylj": "/gkxx/zybk/zt/201610/20161018/1560768035.html"
+                },
+                {
+                    "zymc": "生物制药",
+                    "zylj": "/gkxx/zybk/zt/201611/20161111/1566437947.html"
+                },
+                {
+                    "zymc": "电子信息工程",
+                    "zylj": "/gkxx/zybk/zt/201611/20161125/1570305446.html"
+                },
+                {
+                    "zymc": "电子信息科学与技术",
+                    "zylj": "/gkxx/zybk/zt/201612/20161209/1572764371.html"
+                },
+                {
+                    "zymc": "电子科学与技术",
+                    "zylj": "/gkxx/zybk/zt/201612/20161212/1572985406.html"
+                },
+                {
+                    "zymc": "微电子科学与工程",
+                    "zylj": "/gkxx/zybk/zt/201612/20161214/1573976833.html"
+                },
+                {
+                    "zymc": "汽车服务工程",
+                    "zylj": "/gkxx/zybk/zt/201612/20161216/1574082480.html"
+                },
+                {
+                    "zymc": "制药工程",
+                    "zylj": "/gkxx/zybk/zt/201612/20161223/1575047580.html"
+                },
+                {
+                    "zymc": "食品科学与工程",
+                    "zylj": "/gkxx/zybk/zt/201701/20170116/1579193236.html"
+                },
+                {
+                    "zymc": "新能源材料与器件",
+                    "zylj": "/gkxx/zybk/zt/201701/20170120/1579973700.html"
+                },
+                {
+                    "zymc": "光电信息科学与工程",
+                    "zylj": "/gkxx/zybk/zt/201702/20170216/1583914450.html"
+                },
+                {
+                    "zymc": "信息安全",
+                    "zylj": "/gkxx/zybk/zt/201704/20170412/1596198696.html"
+                },
+                {
+                    "zymc": "交通工程",
+                    "zylj": "/gkxx/zybk/zt/201708/20170822/1625712989.html"
+                },
+                {
+                    "zymc": "纺织工程",
+                    "zylj": "/gkxx/zybk/zt/201709/20170915/1628675750.html"
+                },
+                {
+                    "zymc": "工程力学",
+                    "zylj": "/gkxx/zybk/zt/201709/20170906/1627336396.html"
+                },
+                {
+                    "zymc": "工业设计",
+                    "zylj": "/gkxx/zybk/zt/201711/20171103/1638939583.html"
+                },
+                {
+                    "zymc": "数据科学与大数据技术",
+                    "zylj": "/gkxx/zybk/zt/201802/20180213/1655722030.html"
+                },
+                {
+                    "zymc": "风景园林",
+                    "zylj": "/gkxx/zybk/zt/201807/20180719/1708070231.html"
+                },
+                {
+                    "zymc": "机器人工程",
+                    "zylj": "/gkxx/zybk/zt/201808/20180830/1717440390.html"
+                },
+                {
+                    "zymc": "软件工程",
+                    "zylj": "/gkxx/zybk/zt/201811/20181122/1741107487.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "农学",
+            "xkzyList": [
+                {
+                    "zymc": "农学",
+                    "zylj": "/gkxx/zybk/zt/201312/20131219/690792571.html"
+                },
+                {
+                    "zymc": "植物保护",
+                    "zylj": "/gkxx/zybk/zt/201312/20131219/690958295.html"
+                },
+                {
+                    "zymc": "园艺",
+                    "zylj": "/gkxx/zybk/zt/201403/20140318/827726541.html"
+                },
+                {
+                    "zymc": "动物医学",
+                    "zylj": "/gkxx/zybk/zt/201509/20150902/1503676810.html"
+                },
+                {
+                    "zymc": "园林",
+                    "zylj": "/gkxx/zybk/zt/201609/20160922/1555635444.html"
+                },
+                {
+                    "zymc": "林学",
+                    "zylj": "/gkxx/zybk/zt/201705/20170525/1607484975.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "医学",
+            "xkzyList": [
+                {
+                    "zymc": "临床医学",
+                    "zylj": "/gkxx/zybk/zt/201401/20140128/752158139.html"
+                },
+                {
+                    "zymc": "药学",
+                    "zylj": "/gkxx/zybk/zt/201403/20140328/855672205.html"
+                },
+                {
+                    "zymc": "麻醉学",
+                    "zylj": "/gkxx/zybk/zt/201609/20160914/1554114610.html"
+                },
+                {
+                    "zymc": "口腔医学",
+                    "zylj": "/gkxx/zybk/zt/201801/20180118/1648453035.html"
+                },
+                {
+                    "zymc": "中医学",
+                    "zylj": "/gkxx/zybk/zt/201803/20180323/1672137499.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "管理学",
+            "xkzyList": [
+                {
+                    "zymc": "工商管理",
+                    "zylj": "/gkxx/zybk/zt/201401/20140126/750987532.html"
+                },
+                {
+                    "zymc": "财务管理",
+                    "zylj": "/gkxx/zybk/zt/201403/20140321/835923034.html"
+                },
+                {
+                    "zymc": "会计学",
+                    "zylj": "/gkxx/zybk/zt/201302/20130225/391049741.html"
+                },
+                {
+                    "zymc": "注会专门化",
+                    "zylj": "/gkxx/zybk/zt/201303/20130322/402843387.html"
+                },
+                {
+                    "zymc": "物流工程",
+                    "zylj": "/gkxx/zybk/zt/201611/20161114/1566612620.html"
+                },
+                {
+                    "zymc": "工程管理",
+                    "zylj": "/gkxx/zybk/zt/201612/20161227/1575701267.html"
+                },
+                {
+                    "zymc": "工程造价",
+                    "zylj": "/gkxx/zybk/zt/201709/20170920/1629756078.html"
+                },
+                {
+                    "zymc": "信息管理与信息系统",
+                    "zylj": "/gkxx/zybk/zt/201811/20181127/1741609115.html"
+                }
+            ]
+        },
+        {
+            "xkmlName": "艺术学",
+            "xkzyList": [
+                {
+                    "zymc": "播音与主持艺术",
+                    "zylj": "/gkxx/zybk/zt/201412/20141210/1413949210.html"
+                },
+                {
+                    "zymc": "动画",
+                    "zylj": "/gkxx/zybk/zt/201412/20141210/1414017593.html"
+                },
+                {
+                    "zymc": "视觉传达设计",
+                    "zylj": "/gkxx/zybk/zt/201412/20141210/1414036583.html"
+                },
+                {
+                    "zymc": "表演",
+                    "zylj": "/gkxx/zybk/zt/201412/20141218/1417006627.html"
+                },
+                {
+                    "zymc": "产品设计",
+                    "zylj": "/gkxx/zybk/zt/201412/20141225/1418569875.html"
+                },
+                {
+                    "zymc": "美术学",
+                    "zylj": "/gkxx/zybk/zt/201503/20150311/1433220440.html"
+                },
+                {
+                    "zymc": "环境设计",
+                    "zylj": "/gkxx/zybk/zt/201612/20161208/1572763875.html"
+                }
+            ]
+        }
+    ]
+}

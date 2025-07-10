@@ -1,0 +1,343 @@
+/* 专业解读页面样式 */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+    padding: 120px 0 80px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/pattern.png') repeat;
+    opacity: 0.1;
+}
+
+.page-header h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* 专业分类筛选区域 */
+.filter-section {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 2rem;
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-outline-primary {
+    border-width: 2px;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* 专业卡片样式 */
+.col-lg-4, .col-md-6 {
+    margin-bottom: 40px;  /* 增加卡片列的下边距 */
+}
+
+.major-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+}
+
+/* 移除之前不生效的间距设置 */
+.row {
+    --bs-gutter-y: initial;
+}
+
+#majors-container {
+    padding: 20px 0;
+}
+
+.row.g-4 {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.major-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* 调整卡片容器的间距 */
+#majors-container {
+    padding: 20px 0;  /* 增加容器的上下内边距 */
+}
+
+.row.g-4 {
+    margin-top: 15px;  /* 增加行与筛选区域的间距 */
+    margin-bottom: 30px;  /* 增加行与分页的间距 */
+}
+
+.major-category {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 专业卡片样式 */
+.major-card .card-body {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.major-card .card-text {
+    color: #666;
+    margin-bottom: 2rem;  /* 增加与按钮的间距 */
+    line-height: 1.6;
+    flex-grow: 1;  /* 让描述文本占据剩余空间 */
+}
+
+/* 修改按钮样式 */
+.btn-outline-primary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+    width: 100%;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.major-card .card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.major-card .card-text {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.major-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
+.major-stats i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* 分页样式 */
+.pagination {
+    margin-top: 3rem;
+}
+
+.pagination .page-link {
+    border: none;
+    padding: 0.8rem 1.2rem;
+    color: var(--dark-color);
+    font-weight: 500;
+    margin: 0 0.3rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.pagination .page-link:hover {
+    background: var(--light-color);
+    transform: translateY(-2px);
+}
+
+/* 搜索框样式 */
+.search-form {
+    position: relative;
+}
+
+.search-form .form-control {
+    padding: 0.8rem 1.2rem;
+    padding-right: 3rem;
+    border-radius: 25px;
+    border: 2px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.search-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(78,115,223,0.1);
+}
+
+.search-form .btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+}
+
+/* 排序下拉菜单样式 */
+.form-select {
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    border: 2px solid #eee;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 100px 0 60px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .filter-section {
+        margin-top: -20px;
+        padding: 1.5rem;
+    }
+    
+    .major-card .card-body {
+        padding: 1.2rem;
+    }
+}
+
+/* 动画效果 */
+.animate__animated {
+    animation-duration: 1s;
+}
+
+.animate__delay-1s {
+    animation-delay: 0.5s;
+}
+
+/* 专业分类筛选样式 */
+.search-bl {
+    margin-bottom: 42px;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.search-bl ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.search-bl li {
+    height: 66px;
+    line-height: 66px;
+    float: left;
+    padding: 0 10px;
+    position: relative;
+    margin-right: 35px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.search-bl li:last-child {
+    margin-right: 0;
+}
+
+.search-bl li:hover {
+    color: #4e73df;
+}
+
+.search-bl li:hover::after,
+.search-bl li.active::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background: #4e73df;
+    left: 0;
+    bottom: 0;
+}
+
+.search-bl li.active {
+    color: #4e73df;
+    font-weight: 500;
+}
+
+/* 删除原有的按钮样式 */
+.btn-outline-primary {
+    display: none;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .search-bl {
+        margin-bottom: 30px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .search-bl ul {
+        display: inline-flex;
+        padding-bottom: 5px;
+    }
+    
+    .search-bl li {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 15px;
+        margin-right: 20px;
+        font-size: 14px;
+    }
+}

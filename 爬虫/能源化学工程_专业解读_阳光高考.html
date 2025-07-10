@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="UTF-8"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title></title>
+    <meta name="keywords" id="keywordsMeta" content=""/>
+    <meta name="description" content=""/>
+    <link rel="shortcut icon" href='https://t1.chei.com.cn/gaokao/favicon.ico' type="image/x-icon"/>
+    <link rel="stylesheet" href="https://t1.chei.com.cn/common/ch/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="https://t2.chei.com.cn/common/css/ueditor.css">
+    <link rel="stylesheet" href="https://t1.chei.com.cn/gaokao/zyjd/css/app-1.0.1.css" />
+    <style>
+        .UEditor img {
+            max-width: 100%;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="https://t3.chei.com.cn/gaokao/wap/common/wap-common.css?20200610">
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/wap/js/wap.min.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/js/vue/2.5.6/vue.min.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/wap/vant/2.12.27/vant.min.js"></script>
+    <script src="https://t1.chei.com.cn/gaokao/zyjd/js/app-1.0.0.js"></script>
+    
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?19141110b831c2c573190bb7a3b0ef3f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524-6"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-100524-6');
+</script>
+<script>
+    function gaTrackerOutboundLink(params,params2) { //ga链接埋点
+        gtag('event', params.eventAction, {
+            'event_category': params.eventCategory,
+            'event_label': params.eventLabel
+        });
+        return true;
+    };
+</script>
+
+
+</head>
+<body>
+    <div class="wap-show">
+        <div id="loading-gif" class="loading-bg" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-gif"></div>
+                <div class="tip">加载中...</div>
+            </div>
+        </div>
+    </div>
+    <div class="pc-show">
+        <div id="appLoading">
+            <div class="spin-loading">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pc-show">
+        
+
+
+
+
+
+
+<style>
+    /**
+     * description: 吊顶;
+     * author: myx;
+     * date: 2017-12;
+     */
+     body{
+        -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    .top-nav-wrapper {
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        background: #fff;
+        font-size: 14px;
+        box-sizing: border-box;
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.05);
+        z-index: 100;
+        position: relative;
+    }
+    .top-nav-wrapper a {
+        color: #2B3330;
+    }
+
+    .top-nav-wrapper a:hover {
+        color: #1CB278;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .top-nav-wrapper .top-nav {
+        width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    .top-nav-wrapper .top-nav-list {
+        flex: 1;
+        height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    .top-nav-wrapper .top-nav-list a {
+        margin-right: 20px;
+    }
+    .top-nav-wrapper .top-nav-list a.top-nav-home {
+        display: inline-block;
+        width: 80px;
+        height: 32px;
+        margin-right: 20px;
+        margin-left: 0px;
+        background-image: url(https://t1.chei.com.cn/gaokao/assets/web/images/nav-logo.png);
+        background-image: -webkit-image-set(url(https://t1.chei.com.cn/gaokao/assets/web/images/nav-logo.png) 1x, url(https://t1.chei.com.cn/gaokao/assets/web/images/nav-logo-2x.png) 2x);
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: auto 32px;
+    }
+    .top-nav-hide {
+        position: relative;
+        cursor: pointer;
+        color: #2B3330;
+}
+    .top-nav-hide:hover {
+        color: #2B3330;
+    }
+    .top-nav-hide:hover .top-nav-pop {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .top-nav-pop {
+        padding: 18px 30px 18px 16px;
+        visibility: hidden;
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #2B3330;
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        top: 44px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.12);
+        font-size: 12px;
+        line-height: 20px;
+        display: flex;
+    }
+    .top-nav-pop-arrow {
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-color: transparent;
+        border-style: solid;
+        left: 50%;
+        margin-left: -14px;
+        top: -7px;
+        border-width: 0 7px 7px;
+        border-bottom-color: rgba(0,0,0,0.03);
+    }
+    .top-nav-pop-arrow::after {
+        display: block;
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-color: transparent;
+        border-style: solid;
+        left: 50%;
+        margin-left: -7px;
+        top: 1px;
+        border-width: 0 7px 7px;
+        border-bottom-color: #fff;
+    }
+    .top-nav-wrapper .top-nav-list a.top-nav-home:hover {
+        text-decoration: none;
+    }
+    .top-nav-wrapper .top-nav-load {
+        max-width: 190px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .top-nav-wrapper a.username {
+        flex: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+        text-align: right;
+        white-space: nowrap;
+        max-width: 86px;
+    }
+    .top-nav-pop-clo {
+        font-size: 14px;
+        line-height: 22px;
+        margin-right: 22px;
+    }
+    .top-nav-pop-clo:last-child {
+        margin-right: 0;
+    }
+    .top-nav-wrapper .top-nav-pop-clo a {
+        display: block;
+        margin-right: 0;
+        white-space: nowrap;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+    .top-nav-wrapper .top-nav-pop-clo a:last-child {
+        margin-bottom: 0;
+    }
+    .top-nav-more {
+        display: flex;
+        align-items: center;
+    }
+    .top-nav-hide:hover .top-nav-more {
+        color: #1CB278;
+        font-weight: 700;
+    }
+    .top-nav-more img {
+        width: 14px;
+        margin-left: 4px;
+        transform: rotate(90deg);
+    }
+    .top-nav-hide:hover img {
+        transform: rotate(-90deg);
+    }
+    .info-line {
+        display: block;
+        width: 1px;
+        height: 12px;
+        background: #E8EAED;
+        margin: 0 12px;
+    }
+    .top-nav-wrapper.active .seach-toggel {
+        display: none;
+    }
+    .search-cancel {
+        display: none;
+        margin-left: 12px;
+        cursor: pointer;
+    }
+    .top-nav-wrapper.active .search-cancel{
+        display: block;
+    }
+    .top-nav-load-search {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(https://t2.chei.com.cn/common/images/icon-search.svg) center center no-repeat;
+        cursor: pointer;
+    }
+    .top-nav-search-input {
+        display: none;
+    }
+    .top-nav-search-input .search-input {
+        width: 200px;
+        border-radius: 16px;
+        border: 1px solid #d4d9d7;
+        height: 30px;
+        color: #131b18;
+        background: #FFF;
+        border-radius: 4px;
+        outline: none;
+        padding: 0 28px 0 8px;
+        box-sizing: border-box;
+    }
+    .top-nav-search-input .search-input:focus {
+        border: 1px solid #1CB278;
+    }
+    .top-nav-wrapper.active .top-nav-search-input {
+        display: block;
+    }
+    .top-nav-wrapper.active .top-nav-load {
+        max-width: none;
+    }
+    .site-search {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .top-nav-wrapper.active .top-nav-load-search {
+        display: none;
+    }
+    .top-nav-wrapper.active .search-button {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(https://t2.chei.com.cn/common/images/icon-search.svg) center center no-repeat;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        position: absolute;
+        right: 8px;
+        top: 5px;
+    }
+    .top-nav-load-info {
+        display: flex;
+        align-items: center;
+    }
+</style>
+<div class="top-nav-wrapper">
+    <div class="top-nav">
+        <div class="top-nav-list">
+            <a href="/" class="top-nav-home">&ensp;</a>
+            <a class="seach-toggel" href="/">首页</a>
+            <a class="seach-toggel" href="/gkzx.do" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '高考资讯' }, {trackName:'topNav-click',trackOption: {'链接名称': '高考资讯'}})">高考资讯</a>
+            <a class="seach-toggel" href="/zyck/" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '阳光志愿' }, {trackName:'topNav-click',trackOption: {'链接名称': '阳光志愿'}})">阳光志愿</a>
+            <a class="seach-toggel" href="/zixun.do" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '高招咨询' }, {trackName:'topNav-click',trackOption: {'链接名称': '高招咨询'}})">高招咨询</a>
+            <a class="seach-toggel" href="/z/gkbmfslq/index.jsp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '招生动态' }, {trackName:'topNav-click',trackOption: {'链接名称': '招生动态'}})">招生动态</a>
+            <a class="seach-toggel" href="/news/stpx.do" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '试题评析' }, {trackName:'topNav-click',trackOption: {'链接名称': '试题评析'}})">试题评析</a>
+            <a class="seach-toggel" href="/sch/" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '院校库' }, {trackName:'topNav-click',trackOption: {'链接名称': '院校库'}})">院校库</a>
+            <a class="seach-toggel" href="/zyk/zybk/" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '专业库' }, {trackName:'topNav-click',trackOption: {'链接名称': '专业库'}})">专业库</a>
+            <a class="seach-toggel" href="/zyk/pub/myd/schAppraisalTop.action" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '院校满意度' }, {trackName:'topNav-click',trackOption: {'链接名称': '院校满意度'}})">院校满意度</a>
+            <a class="seach-toggel" href="/zyk/pub/myd/specAppraisalTop.action" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '专业满意度' }, {trackName:'topNav-click',trackOption: {'链接名称': '专业满意度'}})">专业满意度</a>
+            <a class="seach-toggel" href="/zyk/pub/zytj/recommendTop.action" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '专业推荐' }, {trackName:'topNav-click',trackOption: {'链接名称': '专业推荐'}})">专业推荐</a>
+            <span class="top-nav-hide seach-toggel">
+                <span class="top-nav-more">更多<img src="https://t2.chei.com.cn/common/images/wap-icon/nav-next.svg" class="nav-next"></span>
+                <div class="top-nav-pop">
+                    <span class="top-nav-pop-arrow"></span>
+                    <div class="top-nav-pop-clo">
+                        <a href="/news/zszc.do" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '招生政策' }, {trackName:'topNav-click',trackOption: {'链接名称': '招生政策'}})">招生政策</a>
+                        <a href="/zyck/xkkm/zt/xkzd" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '选科参考' }, {trackName:'topNav-click',trackOption: {'链接名称': '选科参考'}})">选科参考</a>
+                        <a href="/zxdy/" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '云咨询周' }, {trackName:'topNav-click',trackOption: {'链接名称': '云咨询周'}})">云咨询周</a>
+                        <a href="/z/gkbmfslq/cjcx.jsp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '成绩查询' }, {trackName:'topNav-click',trackOption: {'链接名称': '成绩查询'}})">成绩查询</a>
+                        <a href="/zsgs/zhangcheng/" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '招生章程' }, {trackName:'topNav-click',trackOption: {'链接名称': '招生章程'}})">招生章程</a>
+                    </div>
+                    <div class="top-nav-pop-clo">
+                        <a href="/zsgs/mdgs.jsp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '名单公示' }, {trackName:'topNav-click',trackOption: {'链接名称': '名单公示'}})">名单公示</a>
+                        <a href="/zyck/zy/" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '志愿参考' }, {trackName:'topNav-click',trackOption: {'链接名称': '志愿参考'}})">志愿参考</a>
+                        <a href="/zxdy/zxs--method-listDefault,forumid-6267733,year-2005,start-0.dhtml" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '咨询室' }, {trackName:'topNav-click',trackOption: {'链接名称': '咨询室'}})">咨询室</a>
+                        <a href="/z/gkbmfslq/lqjg.jsp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '录取结果' }, {trackName:'topNav-click',trackOption: {'链接名称': '录取结果'}})">录取结果</a>
+                        <a href="/z/gaozhi/index.jsp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '高职招生' }, {trackName:'topNav-click',trackOption: {'链接名称': '高职招生'}})">高职招生</a>
+                    </div>
+                    <div class="top-nav-pop-clo">
+                        <a href="/news/gzdt.do" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '工作动态' }, {trackName:'topNav-click',trackOption: {'链接名称': '工作动态'}})">工作动态</a>
+                        <a href="/zyck/zycp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '心理测评' }, {trackName:'topNav-click',trackOption: {'链接名称': '心理测评'}})">心理测评</a>
+                        <a href="/zxdy/zblist.do" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '直播安排' }, {trackName:'topNav-click',trackOption: {'链接名称': '直播安排'}})">直播安排</a>
+                        <a href="/z/gkbmfslq/pcx.jsp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '批次线' }, {trackName:'topNav-click',trackOption: {'链接名称': '批次线'}})">批次线</a>
+                        <a href="/zyk/zybk/zyjd/listPage/" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '专业解读' }, {trackName:'topNav-click',trackOption: {'链接名称': '专业解读'}})">专业解读</a>
+                    </div>
+                    <div class="top-nav-pop-clo">
+                        <a href="/gdwz.do" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '各地网站' }, {trackName:'topNav-click',trackOption: {'链接名称': '各地网站'}})">各地网站</a>
+                        <a href="/zyck/zyqj/zyqx" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '职业前景' }, {trackName:'topNav-click',trackOption: {'链接名称': '职业前景'}})">职业前景</a>
+                        <a href="/gkzt/tszs" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '特殊类型招生' }, {trackName:'topNav-click',trackOption: {'链接名称': '特殊类型招生'}})">特殊类型招生</a>
+                        <a href="/z/gkbmfslq/zytb.jsp" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '志愿填报时间' }, {trackName:'topNav-click',trackOption: {'链接名称': '志愿填报时间'}})">志愿填报时间</a>
+                        <a href="/gkzt/zbft" onmousedown="gaTrackerOutboundLink({ eventCategory: '二级导航', eventAction: 'click', eventLabel: '招办访谈' }, {trackName:'topNav-click',trackOption: {'链接名称': '招办访谈'}})">招办访谈</a>
+                    </div>
+                </div>
+            </span>
+        </div>
+        <div class="top-nav-load">
+            <div class="top-nav-search-input" id="top-nav-input">
+                <form class="site-search" action="https://www.baidu.com/s" target="_blank" method="get">
+                    <input type="hidden" class="realQuery" name="wd" value="">
+                    <input placeholder="" type="text" name="query" autocomplete="off" id="top-nav-search-input" class="search-input" value="" maxlength="100">
+                    <button type="submit" class="search-button"></button>
+                </form>
+            </div>
+            <span class="search-cancel">取消</span>
+            <span class="top-nav-load-search" id="top-nav-search"></span>
+            <span class="info-line"></span>
+            <span class="top-nav-load-info">
+                
+
+
+
+
+
+
+    <a href="/user/userAccountLogin.do?entrytype=gkstu">登录</a>
+    <span class="info-line"></span>
+    <a href="https://account.chsi.com.cn/account/preregbymphone.action?from=gaokao-zixun">注册</a>
+
+            </span>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const topNavSearch = document.getElementById('top-nav-search');
+    const searchCancel = document.querySelector('.search-cancel');
+    const searchInput = document.querySelector('.search-input');
+    const realQuery = document.querySelector('.realQuery');
+    const searchForm = document.querySelector('.site-search');
+
+    // 点击搜索图标：显示输入框（添加 active 类）
+    if (topNavSearch) {
+        topNavSearch.addEventListener('click', function (event) {
+            event.stopPropagation();
+            document.querySelector('.top-nav-wrapper').classList.add('active');
+            searchInput.focus();
+        });
+    }
+
+    // 点击取消按钮：移除 active 类
+    if (searchCancel) {
+        searchCancel.addEventListener('click', function (event) {
+            document.querySelector('.top-nav-wrapper').classList.remove('active');
+        });
+    }
+
+    // 点击文档其他地方：移除 active 类
+    document.addEventListener('click', function (event) {
+        const wrapper = document.querySelector('.top-nav-wrapper');
+        if (wrapper && !wrapper.contains(event.target)) {
+            wrapper.classList.remove('active');
+        }
+    });
+
+    // 提交表单前处理搜索词
+    if (searchForm) {
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // 阻止默认提交
+
+            const val = searchInput.value.trim();
+
+            if (!val) {
+                alert("请输入关键词");
+                return;
+            }
+
+            // 设置 realQuery 的值为关键词 + site:xxx
+            realQuery.value = val + ' site:gaokao.chsi.com.cn';
+
+            // 手动提交表单
+            searchForm.submit();
+        });
+    }
+});
+</script>
+    </div>
+    <div id="app" class="layout" v-cloak>
+        <div class="wap-show">
+            <top-nav title="专业解读"></top-nav>
+        </div>
+        <div class="banner wap-show">
+            <img alt="" src="//t1.chei.com.cn/gaokao/zyjd/images/banner.png">
+        </div>
+        <div class="gk-zhjy-banner pc-show">
+            <h2>专业解读</h2>
+        </div>
+        <van-skeleton class="detail-skeleton" title :row="5" :loading="loading"></van-skeleton>
+        <div class="content view-vant wap-show" v-if="!loading">
+            <h2 class="title-h2">
+                <p class="zymc-title">{{data.zymc}}</p>
+                <p class="title-h2-text" v-html="data.title"></p>
+            </h2>
+            <div class="title-author" v-html="data.author"></div>
+            <div class="title-img">
+                <img :src="data.topImg" alt="">
+            </div>
+            <div class="title-link">
+                <a class="title-link-zyzy" :href="data.outLink[0].value" :target="isWap?'':'_blank'">
+                    <div class="title-link-bg">
+                        <span class="text">{{data.outLink[0].name}}</span>
+                        <i class="iconfont">&#xe601;</i>
+                    </div>
+                </a>
+                <a class="title-link-ksyx" :href="data.outLink[1].value" :target="isWap?'':'_blank'">
+                    <div class="title-link-bg">
+                        <span class="text">{{data.outLink[1].name}}</span>
+                        <i class="iconfont">&#xe601;</i>
+                    </div>
+                </a>
+            </div>
+            <div class="title-link-fixed">
+                <a class="title-link-zyzy" :href="data.outLink[0].value" :target="isWap?'':'_blank'">
+                    <div class="title-link-bg">
+                        <span class="text">{{data.outLink[0].name}}</span>
+                    </div>
+                </a>
+                <a class="title-link-ksyx" :href="data.outLink[1].value" :target="isWap?'':'_blank'">
+                    <div class="title-link-bg">
+                        <span class="text">{{data.outLink[1].name}}</span>
+                    </div>
+                </a>
+            </div>
+            <div id="target"></div>
+            <div class="title-des-warp">
+                <div class="title-des" style="white-space: pre-line;" v-html="data.topText"></div>
+            </div>
+            <span :id="data.content[0].value"></span>
+            <van-tabs color="#007B4B" @click="tabChang" scrollspy sticky>
+                <van-tab :title="item.name" v-for="(item,index) in data.content" :name="item.value" >
+                    <div class="tab-content">
+                    <div class="tab-content-item UEditor">
+                        <h3 class="tab-title" :id="item.value"><span class="text" v-html="item.title"></span></h3>
+                        <template v-if="item.hasBl">
+                            <div class="card-warp" v-if="item.bysgm!='0'">
+                                <div class="card card-1">
+                                    <div class="card-title">全国普通高校毕业生规模：</div>
+                                    <div class="card-des" v-text="item.bysgm=='0'?'-':item.bysgm"></div>
+                                </div>
+                            </div>
+                            <!-- <div class="card-warp" v-if="item.nvbl[0] || item.nvbl[1]">
+                                <div class="card">
+                                    <div class="card-title">男女比例：</div>
+                                    <div class="card-des" v-if="item.nvbl[0] || item.nvbl[1]">
+                                        <span>男{{item.nvbl[0]}}% </span>
+                                        <span class="progress"><span :style="'width: '+item.nvbl[0]+'%;'" class="progress-width"></span></span>
+                                        <span>女{{item.nvbl[1]}}%</span>
+                                    </div>
+                                    <div class="card-des" v-else>-</div>
+                                </div>
+                            </div> -->
+                        </template>
+                        <div v-html="item.html"></div>
+                        <template v-if="item.hasTuij">
+                            <div class="zytj-title" v-if="item.schools?(item.schools.length>0?true:false):false">专业推荐<span class="tips">（本校学生实名推荐）</span><a href="/zyk/pub/zytj/recommendTop.action" class="more"><i class="van-icon van-icon-arrow"><!----></i></a></div>
+                            <div class="zytj-sch" v-if="item.schools?(item.schools.length>0?true:false):false">
+                                <ul>
+                                    <li v-for="(item,index) in item.schools" style="display: flex;">
+                                        <span class="school-name" style="flex: 1;">{{item.yxmc}}</span>
+                                        <span><span class="rank" style="width: 0.6rem;">{{item.rank.toFixed(1)}}</span><span class="count">（{{item.count}}人）</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </template>
+                        <template v-if="index < data.content.length-1">
+                            <span :id="data.content[index+1].value"></span>
+                        </template>
+                    </div>
+                </div>
+                </van-tab>
+            </van-tabs>
+            <div class="tab-content">
+                <a class="more" :href="data.moreLink">【点击查看更多专业解读】</a>
+                <div class="text-des">{{data.des}}</div>
+            </div>
+        </div>
+        <div class="content pc-show">
+            <div style="background: #fff">
+                <div class="title">{{data.zymc}}：{{data.title}}</div>
+                <div class="author" v-html="data.author"></div>
+                <div class="dy">
+                    <div class="left-img">
+                        <img :src="data.topImg" alt="">
+                        <div class="btn-group">
+                            <template v-for="(item,index) in data.outLink">
+                                <a :class="index===0?'btn-item':'btn-item ksyx'" :href="item.value" target="_blank">
+                                    {{item.name}}<i class="iconfont">&#xe601;</i>
+                                </a>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="right-text">
+                        <div class="bg"><i class="thumb" :style="'background-image: url('+ data.topImg +')'"></i></div>
+                        <div class="container" style="white-space: pre-line;" v-html="data.topText"></div>
+                    </div>
+                </div>
+                <div id="target1"></div>
+            </div>
+            <div class="title-link-fixed-pc">
+                <template v-for="(item,index) in data.outLink">
+                    <a :class="index===0?'title-link':'title-link ksyx'" :href="item.value" target="_blank">
+                        {{item.name}}
+                    </a>
+                </template>
+            </div>
+            <div class="text-content UEditor">
+                <div class="zyjx" v-for="(item,index) in data.content" :style="index%2===1?'background: #fff':null">
+                    <div class="common-title" v-html="item.title"></div>
+                    <div class="card-info" v-if="item.hasBl">
+                        <div class="card-warp" v-if="item.bysgm!='0'">
+                            <div class="card card-1">
+                                <div class="card-title">全国普通高校毕业生规模：</div>
+                                <div class="card-des" v-text="item.bysgm=='0'?'-':item.bysgm"></div>
+                            </div>
+                        </div>
+                        <!-- <div class="card-warp" v-if="item.nvbl[0] || item.nvbl[1]">
+                            <div class="card">
+                                <div class="card-title">男女比例：</div>
+                                <div class="card-des" v-if="item.nvbl[0] || item.nvbl[1]">
+                                    <span>男{{item.nvbl[0]}}% </span>
+                                    <span class="progress"><span :style="'width: '+item.nvbl[0]+'%;'" class="progress-width"></span></span>
+                                    <span>女{{item.nvbl[1]}}%</span>
+                                </div>
+                                <div class="card-des" v-else>-</div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="common-text" v-html="item.html"></div>
+                    <div class="table" v-if="item.hasTuij && item.schools?(item.schools.length>0):false">
+                        <div class="table-head">
+                            <div class="table-title">专业推荐<span>（本校学生实名推荐）</span></div>
+                            <a href="/zyk/pub/zytj/recommendTop.action" class="more">
+                            查看更多<i class="iconfont">&#xe601;</i></a>
+                        </div>
+                        <div class="table-body">
+                            <div class="table-item" v-for="ite in item.schools">
+                                <div class="name">{{ite.yxmc}}</div>
+                                <div class="score">{{ite.rank.toFixed(1)}}（{{ite.count}}）</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">本文版权归教育部阳光高考信息平台所有，转载请注明来源。</div>
+            <div class="footer-more">
+                更多专业解读 <a :href="data.moreLink" class="more-btn" target="_blank">点击查看</a>
+            </div>
+        </div>
+        <div class="wap-show">
+            
+
+
+
+
+<div class="wap-footer">
+    <div class="wap-footer-units" style="padding: 0.32rem;font-size: 0.32rem;line-height: 0.5333rem;text-align: center;">
+        主办单位：<a href="https://chesicc.chsi.com.cn/">教育部学生服务与素质发展中心</a>
+        <br>
+        Copyright © 2003-<span>2025</span> <a href="//www.chsi.com.cn/">学信网</a> All Rights Reserved
+    </div>
+</div>
+        </div>
+        <div class="pc-show">
+            
+
+
+<!-- 4: 底部区域 -->
+<style>
+    /**
+     * description: footer 共用底部;
+     * author:myx;
+     * date:2017-12;
+     */
+
+    .footer-wrapper {
+        line-height: 30px;
+        background: #282828;
+        color: #ababab;
+    }
+
+    .footer-wrapper a {
+        color: #ababab;
+    }
+
+    .footer-wrapper .footer {
+        position: relative;
+        width: 1180px;
+        height: 190px;
+        margin: 0 auto;
+        border-top: 1px solid #3d3d3d;
+    }
+
+    .footer-wrapper .footer-list {
+        position: absolute;
+        top: 24px;
+        left: 0px;
+    }
+
+    .footer-wrapper .footer-list a {
+        margin-right: 15px;
+    }
+
+    .footer-wrapper .footer-units {
+        position: absolute;
+        top: 67px;
+        left: 0px;
+    }
+
+    .footer-wrapper .footer-media {
+        position: absolute;
+        top: 24px;
+        left: 844px;
+    }
+
+    .footer-wrapper .footer-media a {
+        position: relative;
+        display: inline-block;
+        margin-right: 30px;
+        vertical-align: top;
+    }
+
+    .footer-wrapper .footer-media img {
+        display: none;
+        position: absolute;
+        top: -20px;
+        left: -85px;
+    }
+
+    .footer-wrapper .footer-media a:hover {
+        text-decoration: none;
+    }
+    .footer-wrapper .footer-media a:hover img{
+        display: block;
+    }
+
+    .footer-wrapper .footer-media .iconfont {
+        margin-right: 5px;
+        font-size: 20px;
+        vertical-align: middle;
+    }
+
+    .footer-wrapper .footer-msg {
+        position: absolute;
+        top: 67px;
+        left: 844px;
+    }
+    .footer-nav {
+        height: 66px;
+        line-height: 66px;
+        text-align: center;
+    }
+    .footer-nav a{
+        margin-right: 14px;
+    }
+    .footer-nav a:last-child{
+        margin-right: 0;
+    }
+    .footer-wrapper .svg-icon {
+        display: inline-block;
+        width: 20px;
+        height: 23px;
+        margin-right: 3px;
+        vertical-align: middle;
+    }
+
+    .footer-wrapper svg use {
+        color: #ababab;
+    }
+</style>
+<svg style="display: block; width: 0; height: 0">
+    <defs>
+        <symbol id="weibo" viewBox="0 0 16 16">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-139.000000, -4036.000000)" fill="currentColor" fill-rule="nonzero">
+                    <g transform="translate(139.000000, 4036.000000)">
+                        <rect opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path
+                            d="M10.565,3.6325 C10.565,3.6325 12.335,3.445 13.0875,4.5425 C13.84,5.64 13.515,7.02 13.515,7.02 C13.4949253,7.12321653 13.5233752,7.22993417 13.5921672,7.30945968 C13.6609592,7.38898519 13.7624686,7.43250415 13.8675,7.4275 L14.0425,7.4275 C14.2747485,7.42111375 14.4682944,7.24766281 14.5,7.0175 C14.5,7.0175 14.9075,4.8525 13.65,3.6475 C12.67,2.705 11.3275,2.6025 10.79,2.6025 L10.5525,2.6025 C10.3240422,2.60790517 10.1412883,2.79398193 10.1399581,3.0225 L10.1399581,3.2275 C10.1383884,3.33892927 10.183335,3.44597927 10.264011,3.52285878 C10.3446871,3.59973829 10.4537777,3.63947671 10.565,3.6325 L10.565,3.6325 Z M7.08,11.845 C8.315,11.595 9.15,10.565 8.9475,9.5225 C8.7725,8.625 7.8875,8.0225 6.8575,8.0225 C6.6895953,8.02269714 6.52211889,8.03944478 6.3575,8.0725 C5.1225,8.3225 4.2875,9.3525 4.49,10.395 C4.6925,11.4375 5.8475,12.085 7.08,11.845 Z M7.115,9.1625 C7.27228055,9.15431868 7.41868486,9.24275691 7.48462743,9.38578027 C7.55057,9.52880363 7.52275233,9.69756891 7.41439607,9.8118625 C7.3060398,9.9261561 7.13899693,9.96292865 6.99266239,9.90470229 C6.84632786,9.84647593 6.75021264,9.70499305 6.75,9.5475 C6.7484414,9.34193445 6.90964354,9.17189932 7.115,9.1625 L7.115,9.1625 Z M5.75,9.765 C6.13,9.5875 6.5475,9.6775 6.68,9.9675 C6.8125,10.2575 6.625,10.635 6.25,10.8125 C6.12707576,10.8701293 5.99325221,10.9008149 5.8575,10.9025 C5.63577697,10.9190371 5.42511864,10.80342 5.32,10.6075 C5.18,10.32 5.3775,9.9425 5.75,9.765 Z"></path>
+                        <path
+                            d="M7.305,13.3975 C10.555,13.3975 13.155,11.675 13.155,9.5475 C13.155,7.7525 10.94,7.7525 10.94,7.635 C10.94,7.5175 12.045,6.4775 10.94,5.8275 C10.28,5.4375 9.29,5.6375 8.615,5.8275 C8.37593476,5.92066948 8.13025327,5.9958781 7.88,6.0525 C8.75,4.535 7.51,4.0525 6.88,4.0525 C5.38,4.0525 1.4325,7.41 1.4325,9.535 C1.4325,11.66 4.06,13.3975 7.305,13.3975 L7.305,13.3975 Z M6.7675,7.2625 C8.84,6.97 10.6775,7.845 10.87,9.2125 C11.0625,10.58 9.5375,11.9275 7.4625,12.2125 C7.19993139,12.2492176 6.93512346,12.2675954 6.67,12.2675004 C4.94,12.2675004 3.53,11.4525 3.3625,10.2675 C3.17,8.9 4.695,7.5525 6.7675,7.2625 L6.7675,7.2625 Z"></path>
+                        <path
+                            d="M12.1975,6.94 L12.4475,6.94 C12.6059157,6.93686389 12.7404701,6.82317064 12.77,6.6675 C12.77,6.6675 13.065,5.525 12.38,4.9 C12.0543816,4.60954157 11.6312754,4.45243883 11.195,4.46 C11.06222,4.45779075 10.9296415,4.47121643 10.8,4.5 C10.6460069,4.52717522 10.5322284,4.65869897 10.5275,4.815 L10.5275,4.9225 C10.523244,4.99648918 10.5520351,5.06855315 10.6061021,5.11924105 C10.6601692,5.16992894 10.7339389,5.19401568 10.8075,5.185 C10.8075,5.185 11.5575,5.0825 11.9225,5.5225 C12.2875,5.9625 12.0025,6.675 12.0025,6.675 C11.9769169,6.73717397 11.9856249,6.80819055 12.0254718,6.86234147 C12.0653188,6.9164924 12.1305304,6.94593085 12.1975,6.94 Z"></path>
+                    </g>
+                </g>
+            </g>
+        </symbol>
+        <symbol id="weixin" viewBox="0 0 17 16">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-118.000000, -4036.000000)" fill-rule="nonzero">
+                    <g transform="translate(118.000000, 4036.000000)">
+                        <rect fill="#000000" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path
+                            d="M6.33075,2 C3.4003125,2 1,3.99745313 1,6.53370312 C1,7.99773437 1.7986875,9.19954687 3.13267188,10.1306562 L2.5995,11.734625 L4.46289062,10.7997656 C5.129875,10.9321719 5.6646875,11.0676406 6.33003125,11.0676406 C6.49725,11.0676406 6.66329688,11.0594062 6.8276875,11.0462344 C6.72373438,10.6894531 6.66329688,10.3164531 6.66329688,9.92932812 C6.66329688,7.6016875 8.66332812,5.71171875 11.1955781,5.71171875 C11.3682031,5.71171875 11.5391875,5.72442187 11.709,5.74323437 C11.2477969,3.59573437 8.95190625,2 6.33075,2 L6.33075,2 Z M4.5990625,5.5990625 C4.19971875,5.5990625 3.796375,5.33142188 3.796375,4.93184375 C3.796375,4.53060938 4.19971875,4.26673438 4.5990625,4.26673438 C4.99840625,4.26673438 5.26464063,4.53085938 5.26464063,4.93184375 C5.26440625,5.33142188 4.99840625,5.59907813 4.5990625,5.59907813 L4.5990625,5.5990625 Z M8.32984375,5.5990625 C7.93025,5.5990625 7.52925,5.33142188 7.52925,4.93184375 C7.52925,4.53060938 7.93025,4.26673438 8.32982812,4.26673438 C8.73129687,4.26673438 8.9970625,4.53085938 8.9970625,4.93184375 C8.9970625,5.33142188 8.7310625,5.59907813 8.32982812,5.59907813 L8.32984375,5.5990625 Z M16.061125,9.86559375 C16.061125,7.73575 13.9284688,5.99865625 11.5333125,5.99865625 C8.9970625,5.99865625 6.999375,7.73575 6.999375,9.86559375 C6.999375,12.0001562 8.9970625,13.7337187 11.5333125,13.7337187 C12.064125,13.7337187 12.5991719,13.600125 13.1325781,13.4663125 L14.5949687,14.2668906 L14.1939844,12.9345469 C15.2638438,12.1323281 16.061125,11.067875 16.061125,9.86559375 L16.061125,9.86559375 Z M10.0631563,9.19954687 C9.797625,9.19954687 9.52975,8.93590625 9.52975,8.66660938 C9.52975,8.400625 9.797625,8.13296875 10.0631563,8.13296875 C10.4665,8.13296875 10.7303906,8.400625 10.7303906,8.66660938 C10.7303906,8.93590625 10.4665,9.19954687 10.0631563,9.19954687 Z M12.9954687,9.19954687 C12.7318281,9.19954687 12.4658281,8.93590625 12.4658281,8.66660938 C12.4658281,8.400625 12.7318281,8.13296875 12.9954687,8.13296875 C13.3948125,8.13296875 13.6626875,8.400625 13.6626875,8.66660938 C13.6626875,8.93590625 13.3948125,9.19954687 12.9954687,9.19954687 Z"
+                            fill="currentColor"></path>
+                    </g>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+<div class="footer-wrapper">
+    <div class="footer-nav">
+        <a href="https://my.chsi.com.cn/" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '学籍查询' }, {trackName:'footerLink-click',trackOption: {'链接名称': '学籍查询'}})">学籍查询</a>
+        <a href="https://www.chsi.com.cn/xlcx/" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '学历查询' }, {trackName:'footerLink-click',trackOption: {'链接名称': '学历查询'}})">学历查询</a>
+        <a href="https://www.chsi.com.cn/xwcx/" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '学位查询' }, {trackName:'footerLink-click',trackOption: {'链接名称': '学位查询'}})">学位查询</a>
+        <a href="https://www.chsi.com.cn/xlcx/bgcx.jsp" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '在线验证' }, {trackName:'footerLink-click',trackOption: {'链接名称': '在线验证'}})">在线验证</a>
+        <a href="https://www.chsi.com.cn/xlrz/index2.jsp" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '出国教育背景服务' }, {trackName:'footerLink-click',trackOption: {'链接名称': '出国教育背景服务'}})">出国教育背景服务</a>
+        <a href="https://my.chsi.com.cn/archive/index.jsp#txjd" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '图像校对' }, {trackName:'footerLink-click',trackOption: {'链接名称': '图像校对'}})">图像校对</a>
+        <a href="https://my.chsi.com.cn/" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '学信档案' }, {trackName:'footerLink-click',trackOption: {'链接名称': '学信档案'}})">学信档案</a>
+        <a href="https://gaokao.chsi.com.cn/" title="教育部阳光高考信息平台" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '高考' }, {trackName:'footerLink-click',trackOption: {'链接名称': '高考'}})">高考</a>
+        <a href="https://yz.chsi.com.cn/" title="中国研究生招生信息网" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '研招' }, {trackName:'footerLink-click',trackOption: {'链接名称': '研招'}})">研招</a>
+        <a href="https://www.gatzs.com.cn/" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '港澳台招生' }, {trackName:'footerLink-click',trackOption: {'链接名称': '港澳台招生'}})">港澳台招生</a>
+        <a href="https://www.gfbzb.gov.cn/" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '征兵' }, {trackName:'footerLink-click',trackOption: {'链接名称': '征兵'}})">征兵</a>
+        <a href="https://www.ncss.cn/" title="就业" target="_blank" onmousedown="goo(this, '1654381345');gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '就业' }, {trackName:'footerLink-click',trackOption: {'链接名称': '就业'}})" onblur="this.href='https://www.ncss.cn/'">就业</a>
+        <a href="https://xz.chsi.com.cn/" target="_blank" onmousedown="gaTrackerOutboundLink({ eventCategory: 'footer链接', eventAction: 'click', eventLabel: '学职平台' }, {trackName:'footerLink-click',trackOption: {'链接名称': '学职平台'}})">学职平台</a>
+    </div>
+    <div class="footer">
+        <div class="footer-list">
+            <a href="//www.chsi.com.cn/" target="_blank" >学信网</a>
+            <a href="https://chesicc.chsi.com.cn/zxgw/zxjs/201604/20160418/1529506207.html" target="_blank">中心简介</a>
+            <a href="//www.chsi.com.cn/about/contact.shtml" target="_blank">联系我们</a>
+            <a href="//www.chsi.com.cn/about/copyright.shtml" target="_blank">版权声明</a>
+            <a href="/help/" target="_blank">帮助中心</a>
+            <a href="/sitemap.jsp" target="_blank">网站地图</a>
+            <a href="//www.chsi.com.cn/ad/202403/20240322/2293272452.html" target="_blank">网站宣传</a>
+        </div>
+        <div class="footer-units">
+            主办单位：<a href="https://chesicc.chsi.com.cn/" target="_blank">教育部学生服务与素质发展中心</a><br>
+            Copyright © 2003-2025 <a href="//www.chsi.com.cn/" target="_blank">学信网</a> All Rights Reserved<br>
+            <a href="http://beian.miit.gov.cn" target="_blank">京ICP备19004913号-1</a>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010202009747" target="_blank">
+                <img src="https://t1.chei.com.cn/chsi/images/jgwab.svg" style="vertical-align: middle; margin-bottom: 2px; margin-left: 8px;">
+                京公网安备11010202009747号
+            </a>
+        </div>
+        <div class="footer-media">
+            <a href="javascript:;">
+                <svg class="svg-icon">
+                    <use xlink:href="#weixin"></use>
+                </svg>
+                官方微信
+                <img src="https://t3.chei.com.cn/gaokao/assets/web/images/gkwx.jpg">
+            </a>
+            <a href="http://weibo.com/chsigk" target="_blank">
+                <svg class="svg-icon">
+                    <use xlink:href="#weibo"></use>
+                </svg>
+                官方微博
+            </a>
+        </div>
+        <div class="footer-msg">
+            客服热线：010-67410388<br>
+            客服邮箱：kefu@chsi.com.cn
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    
+<style>
+    .ch-nav {
+        display: flex;
+        align-items: center;
+    }
+    .van-overflow-hidden {
+        overflow: hidden !important;
+    }
+    .ch-common-nav-popup .van-popup {
+        position: fixed;
+        width: 100%;
+        max-width: 750px;
+        margin: 0 auto;
+        max-height: 100%;
+        overflow-y: auto;
+        background-color: #fff;
+        transition: transform 0.3s;
+        -webkit-overflow-scrolling: touch;
+    }
+    .ch-van-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .ch-common-nav-popup .van-popup--center {
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    .ch-common-nav-popup .close-bar {
+        height: 1.173rem;
+        padding: 0 0.427rem;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: end;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        background: #fff;
+    }
+    .close-bar:after {
+        position: absolute;
+        box-sizing: border-box;
+        content: " ";
+        pointer-events: none;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        border-bottom: 1px solid #ECECEC;
+        transform: scale(.5);
+    }
+    .ch-common-nav-popup .ch-van-overlay {
+        top: 0;
+        left: auto;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+    .ch-common-nav-popup .van-popup {
+        top: 0;
+        left: auto;
+    }
+    .ch-common-nav-popup .van-popup::after {
+        position: absolute;
+        box-sizing: border-box;
+        content: ' ';
+        pointer-events: none;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        border: 0 solid #e5e5e5;
+        transform: scale(0.5);
+        border-top-width: 1px;
+        border-color: #d5d5d5;
+    }
+    .ch-common-nav-popup .van-popup--center {
+        transform: none;
+    }
+    .gk-top-navlist-content {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: 0.26rem;
+    }
+    .gk-top-navlist-content a {
+        display: block;
+        width: calc( (100% - 0.58rem) / 3 );
+        text-align: center;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        border-radius: 0.11rem;
+        margin-bottom: 0.27rem;
+        margin-right: 0.29rem;
+        font-size: 0.37rem;
+        color: #131b18;
+        background: #f7fbf9;
+        text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .gk-top-navlist-content a:nth-child(3n) {
+        margin-right: 0;
+    }
+    .gk-top-navlist-content a:active {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    .ch-icon-wap-nav:before {
+        display: inline-block;
+        content: "\F0DD";
+        cursor: pointer;
+    }
+    .close-bar .logo{
+        display: block;
+        height: 0.77rem;
+    }
+    .gk-top-nav-body {
+        padding: 0.35rem 0.427rem;
+    }
+    .gk-top-navlist-item {
+        font-size: 0.427rem;
+        font-weight: 700;
+        color: #131b18;
+        line-height: 0.64rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.32rem;
+    }
+    .gk-top-navlist-title {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    .gk-top-navlist-title::before {
+        display: block;
+        content: '';
+        width: 0.08rem;
+        height: 0.4rem;
+        background: #1cb278;
+        border-radius: 0.04rem;
+        margin-right: 0.13rem;
+    }
+    a.gk-top-navlist-link {
+        display: flex;
+        align-items: center;
+        font-size: 0.32rem;
+        font-weight: 400;
+        color: #959e9a;
+        line-height: 0.44rem;
+        padding: 0.1rem 0 0.1rem 0.3rem;
+    }
+    /* wap-top-nav */
+    .wap-nav-bar {
+        position: relative;
+        z-index: 100;
+        height: 1.173rem;
+        display: flex;
+        align-items: center;
+        background: #fff;
+    }
+    .wap-nav-bar:after {
+        position: absolute;
+        box-sizing: border-box;
+        content: " ";
+        pointer-events: none;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        border-bottom: 1px solid #d5d5d5;
+        transform: scale(.5);
+    }
+    .wap-nav-bar .wap-nav-bar__left {
+        padding: 0 0.427rem;
+        display: flex;
+        align-items: center;
+    }
+    .wap-nav-bar .logo {
+        display: block;
+        height: 0.77rem;
+    }
+    .wap-nav-bar__center {
+        flex: 1;
+        height: 1.173rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .wap-nav-bar .wap-nav-bar__right {
+        padding: 0 0.427rem 0 0.32rem;
+        display: flex;
+        align-items: center;
+    }
+    .logo-text {
+        font-size: 0.373rem;
+        color: #626F69;
+    }
+    .logo-text a {
+        color: #626F69;
+    }
+    .logo-dot {
+        display: block;
+        width: 0.027rem;
+        height: 0.533rem;
+        background: #EBEDEC;
+        margin: 0 0.213rem;
+    }
+    .nav-next {
+        height: 0.427rem;
+    }
+    .nav-search{
+        margin-right: 0.32rem;
+    }
+    .ch-van-overlay-search {
+        background: #fff;
+    }
+    .site-search-wap {
+        display: flex;
+        align-items: center;
+        height: 1.173rem;
+        background: #f7fbf9;
+        padding: 0 0.427rem 0 0.24rem;
+    }
+    .top-nav-search-button-wap {
+        outline: none;
+        background: none;
+        border: none;
+        font-size: 0.373rem;
+        padding: 0;
+        margin-left: 0.32rem;
+        color: #131b18;
+    }
+    .top-nav-search-input-wap {
+        flex: 1;
+        border: 1px solid #d4d9d7;
+        height: 0.853rem;
+        color: #131b18;
+        background: #FFF url(https://t2.chei.com.cn/common/images/icon-search-wap.svg) left 0.21rem center no-repeat;
+        background-size: auto 0.533rem;
+        border-radius: 0.11rem;
+        outline: none;
+        padding: 0 0.21rem 0 0.88rem;
+        box-sizing: border-box;
+    }
+</style>
+
+<template id="nav-template">
+    <div class="wap-nav-bar" >
+        <div class="wap-nav-bar__left">
+            <a href="/wap/">
+                <img class="logo" src="https://t1.chei.com.cn/common/wap/images/news_logo_gk.png" alt="阳光高考">
+            </a>
+            <template v-if="title!=''">
+                <span class="logo-dot"></span>
+                <span class="logo-text" v-html="secondTitleHtml"></span>
+            </template>
+        </div>
+        <div class="wap-nav-bar__center">
+            <slot name="center"></slot>
+        </div>
+        <div class="wap-nav-bar__right">
+            <span class="nav-search" @click="showSearch = true;">
+                <slot name="search-icon">
+                    <img src="https://t2.chei.com.cn/common/images/icon-search-wap.svg" style="width: .533rem;display: block;">
+                </slot>
+            </span>
+            <span class="ch-nav" @click="showNav = true;">
+                <slot>
+                    <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-menu.svg" style="width: .533rem;display: block">
+                </slot>
+                <div ref="yzpopup" class="ch-common-nav-popup">
+                    <template v-if="showNav">
+                        <div class="ch-van-overlay" @click="showNav = false;" style="z-index: 2001"></div>
+                        <div class="van-popup van-popup--center" style="z-index: 2002">
+                            <div class="close-bar">
+                                <a href="/wap/">
+                                    <img class="logo" src="https://t1.chei.com.cn/common/wap/images/news_logo_gk.png" alt="阳光高考">
+                                </a>
+                                <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-close.svg" @click="showNav = false;" style="width: .533rem;display: block" alt="">
+                            </div>
+                            <div class="gk-top-nav-body">
+                                <div class="gk-top-navlist" v-for="nav in navList">
+                                    <div v-if="nav.wapHref" class="gk-top-navlist-item">
+                                        <span class="gk-top-navlist-title">{{nav.name}}</span>
+                                        <a class="gk-top-navlist-link" :href="isWap ? nav.wapHref : nav.href" :target="isWap ? '' : '_blank'" @click="gaTrackerOutboundLink({ eventCategory: '移动端二级导航', eventAction: 'click', eventLabel: nav.name }, {trackName:'wapTopNav-click',trackOption: {'点击位置': nav.name}})"><img src="https://t2.chei.com.cn/common/images/wap-icon/nav-next.svg" class="nav-next"></a>
+                                    </div>
+                                    <div class="gk-top-navlist-item" v-else>
+                                        <span class="gk-top-navlist-title">{{nav.name}}</span>
+                                    </div>
+                                    <div class="gk-top-navlist-content">
+                                        <a v-for="item in nav.child" :href="isWap ? item.wapHref : item.href" :target="isWap ? '' : '_blank'"  @click="gaTrackerOutboundLink({ eventCategory: '移动端二级导航', eventAction: 'click', eventLabel: item.name }, {trackName:'wapTopNav-click',trackOption: {'点击位置': item.name}})">{{ item.name }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-if="showSearch">
+                        <div class="ch-van-overlay ch-van-overlay-search" style="z-index: 2001"></div>
+                        <div class="van-popup van-popup--center" style="z-index: 2002">
+                            <form @submit.prevent="searchSubmit" ref="site-search-wap" class="site-search-wap" action="https://www.baidu.com/s" method="get">
+                                <img @click="showSearch=false" src="https://t1.chei.com.cn/common/images/icon-back.svg" style="width: .533rem;display: block;margin-right: 0.24rem;">
+                                <input type="hidden" class="realQuery" name="wd" :value="searchValue + ' site:gaokao.chsi.com.cn'">
+                                <input placeholder="" type="text" ref="seachInput" name="query" autocomplete="off" class="top-nav-search-input-wap" v-model.trim="searchValue" maxlength="100">
+                                <button type="submit" class="top-nav-search-button-wap">搜索</button>
+                            </form>
+                        </div>
+                    </template>
+                </div>
+            </span>
+        </div>
+    </div>
+</template>
+<script>
+    Vue.component('topNav', {
+        props: {
+            title: {
+                type: String,
+                default: ''
+            }
+        },
+        data: function () {
+            return {
+                searchValue: '',
+                showNav: false,
+                showSearch: false,
+                isWap: typeof wapFn != 'undefined' ? wapFn() : true,
+                navList: [
+                    {
+                        name: '高考资讯',
+                        wapHref: '/wap/gkzx/',
+                        href: '/gkzx.do',
+                        child: [
+                            {
+                                name: '招生政策',
+                                wapHref: '/wap/news/zszc/',
+                                href: '/news/zszc.do'
+                            },
+                            {
+                                name: '工作动态',
+                                wapHref: '/wap/news/gzdt/',
+                                href: '/news/gzdt.do'
+                            },
+                            {
+                                name: '名单公示',
+                                wapHref: '/wap/mdgs/',
+                                href: '/zsgs/mdgs.jsp'
+                            },
+                            {
+                                name: '各地网站',
+                                wapHref: '/wap/gdwz/',
+                                href: '/gdwz.do'
+                            }
+                        ]
+                    },
+                    {
+                        name: '阳光志愿',
+                        wapHref: '/zyck/',
+                        href: '/zyck/',
+                        child: [
+                            {
+                                name: '选科参考',
+                                wapHref: '/zyck/xkkm/zt/xkzd',
+                                href: '/zyck/xkkm/zt/xkzd'
+                            },
+                            {
+                                name: '院校查询',
+                                fullName: '院校库',
+                                wapHref: '/wap/sch/schlist',
+                                href: '/sch/search--ss-on,option-qg,searchType-1,start-0.dhtml'
+                            },
+                            {
+                                name: '专业查询',
+                                fullName: '专业知识库',
+                                wapHref: '/zyk/zybk/wap/',
+                                href: '/zyk/zybk/'
+                            },
+                            {
+                                name: '志愿参考',
+                                wapHref: '/zyck/zy/',
+                                href: '/zyck/zy/'
+                            },
+                            {
+                                name: '心理测评',
+                                wapHref: '/zyck/zycp',
+                                href: '/zyck/zycp'
+                            },
+                            {
+                                name: '职业前景',
+                                wapHref: '/zyck/zyqj/zyqx',
+                                href: '/zyck/zyqj/zyqx'
+                            },
+                        ]
+                    },
+                    {
+                        name: '高招咨询',
+                        wapHref: '/wap/zxzx/',
+                        href: '/zixun.do',
+                        child: [
+                            {
+                                name: '云咨询周',
+                                wapHref: '/wap/zxdy',
+                                href: '/zxdy'
+                            },
+                            {
+                                name: '咨询室',
+                                wapHref: '/wap/zxdy/zxs',
+                                href: '/zxdy/zxs--method-listDefault,forumid-6267733,year-2007,start-0.dhtml'
+                            },
+                            {
+                                name: '直播安排',
+                                wapHref: '/wap/zxdy/zb/ydzbhz',
+                                href: '/zxdy/zblist.do'
+                            },
+                        ]
+                    },
+                    {
+                        name: '招生动态',
+                        wapHref: '/wap/z/gkbmfslq/index.jsp',
+                        href: '/z/gkbmfslq/index.jsp',
+                        child: [
+                            {
+                                name: '成绩查询',
+                                wapHref: '/wap/z/gkbmfslq/cjcx.jsp',
+                                href: '/z/gkbmfslq/cjcx.jsp'
+                            },
+                            {
+                                name: '录取结果',
+                                wapHref: '/wap/z/gkbmfslq/lqjg.jsp',
+                                href: '/z/gkbmfslq/lqjg.jsp'
+                            },
+                            {
+                                name: '批次线',
+                                wapHref: '/wap/z/gkbmfslq/pcx.jsp',
+                                href: '/z/gkbmfslq/pcx.jsp'
+                            },
+                            {
+                                name: '志愿填报时间',
+                                wapHref: '/wap/z/gkbmfslq/zytb.jsp',
+                                href: '/z/gkbmfslq/zytb.jsp'
+                            },
+                        ]
+                    },
+                    {
+                        name: '高职招生',
+                        wapHref: '/z/gaozhi/index.jsp',
+                        href: '/z/gaozhi/index.jsp',
+                        child: [
+                            {
+                                name: '院校查询',
+                                wapHref: '/wap/sch/schlist',
+                                href: '/sch/schlist'
+                            },
+                            {
+                                name: '专业查询',
+                                wapHref: '/zyk/zybk/wap/',
+                                href: '/zyk/zybk/'
+                            },
+                            {
+                                name: '咨询室',
+                                wapHref: '/wap/zxdy/zxs',
+                                href: '/zxdy/zxs--method-listDefault,forumid-6267733,year-2007,start-0.dhtml'
+                            },
+                        ]
+                    },
+                    {
+                        name: '试题评析',
+                        wapHref: '/wap/news/stpx',
+                        href: '/news/stpx.do',
+                        child: [
+                            {
+                                name: '试题解读',
+                                wapHref: '/wap/news/stpx?tabIndex=stjd',
+                                href: '/news/stpx.do?tabIndex=stjd'
+                            },
+                            {
+                                name: '试题分析',
+                                wapHref: '/wap/news/stpx?tabIndex=stfx',
+                                href: '/news/stpx.do?tabIndex=stfx'
+                            }
+                        ]
+                    },
+                    {
+                        name: '特别推荐',
+                        wapHref: '',
+                        href: '',
+                        child: [
+                            {
+                                name: '特殊类型招生',
+                                wapHref: '/gkzt/tszs',
+                                href: '/gkzt/tszs',
+                            },
+                            {
+                                name: '招生章程',
+                                wapHref: '/wap/zszc/schlist',
+                                href: '/zsgs/zhangcheng/',
+                            },
+                            {
+                                name: '院校满意度',
+                                wapHref: '/zyk/pub/myd/schAppraisalTop.action',
+                                href: '/zyk/pub/myd/schAppraisalTop.action',
+                            },
+                            {
+                                name: '专业满意度',
+                                wapHref: '/zyk/pub/myd/specAppraisalTop.action',
+                                href: '/zyk/pub/myd/specAppraisalTop.action',
+                            },
+                            {
+                                name: '专业推荐',
+                                wapHref: '/zyk/pub/zytj/recommendTop.action',
+                                href: '/zyk/pub/zytj/recommendTop.action',
+                            },
+                            {
+                                name: '专业解读',
+                                wapHref: '/zyk/zybk/zyjd/listPage',
+                                href: '/zyk/zybk/zyjd/listPage',
+                            },
+                            {
+                                name: '招办访谈',
+                                wapHref: '/gkzt/zbft',
+                                href: '/gkzt/zbft',
+                            }
+                        ]
+                    },
+                    {
+                        name: '帮助中心',
+                        wapHref: '',
+                        href: '',
+                        child: [
+                            {
+                                name: '统考招生',
+                                wapHref: '/wap/help/',
+                                href: '/help/',
+                            },
+                            {
+                                name: '特殊类型招生',
+                                wapHref: '/wap/help/?systemId=gk_ts',
+                                href: '/help/ts.jsp',
+                            },
+                            {
+                                name: '特殊类型报名',
+                                wapHref: '/wap/help/?systemId=gk_wb',
+                                href: '/help/wb.jsp',
+                            }
+                        ]
+                    },
+                    {
+                        name: '专题',
+                        wapHref: '',
+                        href: '',
+                        child: [
+                            {
+                                name: '专题汇总',
+                                wapHref: 'https://www.chsi.com.cn/zthz/yggk.jsp',
+                                href: 'https://www.chsi.com.cn/zthz/yggk.jsp',
+                            }
+                        ]
+                    }
+                ]
+            };
+        },
+        methods: {
+            gaTrackerOutboundLink: function(params,params2) { //ga链接埋点
+                gtag('event', params.eventAction, {
+                    'event_category': params.eventCategory,
+                    'event_label': params.eventLabel
+                });
+                return true;
+            },
+            searchSubmit: function() {
+                if (!this.searchValue) {
+                    alert("请输入关键词");
+                    return;
+                }
+                this.$refs['site-search-wap'].submit();
+            },
+            findMatchingNavItem: function(list, title) {
+                var _this = this;
+                for (var i = 0, len = list.length; i < len; i++) {
+                    var item = list[i];
+                    if (item.name === title || item.fullName === title) return item;
+
+                    if (item.child && item.child.length) {
+                        var foundChild = _this.findMatchingNavItem(item.child, title);
+                        if (foundChild) return foundChild;
+                    }
+                }
+                return null;
+            }
+        },
+        computed: {
+            secondTitleHtml: function () {
+                var str = this.title;
+                if (str) {
+                    var found = this.findMatchingNavItem(this.navList, str);
+                    if (found) {
+                        str = '<a href="' + (this.isWap ? found.wapHref : found.href) + '">' + (found.fullName || found.name) + '</a>';
+                    }
+                }
+                return str;
+            }
+        },
+        mounted: function () {
+            document.addEventListener("touchstart", function(){}, true);
+            var popDom = this.$refs.yzpopup;
+            document.body.append(popDom);
+        },
+        watch: {
+            showNav: function (val) {
+                if (val) {
+                    document.body.classList.add('van-overflow-hidden');
+                } else {
+                    document.body.classList.remove('van-overflow-hidden');
+                }
+            },
+            showSearch: function(val) {
+                var _this = this;
+                if (val) {
+                    document.body.classList.add('van-overflow-hidden');
+                    this.$nextTick(function(){
+                        _this.$refs.seachInput.focus();
+                    });
+                } else {
+                    document.body.classList.remove('van-overflow-hidden');
+                }
+            },
+        },
+        template: '#nav-template',
+    });
+</script>
+
+    <script>
+        var id="sxcxwgga9f5z4ba3";
+        var cNum = ['一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十'];
+        new Vue({
+            el: '#app',
+            data: function() {
+                return {
+                    keepLoading: true,
+                    isWap: wapFn(),
+                    active: '',
+                    data: {
+                        moreLink: '/zyk/zybk/zyjd/listPage',
+                        des: '本文版权归教育部阳光高考信息平台所有，转载请注明来源。',
+                    },
+                    loading: true,
+                }
+            },
+            methods: {
+                tabChang: function(name) {
+                    this.active = name;
+                    location.href = '#'+name;
+                },
+                addPageLoading: function () {
+                    document.getElementById('appLoading').style.display = 'block';
+                    document.getElementById('loading-gif').style.display = 'block';
+                },
+                removePageLoading: function () {
+                    document.getElementById('appLoading').style.display = 'none';
+                    document.getElementById('loading-gif').style.display = 'none';
+                },
+            },
+            mounted: function() {
+                var _this = this;
+                window.onscroll = function() {
+                    if(!_this.loading){
+                        var height = $('#target').offset().top - $(window).scrollTop();
+                        var height1 = $('#target1').offset().top - $(window).scrollTop();
+                        if (_this.isWap) {
+                            $('.title-link-fixed').css({
+                                right: '0',
+                                transform: 'translateX(0)'
+                            })
+                        } else {
+                            if(height1<0){
+                                $('.title-link-fixed-pc').show();
+                            } else{
+                                $('.title-link-fixed-pc').hide();
+                            }
+                        }
+                        if(height<0){
+                            $('.title-link-fixed').show();
+                        } else{
+                            $('.title-link-fixed').hide();
+                        }
+                    }
+
+                }
+                /* 获取数据 */
+                api.syncAjax('get', '/zyk/zybk/zyjd/view/'+id, {})
+                .then(function (res) {
+                    _this.removePageLoading();
+                    if (res.flag) {
+                        document.getElementsByTagName('title')[0].innerText = res.msg.zymc+'_专业解读_阳光高考';
+                        $("#keywordsMeta").attr('content',res.msg.zymc+'专业');
+                        _this.data.title = res.msg.title;
+                        _this.data.zymc = res.msg.zymc;
+                        _this.data.author = '<span class="text">'+res.msg.origin+'</span><span class="name">作者：'+res.msg.author+'</span>';
+                        _this.data.topImg = 'https://t3.chei.com.cn/zyk/zybk/zyjd/cdn/showImg/'+id+'.jpg';
+                        _this.data.outLink = [
+                            {
+                                name: '专业主页',
+                                value: _this.isWap?('/zyk/zybk/wap/detail/'+res.msg.specId):('/zyk/zybk/detail/'+res.msg.specId)
+                            },
+                            {
+                                name: '开设院校',
+                                value: _this.isWap?('/zyk/zybk/wap/ksyxPage?specId='+res.msg.specId):('/zyk/zybk/ksyxPage?specId='+res.msg.specId)
+                            }
+                        ];
+                        _this.data.topText = res.msg.gy;
+                        _this.data.content = [];
+
+                        for(var m=0;m<res.msg.mlList.length;m++){
+                            var hasBl = res.msg.mlList[m].title === '专业与就业';
+                            var item = {
+                                name: res.msg.mlList[m].title,
+                                value: res.msg.mlList[m].titleId,
+                                title: cNum[m]+'<span class="com-title-icon"></span>'+res.msg.mlList[m].title,
+                                hasBl: hasBl,
+                                html: res.msg.mlList[m].content
+                            }
+                            if(hasBl){
+                                item.nvbl = [];
+                                item.nvbl.push(res.msg.mlList[m].boyPercent);
+                                item.nvbl.push(res.msg.mlList[m].girlPercent);
+                                item.bysgm = res.msg.mlList[m].xsgm;
+                                _this.data.content.push(item);
+                            }else if(res.msg.mlList[m].title=='报考指南'){
+                                item.hasTuij = true;
+                                item.schools = res.msg.mlList[m].zytjList;
+                                _this.data.content.push(item);
+                            }else{
+                                _this.data.content.push(item);
+                            }
+                        }
+                        _this.active = _this.data.content[0].value;
+                        _this.loading = false;
+                        _this.$forceUpdate()
+                    } else {
+                        _this.$toast.fail("获取数据失败");
+                    }
+                })
+                .catch(function (error) {
+                    _this.$toast.fail("获取数据失败");
+                });
+                if (typeof this.keepLoading == 'undefined') {
+                    this.removePageLoading();
+                }
+            },
+            created: function () {
+                this.addPageLoading();
+            },
+        });
+    </script>
+</body>
+</html>
