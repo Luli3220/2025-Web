@@ -96,33 +96,33 @@
             <!-- 帖子列表 -->
             <div class="row g-4" id="postsList">
                 <!-- 帖子将通过JavaScript动态加载 -->
-                <div class="text-center py-5" id="loadingPosts">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">加载中...</span>
-                    </div>
-                    <p class="mt-2">加载帖子中...</p>
-                </div>
-                <div id="noPostsMessage" class="text-center py-5 d-none">
-                    <i class="fas fa-comment-slash fa-3x text-muted mb-3"></i>
-                    <p>暂无帖子，成为第一个发帖的人吧！</p>
-                </div>
             </div>
-            
-            <!-- 分页 -->
-            <nav class="mt-5">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">下一页</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="text-center py-5" id="loadingPosts">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">加载中...</span>
+                </div>
+                <p class="mt-2">加载帖子中...</p>
+            </div>
+            <div id="noPostsMessage" class="text-center py-5 d-none">
+                <i class="fas fa-comment-slash fa-3x text-muted mb-3"></i>
+                <p>暂无帖子，成为第一个发帖的人吧！</p>
+            </div>
         </div>
+        
+        <!-- 分页 -->
+        <nav class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">下一页</a>
+                </li>
+            </ul>
+        </nav>
     </section>
 
     <!-- 发帖表单 -->

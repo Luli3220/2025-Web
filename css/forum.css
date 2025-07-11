@@ -73,11 +73,41 @@
     text-decoration: none;
 }
 
+/* 帖子卡片样式 */
+.senior-card {
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.senior-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.15rem 2.5rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.testimonial-text {
+    background-color: #f8f9fc;
+    border-radius: 0.5rem;
+}
+
+.comment-item {
+    padding: 0.5rem;
+    background-color: #f8f9fc;
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.user-avatar {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
 /* 评论区样式 */
 .comments-section {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dashed #eaeaea;
+    font-size: 0.9rem;
+}
+
+.comments-section hr {
+    margin: 1rem 0;
 }
 
 .comment-item {

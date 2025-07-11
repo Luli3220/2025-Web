@@ -163,126 +163,73 @@ function loadPosts(categoryId = null) {
 // 创建帖子元素
 function createPostElement(post) {
     const postElement = document.createElement('div');
-    postElement.className = 'post-item';
-    postElement.dataset.postId = post.post_id;
+    postElement.className = 'col-lg-6';
     
-    // 帖子头部（作者信息）
-    const postHeader = document.createElement('div');
-    postHeader.className = 'post-header';
-    
-    const authorInfo = document.createElement('div');
-    authorInfo.className = 'd-flex justify-content-between align-items-center';
-    
-    const authorName = document.createElement('div');
-    authorName.className = 'post-author';
-    authorName.textContent = post.name;
-    
-    const postMeta = document.createElement('div');
-    postMeta.className = 'post-meta';
-    
-    // 格式化日期
-    const postDate = new Date(post.post_time);
-    const formattedDate = postDate.toLocaleString('zh-CN', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-    
-    postMeta.textContent = formattedDate;
-    
-    authorInfo.appendChild(authorName);
-    authorInfo.appendChild(postMeta);
-    
-    // 学校和专业信息（如果有）
-    const schoolMajorInfo = document.createElement('div');
-    schoolMajorInfo.className = 'small text-muted mt-1';
-    
-    if (post.school || post.major) {
-        let infoText = '';
-        if (post.school) infoText += post.school;
-        if (post.school && post.major) infoText += ' · ';
-        if (post.major) infoText += post.major;
-        schoolMajorInfo.textContent = infoText;
+    // 解析评论
+    let comments = [];
+    try {
+        comments = post.comments ? JSON.parse(post.comments) : [];
+    } catch (e) {
+        console.error('解析评论失败:', e);
+        comments = [];
     }
-    
-    postHeader.appendChild(authorInfo);
-    postHeader.appendChild(schoolMajorInfo);
-    
-    // 帖子内容
-    const postContent = document.createElement('div');
-    postContent.className = 'post-content';
-    postContent.textContent = post.content;
-    
-    // 帖子底部（评论按钮）
-    const postFooter = document.createElement('div');
-    postFooter.className = 'post-footer';
-    
-    const commentBtn = document.createElement('button');
-    commentBtn.className = 'btn btn-sm comment-btn';
-    commentBtn.innerHTML = '<i class="far fa-comment"></i> 评论';
-    commentBtn.addEventListener('click', function() {
-        openCommentModal(post.post_id);
-    });
-    
-    postFooter.appendChild(commentBtn);
-    
-    // 评论区域（如果有评论）
-    if (post.comments && post.comments.length > 0) {
-        const commentsSection = document.createElement('div');
-        commentsSection.className = 'comments-section';
-        
-        // 解析评论（假设comments是JSON字符串）
-        let comments = [];
-        try {
-            comments = JSON.parse(post.comments);
-        } catch (e) {
-            console.error('解析评论失败:', e);
-        }
-        
-        comments.forEach(comment => {
-            const commentItem = document.createElement('div');
-            commentItem.className = 'comment-item';
-            
-            const commentHeader = document.createElement('div');
-            commentHeader.className = 'd-flex justify-content-between';
-            
-            const commentAuthor = document.createElement('span');
-            commentAuthor.className = 'comment-author';
-            commentAuthor.textContent = comment.name;
-            
-            const commentTime = document.createElement('span');
-            commentTime.className = 'comment-time';
-            const commentDate = new Date(comment.time);
-            commentTime.textContent = commentDate.toLocaleString('zh-CN', {
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-            
-            commentHeader.appendChild(commentAuthor);
-            commentHeader.appendChild(commentTime);
-            
-            const commentContent = document.createElement('div');
-            commentContent.className = 'comment-content';
-            commentContent.textContent = comment.content;
-            
-            commentItem.appendChild(commentHeader);
-            commentItem.appendChild(commentContent);
-            
-            commentsSection.appendChild(commentItem);
+
+    postElement.innerHTML = `
+        <div class="card senior-card h-100">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="user-avatar rounded-circle me-3 d-flex align-items-center justify-content-center" 
+                         style="width: 60px; height: 60px; background: linear-gradient(135deg, #4e73df 0%, #1e3fa0 100%); color: white;">
+                        <span style="font-size: 24px;">${post.name ? post.name[0] : '?'}</span>
+                    </div>
+                    <div>
+                        <h5 class="mb-0">${post.name || '匿名用户'}</h5>
+                        <p class="text-muted mb-0">${post.school || '未知学校'} | ${post.major || '未知专业'}</p>
+                    </div>
+                </div>
+                <div class="testimonial-text p-3 mb-3">
+                    <p>${post.content}</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <button class="btn btn-link text-decoration-none comment-btn" data-post-id="${post.post_id}">
+                            <i class="far fa-comment me-1"></i>${comments.length || 0} 评论
+                        </button>
+                    </div>
+                    <small class="text-muted">发布于 ${new Date(post.post_time).toLocaleDateString()}</small>
+                </div>
+                ${comments.length > 0 ? `
+                    <div class="comments-section mt-3">
+                        <hr>
+                        <h6 class="mb-3">最新评论</h6>
+                        ${comments.slice(0, 2).map(comment => `
+                            <div class="comment-item mb-2">
+                                <div class="d-flex align-items-center">
+                                    <small class="fw-bold me-2">${comment.name}:</small>
+                                    <small>${comment.content}</small>
+                                </div>
+                            </div>
+                        `).join('')}
+                        ${comments.length > 2 ? `
+                            <button class="btn btn-link btn-sm text-decoration-none p-0">
+                                查看全部 ${comments.length} 条评论
+                            </button>
+                        ` : ''}
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    `;
+
+    // 绑定评论按钮事件
+    const commentBtn = postElement.querySelector('.comment-btn');
+    if (commentBtn) {
+        commentBtn.addEventListener('click', () => {
+            const postId = commentBtn.getAttribute('data-post-id');
+            showCommentModal(postId);
         });
-        
-        postFooter.appendChild(commentsSection);
     }
-    
-    // 组装帖子元素
-    postElement.appendChild(postHeader);
-    postElement.appendChild(postContent);
-    postElement.appendChild(postFooter);
-    
+
     return postElement;
 }
 
