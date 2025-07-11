@@ -215,3 +215,140 @@ app.post('/api/login', (req, res) => {
     res.json({ success: true, message: '登录成功', user });
   });
 });
+
+// 论坛API - 获取所有帖子
+app.get('/api/forum/posts', (req, res) => {
+  const categoryId = req.query.category_id;
+  
+  let query = `
+    SELECT p.*, u.nickname as name, u.school, u.major, c.category_name 
+    FROM forum_posts p
+    JOIN users u ON p.user_id = u.user_id
+    JOIN major_categories c ON p.category_id = c.category_id
+  `;
+  
+  // 如果指定了分类，添加筛选条件
+  if (categoryId) {
+    query += ` WHERE p.category_id = ? `;
+  }
+  
+  query += ` ORDER BY p.post_time DESC`;
+  
+  if (categoryId) {
+    connection.query(query, [categoryId], (err, results) => {
+      if (err) {
+        console.error('获取帖子失败:', err);
+        return res.status(500).json({ error: '服务器错误' });
+      }
+      res.json(results);
+    });
+  } else {
+    connection.query(query, (err, results) => {
+      if (err) {
+        console.error('获取帖子失败:', err);
+        return res.status(500).json({ error: '服务器错误' });
+      }
+      res.json(results);
+    });
+  }
+});
+
+// 论坛API - 发布新帖子
+app.post('/api/forum/posts', (req, res) => {
+  // 检查用户是否已登录
+  if (!req.session.user) {
+    return res.status(401).json({ success: false, message: '请先登录' });
+  }
+  
+  const { content, category_id } = req.body;
+  const userId = req.session.user.user_id;
+  
+  // 验证内容
+  if (!content) {
+    return res.status(400).json({ success: false, message: '帖子内容不能为空' });
+  }
+  
+  // 如果没有提供分类，默认使用第一个分类（哲学）
+  const categoryId = category_id || 1;
+  
+  // 插入帖子
+  const query = `
+    INSERT INTO forum_posts (user_id, name, school, major, category_id, content) 
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+  
+  connection.query(
+    query, 
+    [userId, req.session.user.nickname, req.session.user.school, req.session.user.major, categoryId, content], 
+    (err, results) => {
+      if (err) {
+        console.error('发布帖子失败:', err);
+        return res.status(500).json({ success: false, message: '服务器错误' });
+      }
+      
+      res.json({ success: true, message: '发布成功', postId: results.insertId });
+    }
+  );
+}
+);
+
+// 论坛API - 添加评论
+app.post('/api/forum/posts/:postId/comments', (req, res) => {
+  // 检查用户是否已登录
+  if (!req.session.user) {
+    return res.status(401).json({ success: false, message: '请先登录' });
+  }
+  
+  const postId = req.params.postId;
+  const { content } = req.body;
+  const userId = req.session.user.user_id;
+  
+  // 验证内容
+  if (!content) {
+    return res.status(400).json({ success: false, message: '评论内容不能为空' });
+  }
+  
+  // 首先获取当前帖子
+  connection.query('SELECT comments FROM forum_posts WHERE post_id = ?', [postId], (err, results) => {
+    if (err) {
+      console.error('获取帖子失败:', err);
+      return res.status(500).json({ success: false, message: '服务器错误' });
+    }
+    
+    if (results.length === 0) {
+      return res.status(404).json({ success: false, message: '帖子不存在' });
+    }
+    
+    // 解析现有评论
+    let comments = [];
+    if (results[0].comments) {
+      try {
+        comments = JSON.parse(results[0].comments);
+      } catch (e) {
+        console.error('解析评论失败:', e);
+        comments = [];
+      }
+    }
+    
+    // 添加新评论
+    const newComment = {
+      user_id: userId,
+      name: req.session.user.nickname,
+      content: content,
+      time: new Date().toISOString()
+    };
+    
+    comments.push(newComment);
+    
+    // 更新帖子评论
+    const updateQuery = 'UPDATE forum_posts SET comments = ? WHERE post_id = ?';
+    connection.query(updateQuery, [JSON.stringify(comments), postId], (err, updateResult) => {
+      if (err) {
+        console.error('添加评论失败:', err);
+        return res.status(500).json({ success: false, message: '服务器错误' });
+      }
+      
+      res.json({ success: true, message: '评论成功' });
+    });
+  });
+});

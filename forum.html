@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业论坛 - 高考志愿填报辅助平台</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 动画库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/user-dropdown.css">
+    <link rel="stylesheet" href="css/forum.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- 左侧品牌标识 -->
+            <div class="navbar-left">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-graduation-cap me-2"></i>志愿填报助手
+                </a>
+            </div>
+    
+            <!-- 中间导航链接 -->
+            <div class="navbar-center d-none d-lg-block">
+                <ul class="navbar-nav flex-row justify-content-center">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link " href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="majors.html">专业解读</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active" href="forum.html">学长学姐说</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- 右侧用户信息 -->
+            <div class="navbar-right">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="fas fa-user me-1"></i>登录/注册
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">专业交流论坛</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+                在这里与其他考生交流专业选择经验，分享你的见解
+            </p>
+        </div>
+    </header>
+
+    <!-- 论坛内容区 -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap">
+                        <button class="btn btn-outline-primary me-2 mb-2 active">全部</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">计算机类</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">经济类</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">医学类</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">文学类</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">法学类</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">教育类</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">理学类</button>
+                        <button class="btn btn-outline-primary me-2 mb-2">艺术类</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <select class="form-select" aria-label="排序方式">
+                            <option selected>排序方式</option>
+                            <option value="1">最新发布</option>
+                            <option value="2">最多评论</option>
+                        </select>
+                        <button class="btn btn-outline-secondary" type="button">排序</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 帖子列表 -->
+            <div class="row g-4" id="postsList">
+                <!-- 帖子将通过JavaScript动态加载 -->
+                <div class="text-center py-5" id="loadingPosts">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p class="mt-2">加载帖子中...</p>
+                </div>
+                <div id="noPostsMessage" class="text-center py-5 d-none">
+                    <i class="fas fa-comment-slash fa-3x text-muted mb-3"></i>
+                    <p>暂无帖子，成为第一个发帖的人吧！</p>
+                </div>
+            </div>
+            
+            <!-- 分页 -->
+            <nav class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">下一页</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- 发帖表单 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title text-center mb-4">发表新帖</h3>
+                            <form id="postForm">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label for="postContent" class="form-label">分享你的专业经验或疑问</label>
+                                        <textarea class="form-control" id="postContent" rows="4" required placeholder="分享你的专业选择经验、学习体验或疑问..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="postCategory" class="form-label">选择专业类别</label>
+                                        <select class="form-select" id="postCategory" required>
+                                            <option value="" selected disabled>请选择专业类别</option>
+                                            <option value="1">哲学</option>
+                                            <option value="2">经济学</option>
+                                            <option value="3">法学</option>
+                                            <option value="4">教育学</option>
+                                            <option value="5">文学</option>
+                                            <option value="6">历史学</option>
+                                            <option value="7">理学</option>
+                                            <option value="8">工学</option>
+                                            <option value="9">农学</option>
+                                            <option value="10">医学</option>
+                                            <option value="11">管理学</option>
+                                            <option value="12">艺术学</option>
+                                            <option value="13">军事学</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg px-5">发布</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 评论模态框 -->
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">发表评论</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="commentForm">
+                        <input type="hidden" id="commentPostId">
+                        <div class="mb-3">
+                            <label for="commentContent" class="form-label">评论内容</label>
+                            <textarea class="form-control" id="commentContent" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="submitComment">提交评论</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 版权信息 -->
+    <div class="py-4 bg-light">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">© 2023 高考志愿填报辅助平台 | 版权所有</p>
+                <p class="text-muted small">本网站仅供教育参考，具体填报请以官方政策为准</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 用户会话管理 -->
+    <script src="js/user-session.js"></script>
+    <!-- 自定义JS -->
+    <script src="js/main.js"></script>
+    <script src="js/forum.js"></script>
+</body>
+</html>
