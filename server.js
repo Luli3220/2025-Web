@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname)));
 // 检查用户是否已登录的中间件
 const checkAuth = (req, res, next) => {
   // 排除不需要登录验证的路径
-  const excludePaths = ['/login.html', '/api/login', '/api/register'];
+  const excludePaths = ['/login.html', '/api/login', '/api/register', '/api/stats'];
   if (excludePaths.includes(req.path) || req.path.startsWith('/css/') || req.path.startsWith('/js/') || 
       req.path.startsWith('/lib/') || req.path.startsWith('/images/')) {
     return next();
@@ -291,6 +291,47 @@ app.post('/api/forum/posts', (req, res) => {
   );
 }
 );
+
+// API 路由 - 获取统计数据
+app.get('/api/stats', (req, res) => {
+  // 查询专业数量
+  const majorsQuery = 'SELECT COUNT(*) as count FROM majors';
+  // 查询帖子数量
+  const postsQuery = 'SELECT COUNT(*) as count FROM forum_posts';
+  // 查询用户数量
+  const usersQuery = 'SELECT COUNT(*) as count FROM users';
+  
+  // 执行专业数量查询
+  connection.query(majorsQuery, (err, majorsResults) => {
+    if (err) {
+      console.error('查询专业数量失败:', err);
+      return res.status(500).json({ error: '服务器错误' });
+    }
+    
+    // 执行帖子数量查询
+    connection.query(postsQuery, (err, postsResults) => {
+      if (err) {
+        console.error('查询帖子数量失败:', err);
+        return res.status(500).json({ error: '服务器错误' });
+      }
+      
+      // 执行用户数量查询
+      connection.query(usersQuery, (err, usersResults) => {
+        if (err) {
+          console.error('查询用户数量失败:', err);
+          return res.status(500).json({ error: '服务器错误' });
+        }
+        
+        // 返回所有统计数据
+        res.json({
+          "majorsCount": majorsResults[0].count,
+          "postsCount": postsResults[0].count,
+          "usersCount": usersResults[0].count
+        });
+      });
+    });
+  });
+});
 
 // 论坛API - 添加评论
 app.post('/api/forum/posts/:postId/comments', (req, res) => {
