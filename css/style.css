@@ -64,6 +64,44 @@ body {
 .nav-link.active::after {
     width: 70%;
 }
+.navbar .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 0;  /* 取消左右间距，确保最左对齐 */
+    padding-right: 0;
+}
+
+/* 中间导航居中 */
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 修正中间导航显示不整齐的问题 */
+.navbar-center .navbar-nav {
+    flex-direction: row;
+}
+
+/* 禁用原先 .navbar-nav 的 max-width 限制 */
+.navbar-nav {
+    max-width: none !important;
+}
+.navbar-left {
+    margin-right: auto;
+}
+/* 移动端自适应可选优化 */
+@media (max-width: 991.98px) {
+    .navbar-center {
+        display: none; /* 可根据需求调整是否隐藏 */
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+
 
 /* 响应式调整 */
 @media (max-width: 992px) {
