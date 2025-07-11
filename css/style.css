@@ -91,16 +91,6 @@ body {
 .navbar-left {
     margin-right: auto;
 }
-/* 移动端自适应可选优化 */
-@media (max-width: 991.98px) {
-    .navbar-center {
-        display: none; /* 可根据需求调整是否隐藏 */
-    }
-
-    .navbar-collapse {
-        text-align: center;
-    }
-}
 
 
 /* 响应式调整 */
@@ -175,11 +165,12 @@ body {
 /* 轮播图文字位置调整 */
 .carousel-caption {
     bottom: auto;
-    top: 10%;  
+    top: 5%;  
     transform: translateY(-10%);
     text-align: center;
     max-width: 800px;
-    padding-left: 20%;
+    padding-left: 10%;
+    left: 550px;
 }
 
 .carousel-caption h1 {
@@ -294,17 +285,22 @@ body {
 /* 学长学姐说样式 */
 .testimonial-item {
     position: relative;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-.testimonial-item img {
-    width: 100px;
-    height: 100px;
+ .testimonial-item img {
+    width: 270px;
+    height: 360px;
     object-fit: cover;
-    border-radius: 50%;  /* 将图片改为圆形 */
-    border: 4px solid var(--primary-color);  /* 添加主题色边框 */
+    border-radius: 15px;  
+    border: 1px solid #eaeaea;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    margin: 0 auto 1.5rem;  /* 居中显示并添加底部间距 */
+    margin: 0 auto 0.5rem;
+    transition: transform 0.3s ease;
+} 
+
+.testimonial-item img:hover {
+    transform: translateY(-5px);
 }
 
 /* 查看更多按钮样式 */
@@ -329,13 +325,15 @@ body {
     color: #fff;
 }
 
+
 .testimonial-text {
     position: relative;
-    padding: 1.5rem;
-    margin-top: 1rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
     background-color: var(--light-color);
     border-radius: 1rem;
 }
+
 
 /* 数据统计样式优化 */
 .stat-item {

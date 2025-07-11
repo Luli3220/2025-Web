@@ -26,14 +26,14 @@ body {
 .navbar-brand {
     font-weight: 700;
     font-size: 1.5rem;
-    margin-right: 3rem;
+    margin-right: 3rem; /* 增加品牌名称右侧间距 */
 }
 
 .navbar-nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* 控制导航项的最大宽度 */
 }
 
 .nav-item {
@@ -44,7 +44,7 @@ body {
     font-weight: 500;
     position: relative;
     padding: 0.5rem 1rem;
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* 增加导航项字体大小 */
 }
 
 /* 导航项悬停效果 */
@@ -64,6 +64,34 @@ body {
 .nav-link.active::after {
     width: 70%;
 }
+.navbar .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 0;  /* 取消左右间距，确保最左对齐 */
+    padding-right: 0;
+}
+
+/* 中间导航居中 */
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 修正中间导航显示不整齐的问题 */
+.navbar-center .navbar-nav {
+    flex-direction: row;
+}
+
+/* 禁用原先 .navbar-nav 的 max-width 限制 */
+.navbar-nav {
+    max-width: none !important;
+}
+.navbar-left {
+    margin-right: auto;
+}
+
 
 /* 响应式调整 */
 @media (max-width: 992px) {
@@ -81,6 +109,39 @@ body {
     }
 }
 
+.navbar.scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(44, 62, 80, 0.98);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
 /* 其他公共样式... */
 
 /* 页脚样式 */

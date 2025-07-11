@@ -66,18 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 3,
         initialSlide: 2,
         loop: true,
-        loopedSlides: 6,        // 修改循环幻灯片数量
-        direction: 'horizontal', // 明确指定方向
+        loopedSlides: 6,        
+        direction: 'horizontal', 
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
         },
-        speed: 600,             // 调整速度
+        speed: 600,             
         coverflowEffect: {
             rotate: 30,
             stretch: -30,
             depth: 300,
-            modifier: 1,        // 调整修饰符
+            modifier: 1,        
             slideShadows: true,
         },
         navigation: {

@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>启航专业志-首页</title>
     <!-- 添加网站图标 -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23343a40' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z'/></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23343a40' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z'/></svg>">
     <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- 自定义CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/user-dropdown.css">
+    <!-- 自定义JS -->
+    <script src="js/main.js"></script>
     <!-- Font Awesome 图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- 动画库 -->
@@ -19,19 +22,22 @@
     <link rel="stylesheet" href="lib/swiper/swiper-bundle.min.css">
     <!-- Swiper JS -->
     <script src="lib/swiper/swiper-bundle.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- 用户会话管理 -->
+    <script src="js/user-session.js"></script>
     <style>
         .air {
-            background: 
+            background:
                 linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%),
-                linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%),
-                linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
-            background-blend-mode: normal,color-burn;
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 50%, rgba(255, 255, 255, 0.02) 61%, rgba(0, 0, 0, 0.02) 73%),
+                linear-gradient(33deg, rgba(255, 255, 255, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+            background-blend-mode: normal, color-burn;
             min-height: 100vh;
         }
     </style>
 </head>
 
-<body class=".air">
+<body class="air">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- 左侧品牌标识 -->
@@ -40,7 +46,7 @@
                     <i class="fas fa-graduation-cap me-2"></i>启航专业志
                 </a>
             </div>
-    
+
             <!-- 中间导航链接 -->
             <div class="navbar-center d-none d-lg-block">
                 <ul class="navbar-nav flex-row justify-content-center">
@@ -55,7 +61,7 @@
                     </li>
                 </ul>
             </div>
-    
+
             <!-- 右侧用户信息 -->
             <div class="navbar-right">
                 <ul class="navbar-nav">
@@ -68,7 +74,7 @@
             </div>
         </div>
     </nav>
-    
+
 
     <!-- 轮播图部分 -->
     <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -98,12 +104,12 @@
             </div>
             <div class="carousel-item">
                 <img src="images/carousel/Profeinterpretation.png" class="d-block w-100" alt="知途">
-                <!-- <div class="carousel-caption text-start">
+                <div class="carousel-caption text-start">
                     <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">看清专业真面目</h1>
                     <p class="lead fs-4 animate__animated animate__fadeInUp animate__delay-1s">
                         系统梳理方向，助你找到匹配定位
                     </p>
-                </div> -->
+                </div>
             </div>
         </div>
         <!-- 修改导航按钮 -->
@@ -133,7 +139,7 @@
                             帮助你做出最适合自己的决定。
                         </p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="majors.html" class="btn btn-primary btn-lg rounded-pill">
+                            <a href="majors.html" class="btn btn-outline-primary btn-lg rounded-pill">
                                 知途
                             </a>
                             <a href="forum.html" class="btn btn-outline-primary btn-lg rounded-pill">
@@ -172,7 +178,7 @@
                     <div class="swiper-slide">
                         <div>
                             <a href="https://gaokao.chsi.com.cn/gkxx/zybk/zt/201401/20140122/740700997.html"
-                            target="_blank" title="计算机科学与技术">
+                                target="_blank" title="计算机科学与技术">
                                 <img src="images/majors/cs.png" border="0" width="100%">
                             </a>
                         </div>
@@ -182,7 +188,7 @@
                     <div class="swiper-slide">
                         <div>
                             <a href="https://gaokao.chsi.com.cn/gkxx/zybk/zt/201811/20181122/1741107487.html"
-                            target="_blank" title="人工智能">
+                                target="_blank" title="人工智能">
                                 <img src="images/majors/se.png" border="0" width="100%">
                             </a>
                         </div>
@@ -192,7 +198,7 @@
                     <div class="swiper-slide">
                         <div>
                             <a href="https://gaokao.chsi.com.cn/gkxx/zybk/zt/201401/20140115/725980700.html"
-                            target="_blank"  title="金融学">
+                                target="_blank" title="金融学">
                                 <img src="images/majors/finance.png" border="0" width="100%">
                             </a>
                         </div>
@@ -201,7 +207,8 @@
                     <!-- 医学 -->
                     <div class="swiper-slide">
                         <div>
-                            <a href="https://gaokao.chsi.com.cn/gkxx/zybk/zt/201401/20140128/752158139.html"target="_blank"  title="医学">
+                            <a href="https://gaokao.chsi.com.cn/gkxx/zybk/zt/201401/20140128/752158139.html"
+                                target="_blank" title="医学">
                                 <img src="images/majors/medicine.png" border="0" width="100%">
                             </a>
                         </div>
@@ -210,7 +217,8 @@
                     <!-- 法学 -->
                     <div class="swiper-slide">
                         <div>
-                            <a href="https://gaokao.chsi.com.cn/gkxx/zybk/zt/201401/20140122/740620575.html" target="_blank" title="法学">
+                            <a href="https://gaokao.chsi.com.cn/gkxx/zybk/zt/201401/20140122/740620575.html"
+                                target="_blank" title="法学">
                                 <img src="images/majors/law.png" border="0" width="100%">
                             </a>
                         </div>
@@ -219,7 +227,7 @@
                     <!-- 电子信息工程 -->
                     <div class="swiper-slide">
                         <div>
-                            <a href="电子信息工程/gkxx/zybk/zt/201611/20161125/1570305446.html" target="_blank"  title="建筑学">
+                            <a href="电子信息工程/gkxx/zybk/zt/201611/20161125/1570305446.html" target="_blank" title="建筑学">
                                 <img src="images/majors/EleInformation.png" border="0" width="100%">
                             </a>
                         </div>
@@ -257,8 +265,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="testimonial-item text-center">
-                                    <img src="https://source.unsplash.com/random/100x100/?portrait,man"
-                                        class="rounded-circle mb-3" alt="学长照片">
+                                    <img src="./images/Senior/cs.png" class="mb-3" alt="学长照片">
                                     <h4>李明阳</h4>
                                     <p class="text-muted">北京大学 | 计算机科学与技术 | 2019级</p>
                                     <div class="testimonial-text">
@@ -270,8 +277,7 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="testimonial-item text-center">
-                                    <img src="https://source.unsplash.com/random/100x100/?portrait,woman"
-                                        class="rounded-circle mb-3" alt="学姐照片">
+                                    <img src="./images/Senior/fin.png" class="mb-3" alt="学姐照片">
                                     <h4>张雨晴</h4>
                                     <p class="text-muted">复旦大学 | 金融学 | 2018级</p>
                                     <div class="testimonial-text">
@@ -283,13 +289,13 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="testimonial-item text-center">
-                                    <img src="https://source.unsplash.com/random/100x100/?portrait,man"
-                                        class="rounded-circle mb-3" alt="学长照片">
+                                    <img src="./images/Senior/med.png" class="mb-3" alt="学长照片">
+                                    <!-- 修改这里的类名 -->
                                     <h4>王浩然</h4>
-                                    <p class="text-muted">清华大学 | 软件工程 | 2017级</p>
+                                    <p class="text-muted">上海交通大学 | 临床医学 | 2017级</p>
                                     <div class="testimonial-text">
                                         <p class="mb-0">
-                                            "软件工程专业注重实践能力的培养，我们有大量的项目实战机会。大学期间我参与了多个开源项目，这些经历让我在求职时非常有竞争力。建议学弟学妹们多参与实际项目开发，培养团队协作能力和解决实际问题的能力。"
+                                            "临床医学专业注重理论学习与临床实践相结合。大学期间，我积极参加各种临床见习和实习机会，深入科室跟诊，积累了宝贵的一线经验。这些实践不仅提升了我的专业技能，也让我在考研和就业中更加从容。建议学弟学妹们珍惜实习机会，主动请教老师和带教医生，注重沟通能力和临床思维的培养，为将来成为一名合格的医生打下坚实基础。"
                                         </p>
                                     </div>
                                 </div>
@@ -408,19 +414,12 @@
             </div>
         </div>
     </div>
-
+   
     <!-- 返回顶部按钮 -->
     <button id="backToTop" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4"
         style="display: none;">
         <i class="fas fa-arrow-up"></i>
     </button>
-
-    <!-- Bootstrap 5 JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- 自定义JS -->
-    <script src="js/main.js"></script>
-    <!-- 用户会话管理 -->
-    <script src="js/user-session.js"></script>
 </body>
 
 </html>
