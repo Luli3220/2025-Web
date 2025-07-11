@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     // 用户已登录，显示用户信息
                     displayUserInfo(data.user);
                 } else {
-                    // 用户未登录，如果当前不是登录页面，则重定向到登录页面
-                    if (!window.location.pathname.includes('/login.html')) {
-                        window.location.href = '/login.html';
-                    }
+                    // 用户未登录，如果当前不是登录页面，则不做任何操作
+                    // 注释掉重定向代码，避免未登录时强制跳转到登录页面
+                    // if (!window.location.pathname.includes('/login.html')) {
+                    //     window.location.href = '/login.html';
+                    // }
                 }
             })
             .catch(error => {
@@ -22,7 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 显示用户信息
     function displayUserInfo(user) {
-        const navbarRight = document.querySelector('.navbar-nav:last-child');
+        // 根据页面结构选择合适的导航栏右侧元素
+        let navbarRight = document.querySelector('.navbar-right .navbar-nav');
+        if (!navbarRight) {
+            // 适配seniors.html页面的不同结构
+            navbarRight = document.querySelector('.navbar-nav.ms-auto:last-child');
+        }
         if (!navbarRight) return;
 
         navbarRight.innerHTML = '';
