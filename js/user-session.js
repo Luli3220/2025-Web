@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h6 class="mb-0">${displayName}</h6>
                     <p>${user.school ? user.school : '未设置学校'}</p>
                     <div class="user-details">
-                        <div class="detail-item"><i class="fas fa-graduation-cap"></i> ${user.major || '未设置专业'}</div>
+                        <div class="detail-item">${user.major || '未设置专业'}</div>
                     </div>
                 </li>
                 <li><hr class="dropdown-divider"></li>
