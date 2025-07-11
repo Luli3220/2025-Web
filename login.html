@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录与注册 - 志愿解读辅助平台</title>
+    <title>启航专业志-登入/注册</title>
     <!-- 添加网站图标 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23343a40' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z'/></svg>">
     <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -95,17 +95,25 @@
         .auth-form-container.active {
             display: block;
         }
+        .air {
+            background: 
+                linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%),
+                linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%),
+                linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+            background-blend-mode: normal,color-burn;
+            min-height: 100vh;
+        }
     </style>
 </head>
 
-<body>
+<body class=".air">
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- 左侧品牌标识 -->
             <div class="navbar-left">
                 <a class="navbar-brand" href="index.html">
-                    <i class="fas fa-graduation-cap me-2"></i>志愿填报助手
+                    <i class="fas fa-graduation-cap me-2"></i>启航专业志
                 </a>
             </div>
     
@@ -116,10 +124,10 @@
                         <a class="nav-link active" href="index.html">首页</a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="majors.html">专业解读</a>
+                        <a class="nav-link" href="majors.html">知途</a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="forum.html">学长学姐说</a>
+                        <a class="nav-link" href="forum.html">学途说</a>
                     </li>
                 </ul>
             </div>
@@ -146,7 +154,7 @@
                         <div class="row g-0">
                             <!-- 左侧信息栏 -->
                             <div class="col-md-5 auth-sidebar">
-                                <h2 class="mb-4">欢迎来到志愿填报助手</h2>
+                                <h2 class="mb-4">欢迎来到启航专业志</h2>
                                 <p class="mb-4">登录或注册账号，获取更多专业解读和学长学姐经验分享。</p>
                                 <div class="d-flex align-items-center mb-3">
                                     <i class="fas fa-check-circle me-2"></i>

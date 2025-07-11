@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>志愿解读辅助平台</title>
+    <title>启航专业志-首页</title>
     <!-- 添加网站图标 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23343a40' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z'/></svg>">
     <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -19,15 +19,25 @@
     <link rel="stylesheet" href="lib/swiper/swiper-bundle.min.css">
     <!-- Swiper JS -->
     <script src="lib/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .air {
+            background: 
+                linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%),
+                linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%),
+                linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+            background-blend-mode: normal,color-burn;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 
-<body>
+<body class=".air">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- 左侧品牌标识 -->
             <div class="navbar-left">
                 <a class="navbar-brand" href="index.html">
-                    <i class="fas fa-graduation-cap me-2"></i>志愿填报助手
+                    <i class="fas fa-graduation-cap me-2"></i>启航专业志
                 </a>
             </div>
     
@@ -38,10 +48,10 @@
                         <a class="nav-link active" href="index.html">首页</a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="majors.html">专业解读</a>
+                        <a class="nav-link" href="majors.html">知途</a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="forum.html">学长学姐说</a>
+                        <a class="nav-link" href="forum.html">学途说</a>
                     </li>
                 </ul>
             </div>
@@ -71,14 +81,14 @@
             <div class="carousel-item active">
                 <img src="images/carousel/select.png" class="d-block w-100" alt="选择">
                 <div class="carousel-caption text-start">
-                    <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">十字路口</h1>
+                    <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">选向未来</h1>
                     <p class="lead fs-4 animate__animated animate__fadeInUp animate__delay-1s">
                         探索你的未来，开启人生新篇章
                     </p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/carousel/students.png" class="d-block w-100" alt="学长学姐说">
+                <img src="images/carousel/students.png" class="d-block w-100" alt="学途说">
                 <div class="carousel-caption text-start">
                     <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">听听过来人说</h1>
                     <p class="lead fs-4 animate__animated animate__fadeInUp animate__delay-1s">
@@ -87,7 +97,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/carousel/Profeinterpretation.png" class="d-block w-100" alt="专业解读">
+                <img src="images/carousel/Profeinterpretation.png" class="d-block w-100" alt="知途">
                 <!-- <div class="carousel-caption text-start">
                     <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">看清专业真面目</h1>
                     <p class="lead fs-4 animate__animated animate__fadeInUp animate__delay-1s">
@@ -112,10 +122,10 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="welcome-content">
                         <span class="badge bg-primary mb-3 px-3 py-2 rounded-pill">
-                            欢迎来到志愿解读助手
+                            欢迎来到启航专业志
                         </span>
                         <h2 class="display-4 fw-bold mb-4 text-gradient">
-                            选择专业<br>
+                            选向未来<br>
                             <span class="highlight">开启人生新篇章</span>
                         </h2>
                         <p class="lead mb-5 text-muted">
@@ -124,10 +134,10 @@
                         </p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="majors.html" class="btn btn-primary btn-lg rounded-pill">
-                                浏览专业
+                                知途
                             </a>
                             <a href="forum.html" class="btn btn-outline-primary btn-lg rounded-pill">
-                                学长学姐说
+                                学途说
                             </a>
                         </div>
                     </div>
@@ -138,7 +148,7 @@
                             <div class="floating-card bg-white p-4 rounded-4 shadow-lg position-absolute">
                                 <div class="d-flex align-items-center">
                                     <div>
-                                        <h4 class="mb-1">专业解读</h4>
+                                        <h4 class="mb-1">知途</h4>
                                         <p class="mb-0 text-muted">100+专业详细介绍</p>
                                     </div>
                                 </div>
@@ -228,11 +238,11 @@
     </div>
 
     </section>
-    <!-- 学长学姐说 -->
+    <!-- 学途说 -->
     <section id="testimonials" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">学长学姐说</h2>
+                <h2 class="display-5 fw-bold">学途说</h2>
                 <p class="lead text-muted">听听过来人的真实经历和建议</p>
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -346,7 +356,7 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#faq1">
-                                    如何开始使用志愿填报助手？
+                                    如何开始使用启航专业志？
                                 </button>
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
@@ -365,7 +375,7 @@
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    在"专业解读"页面，你可以浏览所有专业信息。点击具体专业可查看详细介绍、就业方向、课程设置等内容。
+                                    在"知途"页面，你可以浏览所有专业信息。点击具体专业可查看详细介绍、就业方向、课程设置等内容。
                                 </div>
                             </div>
                         </div>
@@ -379,7 +389,7 @@
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    在"学长学姐说"板块，你可以浏览他们的经验分享。如需进一步交流，可以通过平台提供的留言功能与他们取得联系。
+                                    在"学途说"板块，你可以浏览他们的经验分享。如需进一步交流，可以通过平台提供的留言功能与他们取得联系。
                                 </div>
                             </div>
                         </div>
@@ -393,7 +403,7 @@
     <div class="py-4 bg-light">
         <div class="container">
             <div class="text-center">
-                <p class="mb-0">© 2023 高考志愿填报辅助平台 | 版权所有</p>
+                <p class="mb-0">© 2025 启航专业志 | 版权所有</p>
                 <p class="text-muted small">本网站仅供教育参考，具体填报请以官方政策为准</p>
             </div>
         </div>
