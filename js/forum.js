@@ -17,31 +17,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // 绑定评论提交事件
     document.getElementById('submitComment').addEventListener('click', submitComment);
     
-    // 绑定分类按钮点击事件
-    const categoryButtons = document.querySelectorAll('.btn-outline-primary');
-    categoryButtons.forEach((button, index) => {
-        button.addEventListener('click', function() {
-            // 移除所有按钮的active类
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            // 添加当前按钮的active类
+    // 绑定分类筛选点击事件
+    const categoryFilters = document.querySelectorAll('#category-filter li');
+    categoryFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+            // 移除所有分类的active类
+            categoryFilters.forEach(f => f.classList.remove('active'));
+            // 添加当前分类的active类
             this.classList.add('active');
             
-            // 根据按钮索引加载对应分类的帖子
-            if (index === 0) {
-                // 全部分类
+            // 获取选中的分类
+            const category = this.getAttribute('data-category');
+            
+            // 根据分类加载帖子
+            if (category === '全部') {
                 loadPosts();
             } else {
-                // 专业类别对应的ID（根据按钮顺序和数据库中的类别ID对应）
-                // 工学类对应8，计算机类也是工学类，所以使用8
-                // 经济类对应2，医学类对应10，文学类对应5，法学类对应3，教育类对应4，理学类对应7，艺术类对应12
-                const categoryMap = [null, 8, 2, 10, 5, 3, 4, 7, 12];
-                loadPosts(categoryMap[index]);
+                // 专业类别映射
+                const categoryMap = {
+                    '工学': 8,
+                    '理学': 7,
+                    '经济学': 2,
+                    '医学': 10,
+                    '文学': 5,
+                    '法学': 3,
+                    '教育学': 4,
+                    '管理学': 6,
+                    '艺术学': 12,
+                    '农学': 9,
+                    '哲学': 1,
+                    '历史学': 11
+                };
+                loadPosts(categoryMap[category]);
             }
         });
     });
-    
-    // 加载专业类别下拉菜单
-    loadCategorySelect();
 });
 
 // 检查用户登录状态
@@ -138,8 +148,7 @@ function loadPosts(categoryId = null) {
             }
             
             // 清空现有内容（除了加载提示和无帖子提示）
-            const existingPosts = postsContainer.querySelectorAll('.post-item');
-            existingPosts.forEach(post => post.remove());
+            postsContainer.innerHTML = '';
             
             // 添加帖子到列表
             data.forEach(post => {
@@ -226,7 +235,7 @@ function createPostElement(post) {
     if (commentBtn) {
         commentBtn.addEventListener('click', () => {
             const postId = commentBtn.getAttribute('data-post-id');
-            showCommentModal(postId);
+            openCommentModal(postId);
         });
     }
 

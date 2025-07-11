@@ -67,32 +67,25 @@
     <!-- 论坛内容区 -->
     <section class="py-5">
         <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-8">
-                    <div class="d-flex flex-wrap">
-                        <button class="btn btn-outline-primary me-2 mb-2 active">全部</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">计算机类</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">经济类</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">医学类</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">文学类</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">法学类</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">教育类</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">理学类</button>
-                        <button class="btn btn-outline-primary me-2 mb-2">艺术类</button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <select class="form-select" aria-label="排序方式">
-                            <option selected>排序方式</option>
-                            <option value="1">最新发布</option>
-                            <option value="2">最多评论</option>
-                        </select>
-                        <button class="btn btn-outline-secondary" type="button">排序</button>
-                    </div>
-                </div>
+            <!-- 修改分类筛选样式 -->
+            <div class="search-bl clearfix">
+                <ul id="category-filter">
+                    <li class="active" data-category="全部">全部</li>
+                    <li data-category="工学">工学</li>
+                    <li data-category="理学">理学</li>
+                    <li data-category="经济学">经济学</li>
+                    <li data-category="医学">医学</li>
+                    <li data-category="文学">文学</li>
+                    <li data-category="法学">法学</li>
+                    <li data-category="教育学">教育学</li>
+                    <li data-category="管理学">管理学</li>
+                    <li data-category="艺术学">艺术学</li>
+                    <li data-category="农学">农学</li>
+                    <li data-category="哲学">哲学</li>
+                    <li data-category="历史学">历史学</li>
+                </ul>
             </div>
-
+    
             <!-- 帖子列表 -->
             <div class="row g-4" id="postsList">
                 <!-- 帖子将通过JavaScript动态加载 -->
