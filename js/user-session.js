@@ -23,10 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 显示用户信息
     function displayUserInfo(user) {
-        // 根据页面结构选择合适的导航栏右侧元素
         let navbarRight = document.querySelector('.navbar-right .navbar-nav');
         if (!navbarRight) {
-            // 适配seniors.html页面的不同结构
             navbarRight = document.querySelector('.navbar-nav.ms-auto:last-child');
         }
         if (!navbarRight) return;
@@ -36,22 +34,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const userDropdown = document.createElement('li');
         userDropdown.className = 'nav-item dropdown';
         
-        const firstLetter = user.nickname ? user.nickname.charAt(0).toUpperCase() : user.username.charAt(0).toUpperCase();
+        const displayName = user.nickname || user.username;
         
         userDropdown.innerHTML = `
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <div class="user-avatar d-inline-block">${firstLetter}</div>
-                <span>${user.nickname || user.username}</span>
+                <span>${displayName}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li class="px-3 py-2 text-center border-bottom">
-                    <h6 class="mb-0">${user.nickname || user.username}</h6>
-                    <small class="text-muted">${user.school ? user.school + (user.major ? ' · ' + user.major : '') : '未设置学校和专业'}</small>
+                <li class="user-info">
+                    <h6 class="mb-0">${displayName}</h6>
+                    <p>${user.school ? user.school : '未设置学校'}</p>
+                    <div class="user-details">
+                        <div class="detail-item"><i class="fas fa-graduation-cap"></i> ${user.major || '未设置专业'}</div>
+                    </div>
                 </li>
-                <li><a class="dropdown-item py-2" href="#"><i class="fas fa-user me-2"></i>个人资料</a></li>
-                <li><a class="dropdown-item py-2" href="#"><i class="fas fa-bookmark me-2"></i>我的收藏</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item py-2 logout-btn" href="javascript:void(0);"><i class="fas fa-sign-out-alt me-2"></i>退出登录</a></li>
+                <li><a class="dropdown-item logout-btn" href="javascript:void(0);"><i class="fas fa-sign-out-alt"></i>退出登录</a></li>
             </ul>
         `;
 
