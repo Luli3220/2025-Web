@@ -337,5 +337,4 @@ function submitComment() {
     .catch(error => {
         console.error('提交评论失败:', error);
         alert('评论失败，请稍后再试');
-    });
-}
+    });}

@@ -180,3 +180,20 @@
     background-color: #4e73df;
     color: white;
 }
+
+
+/* 添加页面头部渐变背景样式 */
+.page-header {
+    background: linear-gradient(135deg, rgb(48, 63, 85) 0%, rgb(28, 37, 50) 100%);
+    padding: 8rem 0 4rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.page-header h1 {
+    margin-bottom: 1rem;
+}
+
+.page-header .lead {
+    opacity: 0.9;
+}

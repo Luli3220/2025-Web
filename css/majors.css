@@ -349,3 +349,19 @@ a:hover .major-card {
     border-radius: 1rem;
     font-size: 0.875rem;
 }
+
+/* 修改页面头部样式 */
+.page-header {
+    background: linear-gradient(135deg, rgb(48, 63, 85) 0%, rgb(28, 37, 50) 100%);
+    padding: 8rem 0 4rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.page-header h1 {
+    margin-bottom: 1rem;
+}
+
+.page-header .lead {
+    opacity: 0.9;
+}
