@@ -1,5 +1,10 @@
 // 论坛页面JavaScript
 
+// 每页显示的帖子数量
+const itemsPerPage = 12;
+// 当前页码
+let currentPage = 1;
+
 // 等待DOM加载完成
 document.addEventListener('DOMContentLoaded', function() {
     // 检查用户登录状态
@@ -31,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 根据分类加载帖子
             if (category === '全部') {
+                currentPage = 1;
                 loadPosts();
             } else {
                 // 专业类别映射
@@ -48,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     '哲学': 1,
                     '历史学': 11
                 };
+                currentPage = 1;
                 loadPosts(categoryMap[category]);
             }
         });
@@ -128,9 +135,9 @@ function loadPosts(categoryId = null) {
     currentCategoryId = categoryId;
     
     // 构建API URL
-    let url = '/api/forum/posts';
+    let url = `/api/forum/posts?page=${currentPage}&limit=${itemsPerPage}`;
     if (categoryId) {
-        url += `?category_id=${categoryId}`;
+        url += `&category_id=${categoryId}`;
     }
     
     fetch(url)
@@ -139,7 +146,31 @@ function loadPosts(categoryId = null) {
             // 隐藏加载提示
             loadingElement.classList.add('d-none');
             
-            if (data.length === 0) {
+            // 检查数据结构
+            let posts = [];
+            let totalPages = 1;
+            
+            // 处理不同的数据结构
+            if (Array.isArray(data)) {
+                // 如果返回的是数组，直接使用
+                posts = data;
+                // 如果没有提供总页数，默认为1页
+                totalPages = data.totalPages || 1;
+            } else if (data.posts && Array.isArray(data.posts)) {
+                // 如果返回的是包含posts数组的对象
+                posts = data.posts;
+                totalPages = data.totalPages || data.total_pages || Math.ceil(data.total / itemsPerPage) || 1;
+            } else if (data.data && Array.isArray(data.data)) {
+                // 另一种常见的API返回结构
+                posts = data.data;
+                totalPages = data.totalPages || data.total_pages || Math.ceil(data.total / itemsPerPage) || 1;
+            } else {
+                // 其他情况，尝试使用data本身
+                posts = data;
+                totalPages = 1;
+            }
+            
+            if (posts.length === 0) {
                 // 没有帖子，显示提示信息
                 noPostsMessage.classList.remove('d-none');
                 return;
@@ -151,10 +182,13 @@ function loadPosts(categoryId = null) {
             postsContainer.innerHTML = '';
             
             // 添加帖子到列表
-            data.forEach(post => {
+            posts.forEach(post => {
                 const postElement = createPostElement(post);
                 postsContainer.appendChild(postElement);
             });
+
+            // 渲染分页
+            renderPagination(totalPages);
         })
         .catch(error => {
             console.error('加载帖子失败:', error);
@@ -167,7 +201,6 @@ function loadPosts(categoryId = null) {
             postsContainer.appendChild(errorElement);
         });
 }
-
 
 // 创建帖子元素
 function createPostElement(post) {
@@ -288,7 +321,6 @@ function submitPost() {
     });
 }
 
-
 // 打开评论模态框
 function openCommentModal(postId) {
     // 设置当前评论的帖子ID
@@ -329,7 +361,7 @@ function submitComment() {
             commentModal.hide();
             
             // 重新加载帖子列表
-            loadPosts();
+            loadPosts(currentCategoryId);
         } else {
             alert(data.message || '评论失败，请稍后再试');
         }
@@ -337,4 +369,62 @@ function submitComment() {
     .catch(error => {
         console.error('提交评论失败:', error);
         alert('评论失败，请稍后再试');
-    });}
+    });
+}
+
+// 渲染分页
+function renderPagination(totalPages) {
+    const pagination = document.getElementById('pagination');
+
+    let html = '';
+
+    // 上一页按钮
+    html += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage - 1}" aria-disabled="${currentPage === 1}">上一页</a>
+        </li>
+    `;
+
+    // 页码按钮
+    for (let i = 1; i <= totalPages; i++) {
+        if (
+            i === 1 ||
+            i === totalPages ||
+            (i >= currentPage - 1 && i <= currentPage + 1)
+        ) {
+            html += `
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+                </li>
+            `;
+        } else if (
+            i === currentPage - 2 ||
+            i === currentPage + 2
+        ) {
+            html += `<li class="page-item disabled"><a class="page-link" href="#">...</a></li>`;
+        }
+    }
+
+    // 下一页按钮
+    html += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage + 1}" aria-disabled="${currentPage === totalPages}">下一页</a>
+        </li>
+    `;
+
+    pagination.innerHTML = html;
+
+    // 添加分页事件监听
+    document.querySelectorAll('#pagination .page-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (this.getAttribute('aria-disabled') === 'true') return;
+
+            currentPage = parseInt(this.getAttribute('data-page'));
+            loadPosts(currentCategoryId);
+
+            // 滚动到专业列表顶部
+            document.querySelector('.search-bl').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+}

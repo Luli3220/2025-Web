@@ -219,8 +219,18 @@ app.post('/api/login', (req, res) => {
 // 论坛API - 获取所有帖子
 app.get('/api/forum/posts', (req, res) => {
   const categoryId = req.query.category_id;
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 12;
+  const offset = (page - 1) * limit;
   
-  let query = `
+  let countQuery = `
+    SELECT COUNT(*) as total
+    FROM forum_posts p
+    JOIN users u ON p.user_id = u.user_id
+    JOIN major_categories c ON p.category_id = c.category_id
+  `;
+  
+  let dataQuery = `
     SELECT p.*, u.nickname as name, u.school, u.major, c.category_name 
     FROM forum_posts p
     JOIN users u ON p.user_id = u.user_id
@@ -229,26 +239,60 @@ app.get('/api/forum/posts', (req, res) => {
   
   // 如果指定了分类，添加筛选条件
   if (categoryId) {
-    query += ` WHERE p.category_id = ? `;
+    countQuery += ` WHERE p.category_id = ? `;
+    dataQuery += ` WHERE p.category_id = ? `;
   }
   
-  query += ` ORDER BY p.post_time DESC`;
+  dataQuery += ` ORDER BY p.post_time DESC LIMIT ? OFFSET ?`;
   
+  // 先获取总数，再获取分页数据
   if (categoryId) {
-    connection.query(query, [categoryId], (err, results) => {
+    connection.query(countQuery, [categoryId], (err, countResults) => {
       if (err) {
-        console.error('获取帖子失败:', err);
+        console.error('获取帖子总数失败:', err);
         return res.status(500).json({ error: '服务器错误' });
       }
-      res.json(results);
+      
+      const total = countResults[0].total;
+      const totalPages = Math.ceil(total / limit);
+      
+      connection.query(dataQuery, [categoryId, limit, offset], (err, results) => {
+        if (err) {
+          console.error('获取帖子失败:', err);
+          return res.status(500).json({ error: '服务器错误' });
+        }
+        res.json({
+          posts: results,
+          total: total,
+          totalPages: totalPages,
+          page: page,
+          limit: limit
+        });
+      });
     });
   } else {
-    connection.query(query, (err, results) => {
+    connection.query(countQuery, (err, countResults) => {
       if (err) {
-        console.error('获取帖子失败:', err);
+        console.error('获取帖子总数失败:', err);
         return res.status(500).json({ error: '服务器错误' });
       }
-      res.json(results);
+      
+      const total = countResults[0].total;
+      const totalPages = Math.ceil(total / limit);
+      
+      connection.query(dataQuery, [limit, offset], (err, results) => {
+        if (err) {
+          console.error('获取帖子失败:', err);
+          return res.status(500).json({ error: '服务器错误' });
+        }
+        res.json({
+          posts: results,
+          total: total,
+          totalPages: totalPages,
+          page: page,
+          limit: limit
+        });
+      });
     });
   }
 });
