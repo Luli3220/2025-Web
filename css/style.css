@@ -149,11 +149,13 @@ body {
 }
 
 .carousel-item {
-    height: 70vh;
+    height: 100vh;
     min-height: 500px;
     background: no-repeat center center scroll;
     background-size: cover;
 }
+
+
 
 .carousel-item img {
     object-fit: cover;
@@ -161,6 +163,7 @@ body {
     min-height: 500px;
     filter: brightness(0.7);
 }
+
 
 /* 轮播图文字位置调整 */
 .carousel-caption {
