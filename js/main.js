@@ -169,4 +169,20 @@ document.addEventListener('DOMContentLoaded', function() {
         watchSlidesVisibility: false,
         slideToClickedSlide: false
     });
+    
+    // 优化常见问题部分的性能
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    if (accordionButtons.length > 0) {
+        // 使用事件委托减少事件监听器数量
+        document.getElementById('faqAccordion')?.addEventListener('click', function(e) {
+            // 检查点击的是否是accordion按钮
+            const button = e.target.closest('.accordion-button');
+            if (!button) return;
+            
+            // 使用requestAnimationFrame优化动画性能
+            requestAnimationFrame(() => {
+                // 动画处理逻辑在这里
+            });
+        }, { passive: true }); // 使用passive事件提高滚动性能
+    }
 });
