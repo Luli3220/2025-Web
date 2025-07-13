@@ -203,6 +203,35 @@
         </div>
     </div>
 
+    <!-- 帖子详情模态框 -->
+    <div class="modal fade" id="postDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="d-flex align-items-center">
+                        <img src="https://ui-avatars.com/api/?name=User&background=random" alt="用户头像" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                        <div>
+                            <h5 class="modal-title mb-0" id="postDetailTitle"></h5>
+                            <small class="text-muted" id="postDetailInfo"></small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="post-content mb-4" id="postDetailContent"></div>
+                    <hr>
+                    <div class="comments-section">
+                        <h6 class="mb-3">评论 <span class="badge bg-secondary" id="commentCount">0</span></h6>
+                        <div id="commentsList" class="list-group list-group-flush"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="openCommentModal()">发表评论</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 版权信息 -->
     <div class="py-4 bg-light">
         <div class="container">

@@ -197,3 +197,241 @@
 .page-header .lead {
     opacity: 0.9;
 }
+
+/* 帖子详情模态框样式 */
+.modal-post-detail .modal-dialog {
+    max-width: 700px;
+}
+
+.modal-post-detail .modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-post-detail .modal-header {
+    border-bottom: 1px solid #eaeaea;
+    background-color: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+    padding: 1.25rem 1.5rem;
+}
+
+.modal-post-detail .modal-title {
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-post-detail .modal-body {
+    padding: 1.5rem;
+}
+
+.modal-post-detail .post-author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-post-detail .post-author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    background: linear-gradient(135deg, #4e73df 0%, #1e3fa0 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.modal-post-detail .post-author-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.modal-post-detail .post-author-meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.modal-post-detail .post-content-text {
+    background-color: #f8f9fc;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.modal-post-detail .post-meta-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.modal-post-detail .post-time {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.modal-post-detail .post-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #4e73df;
+    color: white;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* 评论模态框样式 */
+#commentModal {
+    z-index: 1060 !important; /* 确保评论模态框在最上层 */
+}
+
+#commentModal .modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+#commentModal + .modal-backdrop {
+    z-index: 1059 !important;
+}
+
+/* 帖子详情模态框层级调整 */
+#postDetailModal {
+    z-index: 1050;
+}
+
+#postDetailModal .modal-dialog {
+    pointer-events: auto;
+    position: relative;
+    z-index: 1051;
+}
+
+#postDetailModal .modal-content {
+    position: relative;
+    z-index: 1052;
+}
+
+#postDetailModal + .modal-backdrop {
+    z-index: 1049;
+}
+
+/* 评论模态框样式 */
+#commentModal {
+    z-index: 2060;
+}
+
+#commentModal .modal-dialog {
+    pointer-events: auto;
+    position: relative;
+    z-index: 2061;
+}
+
+#commentModal .modal-content {
+    position: relative;
+    z-index: 2062;
+}
+
+#commentModal + .modal-backdrop {
+    z-index: 2059;
+}
+
+/* 通用模态框设置 */
+.modal {
+    pointer-events: auto;
+}
+
+.modal-backdrop {
+    pointer-events: none;
+}
+
+/* 调整模态框背景遮罩的层级 */
+.modal-backdrop.show {
+    opacity: 0.5;
+}
+
+.modal-backdrop.fade {
+    opacity: 0;
+}
+
+#commentModal ~ .modal-backdrop {
+    z-index: 2059 !important;
+}
+
+/* 确保模态框内容可点击 */
+.modal {
+    pointer-events: none;
+}
+
+.modal-dialog {
+    pointer-events: auto;
+}
+
+#commentModal .modal-header {
+    border-bottom: 1px solid #eaeaea;
+    background-color: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+    padding: 1rem 1.5rem;
+}
+
+#commentModal .modal-title {
+    font-weight: 600;
+    color: #333;
+}
+
+#commentModal .modal-body {
+    padding: 1.5rem;
+}
+
+#commentModal .modal-footer {
+    border-top: 1px solid #eaeaea;
+    background-color: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+    padding: 1rem 1.5rem;
+}
+
+#commentModal .form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+#commentModal .form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+#commentModal .form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+#commentModal .btn-secondary {
+    background-color: #e2e8f0;
+    border-color: #e2e8f0;
+    color: #333;
+}
+
+#commentModal .btn-secondary:hover {
+    background-color: #cbd5e0;
+    border-color: #cbd5e0;
+}
+
+#commentModal .btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+#commentModal .btn-primary:hover {
+    background-color: #3a5ccc;
+    border-color: #3a5ccc;
+}

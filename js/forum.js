@@ -217,7 +217,7 @@ function createPostElement(post) {
     }
 
     postElement.innerHTML = `
-        <div class="card senior-card h-100">
+        <div class="card senior-card h-100 cursor-pointer">
             <div class="card-body p-4">
                 <div class="d-flex align-items-center mb-3">
                     <div class="user-avatar rounded-circle me-3 d-flex align-items-center justify-content-center" 
@@ -266,11 +266,18 @@ function createPostElement(post) {
     // 绑定评论按钮事件
     const commentBtn = postElement.querySelector('.comment-btn');
     if (commentBtn) {
-        commentBtn.addEventListener('click', () => {
+        commentBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // 阻止事件冒泡
             const postId = commentBtn.getAttribute('data-post-id');
             openCommentModal(postId);
         });
     }
+
+    // 绑定帖子卡片点击事件
+    const postCard = postElement.querySelector('.card');
+    postCard.addEventListener('click', () => {
+        openPostDetailModal(post, comments);
+    });
 
     return postElement;
 }
@@ -370,6 +377,41 @@ function submitComment() {
         console.error('提交评论失败:', error);
         alert('评论失败，请稍后再试');
     });
+}
+
+// 打开帖子详情模态框
+function openPostDetailModal(post, comments) {
+    // 设置帖子详情
+    document.getElementById('postDetailTitle').textContent = post.name || '匿名用户';
+    document.getElementById('postDetailInfo').textContent = `${post.school || '未知学校'} | ${post.major || '未知专业'} | 发布于 ${new Date(post.post_time).toLocaleString()}`;
+    document.getElementById('postDetailContent').textContent = post.content;
+    
+    // 设置评论数量
+    document.getElementById('commentCount').textContent = comments.length;
+    
+    // 渲染评论列表
+    const commentsListElement = document.getElementById('commentsList');
+    commentsListElement.innerHTML = comments.map(comment => `
+        <div class="list-group-item">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <div class="user-avatar rounded-circle me-2 d-flex align-items-center justify-content-center"
+                         style="width: 32px; height: 32px; background: linear-gradient(135deg, #4e73df 0%, #1e3fa0 100%); color: white; font-size: 14px;">
+                        ${comment.name ? comment.name[0] : '?'}
+                    </div>
+                    <div>
+                        <h6 class="mb-0">${comment.name || '匿名用户'}</h6>
+                        <small class="text-muted">${new Date(comment.comment_time).toLocaleString()}</small>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-2 mb-0">${comment.content}</p>
+        </div>
+    `).join('');
+    
+    // 显示模态框
+    const postDetailModal = new bootstrap.Modal(document.getElementById('postDetailModal'));
+    postDetailModal.show();
 }
 
 // 渲染分页

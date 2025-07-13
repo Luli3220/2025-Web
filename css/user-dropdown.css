@@ -9,9 +9,8 @@
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    color: #4e73df;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
     position: relative;
 }
