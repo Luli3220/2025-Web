@@ -333,8 +333,53 @@ app.post('/api/forum/posts', (req, res) => {
       res.json({ success: true, message: '发布成功', postId: results.insertId });
     }
   );
-}
-);
+});
+
+// AI聊天API
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message, history } = req.body;
+    
+    if (!message) {
+      return res.status(400).json({ error: '消息不能为空' });
+    }
+    
+    // 构建消息历史
+    const messages = [
+      { role: "system", content: "You are a helpful assistant." }
+    ];
+    
+    // 添加历史消息
+    if (history && Array.isArray(history)) {
+      history.forEach(msg => {
+        if (msg.role && msg.content) {
+          messages.push({
+            role: msg.role,
+            content: msg.content
+          });
+        }
+      });
+    }
+    
+    // 添加用户当前消息
+    messages.push({ role: "user", content: message });
+    
+    // 调用DeepSeek API
+    const completion = await openai.chat.completions.create({
+      messages: messages,
+      model: "deepseek-chat",
+    });
+    
+    // 提取AI回复
+    const aiMessage = completion.choices[0].message.content;
+    
+    // 返回响应
+    res.json({ message: aiMessage });
+  } catch (error) {
+    console.error('AI聊天API错误:', error);
+    res.status(500).json({ error: '服务器错误', details: error.message });
+  }
+});
 
 // API 路由 - 获取统计数据
 app.get('/api/stats', (req, res) => {
