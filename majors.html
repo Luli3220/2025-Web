@@ -18,6 +18,20 @@
     <link rel="stylesheet" href="lib/ajax/animate.min.css">
     <link rel="stylesheet" href="css/user-dropdown.css">
     <link rel="stylesheet" href="css/ai-chat.css">
+     <!-- Bootstrap JS 和其他脚本 -->
+     <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+     <!-- 用户会话管理 -->
+     <script src="js/user-session.js"></script>
+     <!-- 自定义JS -->
+     <script src="js/main.js"></script>
+     <script src="js/majors.js"></script>
+     <!-- Markdown解析库 -->
+     <script src="https://cdn.bootcdn.net/ajax/libs/marked/16.0.0/lib/marked.esm.js" type="module"></script>
+     <script type="module">
+       // 确保marked作为全局变量可用
+       import * as markedModule from 'https://cdn.bootcdn.net/ajax/libs/marked/16.0.0/lib/marked.esm.js';
+       window.marked = markedModule;
+     </script>
     <style>
         .air {
             background: 
@@ -208,10 +222,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS 和其他脚本 -->
-    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
-    <!-- 用户会话管理 -->
-    <script src="js/user-session.js"></script>
     <!-- AI聊天功能 -->
     <script src="js/ai-chat.js"></script>
     <script>

@@ -97,7 +97,28 @@ class AIChatUI {
 
         const contentElement = document.createElement('div');
         contentElement.className = 'message-content';
-        contentElement.textContent = message.content;
+        
+        // 使用marked库渲染Markdown内容（仅对AI回复使用Markdown渲染）
+        if (message.role === 'assistant') {
+            try {
+                // 适配ES模块导入的marked
+                if (typeof marked !== 'undefined') {
+                    // 使用marked.parse方法渲染Markdown
+                    contentElement.innerHTML = marked.parse(message.content);
+                } else if (typeof window.marked !== 'undefined') {
+                    // 兼容全局marked对象
+                    contentElement.innerHTML = window.marked.parse(message.content);
+                } else {
+                    // 降级处理
+                    contentElement.textContent = message.content;
+                }
+            } catch (e) {
+                console.error('Markdown渲染失败:', e);
+                contentElement.textContent = message.content;
+            }
+        } else {
+            contentElement.textContent = message.content;
+        }
 
         messageElement.appendChild(avatarElement);
         messageElement.appendChild(contentElement);
