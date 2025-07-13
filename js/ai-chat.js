@@ -6,6 +6,7 @@ class AIChatUI {
         this.chatInput = document.getElementById('chatInput');
         this.sendButton = document.getElementById('sendMessage');
         this.messageHistory = [];
+        this.storageKey = 'aiChatHistory'; // 用于localStorage的键名
 
         this.init();
     }
@@ -20,11 +21,16 @@ class AIChatUI {
             }
         });
 
-        // 添加初始欢迎消息
-        this.addMessage({
-            role: 'assistant',
-            content: '你好！我是AI助手，有什么我可以帮你的吗？'
-        });
+        // 从localStorage加载历史消息
+        this.loadChatHistory();
+        
+        // 如果没有历史消息，添加初始欢迎消息
+        if (this.messageHistory.length === 0) {
+            this.addMessage({
+                role: 'assistant',
+                content: '你好！我是AI助手，有什么我可以帮你的吗？'
+            });
+        }
     }
 
     async sendMessage() {
@@ -86,6 +92,9 @@ class AIChatUI {
     addMessage(message) {
         // 添加消息到历史记录
         this.messageHistory.push(message);
+        
+        // 保存到localStorage
+        this.saveChatHistory();
 
         // 创建消息元素
         const messageElement = document.createElement('div');
@@ -144,3 +153,73 @@ class AIChatUI {
 document.addEventListener('DOMContentLoaded', () => {
     new AIChatUI();
 });
+
+// 添加新方法到AIChatUI类的原型
+AIChatUI.prototype.loadChatHistory = function() {
+    try {
+        const savedHistory = localStorage.getItem(this.storageKey);
+        if (savedHistory) {
+            this.messageHistory = JSON.parse(savedHistory);
+            
+            // 清空当前聊天界面
+            this.chatMessages.innerHTML = '';
+            
+            // 重新渲染所有消息
+            this.messageHistory.forEach(message => {
+                // 创建消息元素
+                const messageElement = document.createElement('div');
+                messageElement.className = `message ${message.role}`;
+
+                const avatarElement = document.createElement('div');
+                avatarElement.className = 'message-avatar';
+                avatarElement.innerHTML = message.role === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+
+                const contentElement = document.createElement('div');
+                contentElement.className = 'message-content';
+                
+                // 使用marked库渲染Markdown内容（仅对AI回复使用Markdown渲染）
+                if (message.role === 'assistant') {
+                    try {
+                        // 适配ES模块导入的marked
+                        if (typeof marked !== 'undefined') {
+                            // 使用marked.parse方法渲染Markdown
+                            contentElement.innerHTML = marked.parse(message.content);
+                        } else if (typeof window.marked !== 'undefined') {
+                            // 兼容全局marked对象
+                            contentElement.innerHTML = window.marked.parse(message.content);
+                        } else {
+                            // 降级处理
+                            contentElement.textContent = message.content;
+                        }
+                    } catch (e) {
+                        console.error('Markdown渲染失败:', e);
+                        contentElement.textContent = message.content;
+                    }
+                } else {
+                    contentElement.textContent = message.content;
+                }
+
+                messageElement.appendChild(avatarElement);
+                messageElement.appendChild(contentElement);
+
+                // 添加到聊天界面
+                this.chatMessages.appendChild(messageElement);
+            });
+            
+            // 滚动到底部
+            this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+        }
+    } catch (error) {
+        console.error('加载聊天历史失败:', error);
+    }
+};
+
+AIChatUI.prototype.saveChatHistory = function() {
+    try {
+        // 只保存最近的20条消息，避免localStorage存储过大
+        const historyToSave = this.messageHistory.slice(-20);
+        localStorage.setItem(this.storageKey, JSON.stringify(historyToSave));
+    } catch (error) {
+        console.error('保存聊天历史失败:', error);
+    }
+};
