@@ -3,8 +3,15 @@ const mysql = require('mysql2');
 const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const axios = require('axios');
 const app = express();
 const port = 3000;
+
+// DeepSeek API配置
+const DEEPSEEK_API_URL = 'https://api.deepseek.com/chat/completions';
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || 'sk-fab1995ad02949e2affab008c311dc3f'; // 请替换为您的API密钥或使用环境变量
+
+console.log('DeepSeek API配置已加载');
 
 // 中间件设置
 app.use(express.json()); // 用于解析JSON请求体
@@ -364,20 +371,58 @@ app.post('/api/chat', async (req, res) => {
     // 添加用户当前消息
     messages.push({ role: "user", content: message });
     
-    // 调用DeepSeek API
-    const completion = await openai.chat.completions.create({
+    // 准备请求数据
+    const requestData = {
       messages: messages,
       model: "deepseek-chat",
+      frequency_penalty: 0,
+      max_tokens: 2048,
+      presence_penalty: 0,
+      response_format: {
+        type: "text"
+      },
+      stop: null,
+      stream: false,
+      stream_options: null,
+      temperature: 1,
+      top_p: 1,
+      tools: null,
+      tool_choice: "none",
+      logprobs: false,
+      top_logprobs: null
+    };
+    
+    // 调用DeepSeek API
+    const response = await axios.post(DEEPSEEK_API_URL, requestData, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${DEEPSEEK_API_KEY}`
+      },
+      timeout: 60000 // 设置超时时间为60秒
     });
     
     // 提取AI回复
-    const aiMessage = completion.choices[0].message.content;
+    const aiMessage = response.data.choices[0].message.content;
     
     // 返回响应
     res.json({ message: aiMessage });
   } catch (error) {
     console.error('AI聊天API错误:', error);
-    res.status(500).json({ error: '服务器错误', details: error.message });
+    
+    // 根据错误类型提供更友好的错误信息
+    let errorMessage = '服务器错误';
+    if (error.code === 'ECONNABORTED') {
+      errorMessage = 'AI服务连接超时，请稍后再试';
+    } else if (error.code === 'ECONNREFUSED') {
+      errorMessage = 'AI服务连接失败，请检查网络连接';
+    } else if (error.response && error.response.status === 429) {
+      errorMessage = 'AI服务请求过于频繁，请稍后再试';
+    } else if (error.response) {
+      errorMessage = `AI服务错误 (${error.response.status}): ${error.response.data.error || '未知错误'}`;
+    }
+    
+    res.status(500).json({ error: errorMessage, details: error.message });
   }
 });
 
