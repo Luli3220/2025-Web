@@ -17,6 +17,7 @@
     <!-- 动画库 -->
     <link rel="stylesheet" href="lib/ajax/animate.min.css">
     <link rel="stylesheet" href="css/user-dropdown.css">
+    <link rel="stylesheet" href="css/ai-chat.css">
     <style>
         .air {
             background: 
@@ -176,6 +177,36 @@
         style="display: none;">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- AI聊天按钮 -->
+    <button class="ai-chat-btn" data-bs-toggle="modal" data-bs-target="#aiChatModal">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- AI聊天模态框 -->
+    <div class="modal fade ai-chat-modal" id="aiChatModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">AI助手</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- 消息将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <div class="chat-input-group">
+                        <textarea class="chat-input form-control" id="chatInput" rows="1" placeholder="输入你的问题..."></textarea>
+                        <button class="chat-send-btn" id="sendMessage">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS 和其他脚本 -->
     <script src="lib/bootstrap/bootstrap.min.js"></script>
