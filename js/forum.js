@@ -401,7 +401,7 @@ function openPostDetailModal(post, comments) {
                     </div>
                     <div>
                         <h6 class="mb-0">${comment.name || '匿名用户'}</h6>
-                        <small class="text-muted">${new Date(comment.comment_time).toLocaleString()}</small>
+                        <small class="text-muted">${new Date(comment.time).toLocaleString()}</small>
                     </div>
                 </div>
             </div>
