@@ -80,6 +80,40 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.senior-card .comments-preview {
+    max-height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+
+.senior-card .view-all-comments {
+    color: #4e73df;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.senior-card .view-all-comments:hover {
+    color: #2e59d9;
+    text-decoration: underline;
+}
+
+.senior-card .comment-item {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #f8f9fc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.senior-card .comment-count {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
 .senior-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0.15rem 2.5rem 0 rgba(58, 59, 69, 0.2);
