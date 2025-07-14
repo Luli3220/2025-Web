@@ -3,17 +3,38 @@
     padding: 60px 0;
 }
 
+/* 基础卡片样式 */
 .hover-card {
     transition: all 0.3s ease;
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
 }
 
+/* 卡片阴影效果 */
 .hover-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3) !important;
 }
 
+/* 卡片内容区域 */
+.hover-card .card-body {
+    position: relative;
+    height: 185px;
+    padding: 20px;
+    transition: height 0.5s, background 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+
+/* 卡片内容区域展开效果 */
+.hover-card:hover .card-body {
+    height: 300px;
+}
+
+/* 图标样式 */
 .category-icon {
     height: 80px;
     display: flex;
@@ -27,4 +48,39 @@
 
 .hover-card:hover .category-icon i {
     transform: scale(1.2);
+}
+
+/* 卡片描述文本 */
+.card-text {
+    color: #666C74;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    transition: opacity 0.3s, transform 0.3s;
+    transition-delay: 0s;
+}
+
+/* 卡片额外描述文本 */
+.card-description {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 56px;
+    margin: 0;
+    padding: 10px;
+    color: #666C74;
+    line-height: 27px;
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.3s, transform 0.3s;
+    transition-delay: 0s;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hover-card:hover .card-description {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
 }
