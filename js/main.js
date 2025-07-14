@@ -170,13 +170,13 @@ document.addEventListener('DOMContentLoaded', function() {
             delay: 3000,
             disableOnInteraction: false,
         },
-        speed: 800,             // 增加过渡速度，使动画更流畅
+        speed: 600,             
         coverflowEffect: {
-            rotate: 20,          // 减小旋转角度
-            stretch: -20,        // 减小拉伸效果
-            depth: 200,          // 减小深度，降低3D效果复杂度
+            rotate: 20,         
+            stretch: -20,       
+            depth: 200,          
             modifier: 1,        
-            slideShadows: false,  // 关闭阴影效果，提高性能
+            slideShadows: true,  
         },
         navigation: {
             nextEl: '.swiper-button-next',

@@ -88,8 +88,9 @@
 }
 
 .major-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    z-index: 5;
 }
 
 /* 调整卡片容器的间距 */
@@ -157,8 +158,38 @@
 
 .major-card .card-text {
     color: #666;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     line-height: 1.6;
+}
+
+/* 完整描述样式 */
+.major-full-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto;
+    color: #333;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    border-radius: 15px;
+    transform: scale(0.9);
+}
+
+.major-card:hover .major-full-description {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
 }
 
 .major-stats {
@@ -323,12 +354,15 @@
 }
 
 .major-card {
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 a:hover .major-card {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    z-index: 10;
 }
 
 .major-card .card-title {

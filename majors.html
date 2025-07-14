@@ -16,10 +16,13 @@
     <link href="css/majors.css" rel="stylesheet">
     <!-- 动画库 -->
     <link rel="stylesheet" href="lib/ajax/animate.min.css">
+    <!-- 用户下拉菜单 -->
     <link rel="stylesheet" href="css/user-dropdown.css">
+    <!-- ai聊天模块 -->
     <link rel="stylesheet" href="css/ai-chat.css">
+    <!-- 粒子特效引擎 -->
     <link rel="stylesheet" href="css/particles.css">
-     <!-- Bootstrap JS 和其他脚本 -->
+     <!-- Bootstrap JS -->
      <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
      <!-- 用户会话管理 -->
      <script src="js/user-session.js"></script>
@@ -302,9 +305,7 @@
                                 <div class="card-body">
                                     <h3 class="card-title">${major.major_name}</h3>
                                     <p class="card-text">${major.summary ? major.summary.substring(0, 100) + '...' : '暂无简介'}</p>
-                                    <div class="mt-auto">
-                                        <button class="btn btn-outline-primary w-100">查看详情</button>
-                                    </div>
+                                    <div class="major-full-description">${major.summary || '暂无简介'}</div>
                                 </div>
                             </div>
                         </a>
