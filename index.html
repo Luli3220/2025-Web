@@ -12,6 +12,7 @@
     <!-- 自定义CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/user-dropdown.css">
+    <link rel="stylesheet" href="./css/testimonial-selector.css">
     <!-- 自定义JS -->
     <script src="js/main.js"></script>
     <!-- Font Awesome 图标 -->
@@ -272,61 +273,154 @@
 
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <div id="testimonialCarousel" class="carousel slide testimonial-slider" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="testimonial-item text-center">
-                                    <img style="margin-top: 80px;" src="./images/Senior/cs.png" class="mb-3" alt="学长照片">
-                                    <h4>李明阳</h4>
-                                    <p class="text-muted">北京大学 | 计算机科学与技术 | 2019级</p>
-                                    <div class="testimonial-text">
-                                        <p class="mb-0">
-                                            "我就读于北京大学计算机科学与技术专业。选择计算机专业，是我大学阶段最正确的决定之一。这个专业的课程体系非常丰富，既包括操作系统、计算机网络、数据结构、算法设计等核心基础，也涵盖人工智能、机器学习、深度学习等前沿方向，理论与应用并重。老师们不仅教学严谨，而且在科研和工程实践方面也非常有经验，能够带领我们深入理解知识背后的原理。
+                    <!-- 学长学姐经验分享内容区域 -->
+                    <div class="testimonial-content">
+                        <!-- 李明阳 - 计算机科学与技术 -->
+                        <div class="testimonial-item active" data-senior="cs">
+                            <div class="text-center">
+                                <img src="./images/Senior/cs.png" class="mb-3" alt="学长照片">
+                                <h4>李明阳</h4>
+                                <p class="text-muted">北京大学 | 计算机科学与技术 | 2019级</p>
+                                <div class="testimonial-text">
+                                    <p class="mb-0">
+                                        "我就读于北京大学计算机科学与技术专业。选择计算机专业，是我大学阶段最正确的决定之一。这个专业的课程体系非常丰富，既包括操作系统、计算机网络、数据结构、算法设计等核心基础，也涵盖人工智能、机器学习、深度学习等前沿方向，理论与应用并重。老师们不仅教学严谨，而且在科研和工程实践方面也非常有经验，能够带领我们深入理解知识背后的原理。
 
-                                            学习过程中确实会面临不少挑战，比如算法难题、系统编程、团队协作开发等，但当你真正掌握了这些技能，就会发现你的就业选择非常广泛，无论是大厂开发、科研深造还是创业创新，计算机都能提供坚实的技术支撑。
-                                            
-                                            我建议学弟学妹们在学习课本知识的同时，一定要多参与实际项目，比如学校的科研训练、开源项目或校外实习。这些经历不仅能提高编程能力和解决问题的思维方式，也能为以后求职和深造打下坚实基础。计算机是一个“做中学”的学科，只有动手实践，才能真正成长。"
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial-item text-center">
-                                    <img style="margin-top: 80px;" src="./images/Senior/fin.png" class="mb-3" alt="学姐照片">
-                                    <h4>张雨晴</h4>
-                                    <p class="text-muted">复旦大学 | 金融学 | 2018级</p>
-                                    <div class="testimonial-text">
-                                        <p class="mb-0">
-                                            "金融学专业需要扎实的数学基础和系统的经济学知识，课程内容涵盖了宏观经济学、微观经济学、金融工程、计量经济学、投资学等，学习过程虽然紧凑、压力不小，但非常充实。在校期间，我注重理论与实践结合，积极参与了多家银行、券商和投行的实习，这些经历不仅提升了我的专业技能，也让我更清晰地了解了行业的运作方式。
-                                            目前我就职于一家投资银行，从事资本市场相关的工作，能够把大学里所学真正应用到实际业务中，成就感很强。如果你对金融市场、投资分析或资本运作感兴趣，金融学无疑是一个值得选择的专业。建议大家在学习的同时，尽早规划职业方向，多参与实习和项目锻炼，为未来做好准备。"
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial-item text-center">
-                                    <img style="margin-top: 80px;" src="./images/Senior/med.png" class="mb-3" alt="学长照片">
-                                    <h4>王浩然</h4>
-                                    <p class="text-muted">上海交通大学 | 临床医学 | 2017级</p>
-                                    <div class="testimonial-text">
-                                        <p class="mb-0">
-                                            "我就读于上海交通大学临床医学专业。这个专业非常注重基础理论与临床实践的有机结合，前期以医学基础课程为主，包括解剖学、生理学、生物化学等，打好理论根基；后期则进入医院实习，真正接触临床一线，体会“医生”这个职业的责任与挑战。
-                                            在大学期间，我积极参与各类临床见习和实习机会，深入内科、外科、儿科等多个科室随诊学习。这些实践经历极大地锻炼了我的专业判断力和应变能力，也让我更好地理解了医患沟通、临床协作的重要性。无论是为考研做准备，还是未来就业，这些一线经验都让我更加从容自信。
-                                            我想对学弟学妹们说，实习阶段是从学生走向医生的关键过渡期，要主动争取机会，多请教老师和带教医生，不断提升自己的临床思维、沟通能力与团队协作意识。只有把理论和实践结合起来，才能为将来成为一名真正合格、值得信赖的医生打下坚实的基础。"
-                                        </p>
-                                    </div>
+                                        学习过程中确实会面临不少挑战，比如算法难题、系统编程、团队协作开发等，但当你真正掌握了这些技能，就会发现你的就业选择非常广泛，无论是大厂开发、科研深造还是创业创新，计算机都能提供坚实的技术支撑。
+                                        
+                                        我建议学弟学妹们在学习课本知识的同时，一定要多参与实际项目，比如学校的科研训练、开源项目或校外实习。这些经历不仅能提高编程能力和解决问题的思维方式，也能为以后求职和深造打下坚实基础。计算机是一个"做中学"的学科，只有动手实践，才能真正成长。"
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <!-- 修改导航按钮 -->
-                        <button class="carousel-control-prev custom-nav-btn" type="button"
-                            data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next custom-nav-btn" type="button"
-                            data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
+                        
+                        <!-- 张雨晴 - 金融学 -->
+                        <div class="testimonial-item" data-senior="fin">
+                            <div class="text-center">
+                                <img src="./images/Senior/fin.png" class="mb-3" alt="学姐照片">
+                                <h4>张雨晴</h4>
+                                <p class="text-muted">复旦大学 | 金融学 | 2018级</p>
+                                <div class="testimonial-text">
+                                    <p class="mb-0">
+                                        "金融学专业需要扎实的数学基础和系统的经济学知识，课程内容涵盖了宏观经济学、微观经济学、金融工程、计量经济学、投资学等，学习过程虽然紧凑、压力不小，但非常充实。在校期间，我注重理论与实践结合，积极参与了多家银行、券商和投行的实习，这些经历不仅提升了我的专业技能，也让我更清晰地了解了行业的运作方式。
+                                        目前我就职于一家投资银行，从事资本市场相关的工作，能够把大学里所学真正应用到实际业务中，成就感很强。如果你对金融市场、投资分析或资本运作感兴趣，金融学无疑是一个值得选择的专业。建议大家在学习的同时，尽早规划职业方向，多参与实习和项目锻炼，为未来做好准备。"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 王浩然 - 临床医学 -->
+                        <div class="testimonial-item" data-senior="med">
+                            <div class="text-center">
+                                <img src="./images/Senior/med.png" class="mb-3" alt="学长照片">
+                                <h4>王浩然</h4>
+                                <p class="text-muted">上海交通大学 | 临床医学 | 2017级</p>
+                                <div class="testimonial-text">
+                                    <p class="mb-0">
+                                        "我就读于上海交通大学临床医学专业。这个专业非常注重基础理论与临床实践的有机结合，前期以医学基础课程为主，包括解剖学、生理学、生物化学等，打好理论根基；后期则进入医院实习，真正接触临床一线，体验"医生"这个职业的责任与挑战。
+                                        在大学期间，我积极参与各类临床见习和实习机会，深入内科、外科、儿科等多个科室随诊学习。这些实践经历极大锻炼了我的专业判断力和应变能力，也让我更好地理解了医患沟通、临床协作的重要性。无论是为考研做准备，还是未来就业，这些一线经验都让我更加从容自信。
+                                        我想对学弟学妹们说，实习阶段是从学生走向医生的关键过渡期，要主动争取机会，多请教老师和带教医生，不断提升自己的临床思维、沟通能力与团队协作意识。只有把理论和实践结合起来，才能为将来成为一名真正合格、值得信赖的医生打下坚实的基础。"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 周秀英 - 法学 -->
+                        <div class="testimonial-item" data-senior="law">
+                            <div class="text-center">
+                                <img src="./images/Senior/law.png" class="mb-3" alt="学姐照片">
+                                <h4>周秀英</h4>
+                                <p class="text-muted">中国政法大学 | 法学 | 2018级</p>
+                                <div class="testimonial-text">
+                                    <p class="mb-0">
+                                        "法学专业是一个需要扎实理论基础和实践能力的学科。在中国政法大学的四年学习中，我系统学习了法理学、宪法学、民法学、刑法学等核心课程，同时也参与了大量的模拟法庭、法律诊所等实践活动。
+                                        法学专业的学习不仅仅是记忆法条，更重要的是培养法律思维和分析能力。我在学习过程中特别注重案例分析和法律文书写作的训练，这对我后来的实习和工作帮助很大。在校期间，我有幸参与了多个法律援助项目，为弱势群体提供法律咨询，这些经历让我深刻理解了法律人的社会责任。
+                                        对于想要选择法学专业的学弟学妹们，我建议在学习专业知识的同时，多关注社会热点和法律实践，积极参与各类法律实践活动，培养自己的法律思维和表达能力。法学是一个需要终身学习的专业，保持对知识的渴望和对正义的追求，你一定会在这条道路上走得更远。"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 王秀英 - 教育学 -->
+                        <div class="testimonial-item" data-senior="edu">
+                            <div class="text-center">
+                                <img src="./images/Senior/edu.png" class="mb-3" alt="学姐照片">
+                                <h4>王秀英</h4>
+                                <p class="text-muted">北京师范大学 | 教育学 | 2019级</p>
+                                <div class="testimonial-text">
+                                    <p class="mb-0">
+                                        "教育学是一门关注人的成长与发展的学科。在北京师范大学的学习经历让我深刻理解了教育的本质和价值。我们的课程体系包括教育原理、教育心理学、课程与教学论等理论课程，同时也有大量的教育实习和见习机会。
+                                        教育学专业的魅力在于它既有深厚的理论基础，又有广阔的实践空间。在校期间，我参与了多个教育研究项目，也在不同类型的学校进行了实习，这些经历让我对教育有了更加全面和深入的认识。特别是在农村学校的支教经历，让我看到了教育的力量和挑战。
+                                        对于有志于从事教育工作的学弟学妹们，我想说的是，教育不仅是一种职业，更是一种责任和使命。希望你们能够在专业学习中不断反思和成长，关注每一个学生的发展需求，成为一名有温度、有思想的教育工作者。教育的道路上没有捷径，但每一步都值得珍惜。"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 孙娜 - 视觉传达设计 -->
+                        <div class="testimonial-item" data-senior="art">
+                            <div class="text-center">
+                                <img src="./images/Senior/art.png" class="mb-3" alt="学姐照片">
+                                <h4>孙娜</h4>
+                                <p class="text-muted">中央美术学院 | 视觉传达设计 | 2020级</p>
+                                <div class="testimonial-text">
+                                    <p class="mb-0">
+                                        "视觉传达设计是一个充满创意和挑战的专业。在中央美术学院的学习让我不仅掌握了设计的基本技能，更培养了独立的审美和创作能力。我们的课程涵盖了平面设计、品牌设计、交互设计等多个方向，同时也有大量的艺术理论和美学课程。
+                                        设计专业的学习过程充满了挑战，需要不断突破自我，寻找创新的表达方式。在校期间，我参与了多个实际项目，为企业和机构提供设计服务，这些经历让我更好地理解了设计如何在实际环境中发挥作用。特别是参与的一个公益项目，通过设计传达社会议题，让我感受到了设计的社会价值。
+                                        对于想要选择设计专业的学弟学妹们，我建议在学习专业技能的同时，多关注社会文化和艺术动态，培养自己的审美和创意思维。设计不仅是一种技能，更是一种思考和表达的方式。希望你们能在设计的道路上找到自己的风格和声音，创造出有价值的作品。"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 赵洋 - 电子信息工程 -->
+                        <div class="testimonial-item" data-senior="eng">
+                            <div class="text-center">
+                                <img src="./images/Senior/eng.png" class="mb-3" alt="学长照片">
+                                <h4>赵洋</h4>
+                                <p class="text-muted">哈尔滨工业大学 | 电子信息工程 | 2018级</p>
+                                <div class="testimonial-text">
+                                    <p class="mb-0">
+                                        "电子信息工程是一个理论与实践并重的专业。在哈尔滨工业大学的学习经历让我掌握了扎实的专业知识和实践能力。我们的课程体系包括电路分析、信号与系统、数字信号处理等理论课程，同时也有大量的实验和项目实践。
+                                        工程专业的学习需要耐心和毅力，特别是在面对复杂的理论和实验时。在校期间，我参与了多个科研项目和创新竞赛，这些经历不仅提升了我的专业能力，也培养了我的团队协作和问题解决能力。特别是参与的一个智能硬件开发项目，从方案设计到最终实现，让我体验了工程项目的完整流程。
+                                        对于想要选择工程专业的学弟学妹们，我建议在学习理论知识的同时，多参与实际项目和实验，将理论与实践相结合。工程教育的核心是培养解决实际问题的能力，希望你们能在学习过程中不断挑战自我，成为具有创新精神和实践能力的工程师。"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 头像选择器 -->
+                    <div class="senior-avatars-container">
+                        <div class="senior-avatars">
+                            <div class="senior-avatar active" data-senior="cs">
+                                <img src="./images/Senior/cs.png" alt="李明阳" class="rounded-circle">
+                                <span>李明阳</span>
+                            </div>
+                            <div class="senior-avatar" data-senior="fin">
+                                <img src="./images/Senior/fin.png" alt="张雨晴" class="rounded-circle">
+                                <span>张雨晴</span>
+                            </div>
+                            <div class="senior-avatar" data-senior="med">
+                                <img src="./images/Senior/med.png" alt="王浩然" class="rounded-circle">
+                                <span>王浩然</span>
+                            </div>
+                            <div class="senior-avatar" data-senior="law">
+                                <img src="./images/Senior/law.png" alt="周秀英" class="rounded-circle">
+                                <span>周秀英</span>
+                            </div>
+                            <div class="senior-avatar" data-senior="edu">
+                                <img src="./images/Senior/edu.png" alt="王秀英" class="rounded-circle">
+                                <span>王秀英</span>
+                            </div>
+                            <div class="senior-avatar" data-senior="art">
+                                <img src="./images/Senior/art.png" alt="孙娜" class="rounded-circle">
+                                <span>孙娜</span>
+                            </div>
+                            <div class="senior-avatar" data-senior="eng">
+                                <img src="./images/Senior/eng.png" alt="赵洋" class="rounded-circle">
+                                <span>赵洋</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

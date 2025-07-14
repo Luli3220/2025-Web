@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 学途说头像选择功能
+    const seniorAvatars = document.querySelectorAll('.senior-avatar');
+    if (seniorAvatars.length > 0) {
+        seniorAvatars.forEach(avatar => {
+            avatar.addEventListener('click', function() {
+                // 获取当前选中的学长/学姐ID
+                const seniorId = this.getAttribute('data-senior');
+                
+                // 移除所有头像的active类
+                seniorAvatars.forEach(item => item.classList.remove('active'));
+                
+                // 为当前点击的头像添加active类
+                this.classList.add('active');
+                
+                // 隐藏所有内容
+                const testimonialItems = document.querySelectorAll('.testimonial-item');
+                testimonialItems.forEach(item => item.classList.remove('active'));
+                
+                // 显示对应内容
+                const activeContent = document.querySelector(`.testimonial-item[data-senior="${seniorId}"]`);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+            });
+        });
+    }
     // 欢迎区域动画效果
     const welcomeSection = document.getElementById('welcome');
     if (welcomeSection) {
@@ -144,13 +170,13 @@ document.addEventListener('DOMContentLoaded', function() {
             delay: 3000,
             disableOnInteraction: false,
         },
-        speed: 600,             
+        speed: 800,             // 增加过渡速度，使动画更流畅
         coverflowEffect: {
-            rotate: 30,
-            stretch: -30,
-            depth: 300,
+            rotate: 20,          // 减小旋转角度
+            stretch: -20,        // 减小拉伸效果
+            depth: 200,          // 减小深度，降低3D效果复杂度
             modifier: 1,        
-            slideShadows: true,
+            slideShadows: false,  // 关闭阴影效果，提高性能
         },
         navigation: {
             nextEl: '.swiper-button-next',
@@ -158,10 +184,28 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         on: {
             beforeInit: function() {
-                // 初始化前的处理
+                // 预加载图片，提高性能
+                const slides = document.querySelectorAll('.ztjjbox .swiper-slide img');
+                slides.forEach(img => {
+                    if(img.getAttribute('src')) {
+                        const preloadImg = new Image();
+                        preloadImg.src = img.getAttribute('src');
+                    }
+                });
             },
             slideChangeTransitionStart: function() {
-                // 确保过渡开始时的正确性
+                // 使用transform硬件加速
+                const slides = document.querySelectorAll('.ztjjbox .swiper-slide');
+                slides.forEach(slide => {
+                    slide.style.willChange = 'transform';
+                });
+            },
+            slideChangeTransitionEnd: function() {
+                // 过渡结束后释放资源
+                const slides = document.querySelectorAll('.ztjjbox .swiper-slide');
+                slides.forEach(slide => {
+                    slide.style.willChange = 'auto';
+                });
             }
         },
         // 移除之前的问题参数

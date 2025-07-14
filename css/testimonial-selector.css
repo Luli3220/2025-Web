@@ -1,0 +1,106 @@
+/* 学途说头像选择器样式 */
+
+/* 内容区域样式 */
+.testimonial-content {
+    position: relative;
+    min-height: 400px;
+    margin-bottom: 30px;
+}
+
+.testimonial-item {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-item.active {
+    display: block;
+    opacity: 1;
+}
+
+/* 头像选择栏样式 */
+.senior-avatars-container {
+    margin-top: 30px;
+}
+
+.senior-avatars {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.senior-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    transform: scale(0.9);
+    position: relative;
+}
+
+.senior-avatar img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.senior-avatar span {
+    margin-top: 8px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.senior-avatar.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.senior-avatar.active img {
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 12px rgba(78, 115, 223, 0.2);
+}
+
+.senior-avatar.active span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.senior-avatar.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.senior-avatar:hover {
+    opacity: 0.9;
+    transform: translateY(-5px);
+}
+
+.senior-avatar:not(.active):hover img {
+    border-color: #ddd;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .senior-avatars {
+        gap: 15px;
+    }
+    
+    .senior-avatar img {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -675,11 +675,13 @@ body {
     margin: 0 auto;
     padding: 40px 0;
     perspective: 1200px;
+    will-change: transform; 
 }
 
 .ztjjbox .swiper-container {
     width: 100%;
     padding: 50px 0;
+    transform: translateZ(0); 
 }
 
 .ztjjbox .swiper-slide {
@@ -688,11 +690,11 @@ body {
     background-position: center;
     background-size: cover;
     transform-origin: center;
-    transition: all 0.3s;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transform-style: preserve-3d; /* 确保3D效果 */
+    transition: all 0.3s ease; 
+    transform: translateZ(0); 
+    backface-visibility: hidden; 
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
 }
 
 .ztjjbox .swiper-slide-active {
