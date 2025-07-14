@@ -77,7 +77,26 @@
 .senior-card {
     border: none;
     box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.senior-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, #4e73df, #36b9cc, #1cc88a, #f6c23e);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .senior-card .comments-preview {
@@ -106,6 +125,13 @@
     background-color: #f8f9fc;
     border-radius: 6px;
     font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.senior-card .comment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1;
 }
 
 .senior-card .comment-count {
@@ -115,8 +141,25 @@
 }
 
 .senior-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.15rem 2.5rem 0 rgba(58, 59, 69, 0.2);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0.15rem 2.5rem 0 rgba(58, 59, 69, 0.2), 0 0 15px rgba(78, 115, 223, 0.3);
+}
+
+.senior-card:hover::before {
+    opacity: 1;
+    animation: borderGradient 3s linear infinite;
+}
+
+@keyframes borderGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .testimonial-text {
@@ -149,6 +192,13 @@
     margin-bottom: 10px;
     background-color: #f8f9fa;
     border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    z-index: 1;
 }
 
 .comment-author {
@@ -421,12 +471,12 @@
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #postDetailModal .comment-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 #postDetailModal .comment-header {
