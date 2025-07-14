@@ -9,7 +9,7 @@ const port = 3000;
 
 // DeepSeek API配置
 const DEEPSEEK_API_URL = 'https://api.deepseek.com/chat/completions';
-const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || 'sk-fab1995ad02949e2affab008c311dc3f'; // 请替换为您的API密钥或使用环境变量
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || 'sk-fab1995ad02949e2affab008c311dc3f'; 
 
 console.log('DeepSeek API配置已加载');
 

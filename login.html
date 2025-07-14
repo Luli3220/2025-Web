@@ -15,96 +15,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- 动画库 -->
     <link rel="stylesheet" href="lib/animate/animate.min.css">
-    <style>
-        /* 登录注册页面特定样式 */
-        .auth-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding-top: 80px;
-        }
-
-        .auth-card {
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-            overflow: hidden;
-        }
-
-        .auth-sidebar {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .auth-form {
-            padding: 2rem;
-        }
-
-        .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .btn-auth {
-            border-radius: 8px;
-            padding: 12px 15px;
-            font-weight: 600;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .auth-tabs {
-            display: flex;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .auth-tab {
-            padding: 10px 20px;
-            font-weight: 600;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .auth-tab.active {
-            color: var(--primary-color);
-        }
-
-        .auth-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .auth-form-container {
-            display: none;
-        }
-
-        .auth-form-container.active {
-            display: block;
-        }
-        .air {
-            background: 
-                linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%),
-                linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%),
-                linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
-            background-blend-mode: normal,color-burn;
-            min-height: 100vh;
-        }
-    </style>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/password-control.css">
 </head>
 
-<body class=".air">
+<body class="air">
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container d-flex justify-content-between align-items-center">
@@ -144,7 +59,14 @@
     </nav>
   
     <!-- 登录注册区域 -->
-    <section class="auth-container">
+    <section class="auth-container floating-box">
+        <!-- 浮动方块元素 -->
+        <div class="square" style="--i:0;"></div>
+        <div class="square" style="--i:1;"></div>
+        <div class="square" style="--i:2;"></div>
+        <div class="square" style="--i:3;"></div>
+        <div class="square" style="--i:4;"></div>
+        <div class="square" style="--i:5;"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -182,9 +104,10 @@
                                             <label for="loginUsername" class="form-label">用户名</label>
                                             <input type="text" class="form-control" id="loginUsername" required>
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-3 position-relative">
                                             <label for="loginPassword" class="form-label">密码</label>
                                             <input type="password" class="form-control" id="loginPassword" required>
+                                            <a href="#" class="password-control position-absolute" style="top: 40px; right: 10px; display: inline-block; width: 20px; height: 20px;" onclick="return show_hide_password(this);"></a>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-auth">登录</button>
                                     </form>
@@ -238,6 +161,20 @@
 
     <!-- Bootstrap JS -->
     <script src="lib/swiper/swiper-bundle.min.js"></script>
+    <!-- 密码显示/隐藏功能 -->
+    <script>
+        function show_hide_password(target){
+            var input = document.getElementById('loginPassword');
+            if (input.getAttribute('type') == 'password') {
+                target.classList.add('view');
+                input.setAttribute('type', 'text');
+            } else {
+                target.classList.remove('view');
+                input.setAttribute('type', 'password');
+            }
+            return false;
+        }
+    </script>
     <!-- 登录注册页面JS -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
