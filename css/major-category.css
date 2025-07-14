@@ -1,0 +1,30 @@
+.major-category-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.hover-card {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.category-icon {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-icon i {
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover .category-icon i {
+    transform: scale(1.2);
+}

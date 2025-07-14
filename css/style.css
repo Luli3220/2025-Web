@@ -376,33 +376,6 @@ body {
     margin: 0;
 }
 
-/* 常见问题样式 */
-.faq-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 4rem 0;
-}
-
-.accordion-item {
-    border: none;
-    background: transparent;
-    margin-bottom: 1rem;
-}
-
-.accordion-header {
-    margin-bottom: 0.5rem;
-}
-
-.accordion-button {
-    background: white;
-    border-radius: 1rem !important;
-    padding: 1.5rem;
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: var(--dark-color);
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
 .accordion-button:not(.collapsed) {
     background: white;
     color: var(--primary-color);

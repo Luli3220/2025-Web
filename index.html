@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/user-dropdown.css">
     <link rel="stylesheet" href="./css/testimonial-selector.css">
+    <link rel="stylesheet" href="./css/major-category.css">
     <!-- 自定义JS -->
     <script src="js/main.js"></script>
     <!-- Font Awesome 图标 -->
@@ -470,64 +471,178 @@
         </div>
     </section>
 
-    <!-- 常见问题 -->
-    <section class="faq-section">
+    <!-- 专业学科分类 -->
+    <section class="major-category-section py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">常见问题</h2>
-                <p class="lead text-muted">解答您在使用过程中的疑惑</p>
+                <h2 class="display-5 fw-bold">专业学科分类</h2>
+                <p class="lead text-muted">了解不同学科门类下的专业分布</p>
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-question-circle"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq1">
-                                    如何开始使用启航专业志？
-                                </button>
-                            </h2>
-                            <div id="faq1" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    只需注册账号并登录，即可开始使用我们的专业解读、院校推荐等功能。我们提供详细的使用指南，帮助你快速上手。
-                                </div>
+            <div class="row g-4">
+                <!-- 工学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-cogs fa-3x text-primary"></i>
                             </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq2">
-                                    如何查看专业详细信息？
-                                </button>
-                            </h2>
-                            <div id="faq2" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    在"知途"页面，你可以浏览所有专业信息。点击具体专业可查看详细介绍、就业方向、课程设置等内容。
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq3">
-                                    如何联系在校学长学姐？
-                                </button>
-                            </h2>
-                            <div id="faq3" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    在"学途说"板块，你可以浏览他们的经验分享。如需进一步交流，可以通过平台提供的留言功能与他们取得联系。
-                                </div>
-                            </div>
+                            <h4 class="card-title">工学</h4>
+                            <p class="card-text text-muted">计算机科学与技术、软件工程、电子信息工程等</p>
+                            <a href="majors.html?category=工学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
                         </div>
                     </div>
                 </div>
+                <!-- 理学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-atom fa-3x text-success"></i>
+                            </div>
+                            <h4 class="card-title">理学</h4>
+                            <p class="card-text text-muted">数学与应用数学、物理学、化学、生物科学等</p>
+                            <a href="majors.html?category=理学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 经济学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-chart-line fa-3x text-danger"></i>
+                            </div>
+                            <h4 class="card-title">经济学</h4>
+                            <p class="card-text text-muted">金融学、国际经济与贸易、经济学、投资学等</p>
+                            <a href="majors.html?category=经济学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 医学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-heartbeat fa-3x text-info"></i>
+                            </div>
+                            <h4 class="card-title">医学</h4>
+                            <p class="card-text text-muted">临床医学、口腔医学、中医学、药学等</p>
+                            <a href="majors.html?category=医学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 法学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-balance-scale fa-3x text-warning"></i>
+                            </div>
+                            <h4 class="card-title">法学</h4>
+                            <p class="card-text text-muted">法学、知识产权、社会学等</p>
+                            <a href="majors.html?category=法学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 文学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-book fa-3x text-secondary"></i>
+                            </div>
+                            <h4 class="card-title">文学</h4>
+                            <p class="card-text text-muted">中国语言文学类、英语、新闻学等</p>
+                            <a href="majors.html?category=文学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 管理学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-tasks fa-3x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">管理学</h4>
+                            <p class="card-text text-muted">工商管理、会计学、财务管理等</p>
+                            <a href="majors.html?category=管理学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 艺术学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-palette fa-3x text-danger"></i>
+                            </div>
+                            <h4 class="card-title">艺术学</h4>
+                            <p class="card-text text-muted">视觉传达设计、动画、表演等</p>
+                            <a href="majors.html?category=艺术学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 教育学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-chalkboard-teacher fa-3x text-info"></i>
+                            </div>
+                            <h4 class="card-title">教育学</h4>
+                            <p class="card-text text-muted">教育学、学前教育、特殊教育等</p>
+                            <a href="majors.html?category=教育学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 农学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-seedling fa-3x text-success"></i>
+                            </div>
+                            <h4 class="card-title">农学</h4>
+                            <p class="card-text text-muted">农学、园艺、动物科学等</p>
+                            <a href="majors.html?category=农学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 哲学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-brain fa-3x text-secondary"></i>
+                            </div>
+                            <h4 class="card-title">哲学</h4>
+                            <p class="card-text text-muted">哲学、伦理学、宗教学等</p>
+                            <a href="majors.html?category=哲学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 历史学 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-landmark fa-3x text-warning"></i>
+                            </div>
+                            <h4 class="card-title">历史学</h4>
+                            <p class="card-text text-muted">历史学、考古学、文物与博物馆学等</p>
+                            <a href="majors.html?category=历史学" class="btn btn-outline-primary mt-2 rounded-pill">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="majors.html" class="btn btn-primary btn-lg rounded-pill">查看全部专业</a>
             </div>
         </div>
     </section>
