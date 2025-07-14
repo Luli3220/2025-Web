@@ -1,0 +1,28 @@
+/* 
+ * particles.css
+ * 启航专业志网站粒子效果样式
+ */
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+/* 确保粒子效果不会影响页面内容的交互 */
+.air {
+    position: relative;
+    z-index: 1;
+}
+
+/* 优化移动设备上的性能 */
+@media (max-width: 768px) {
+    #particles-js {
+        opacity: 0.5; /* 降低移动设备上的粒子密度 */
+    }
+}
