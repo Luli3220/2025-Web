@@ -197,7 +197,7 @@ function loadPosts(categoryId = null) {
             // 显示错误信息
             const errorElement = document.createElement('div');
             errorElement.className = 'alert alert-danger';
-            errorElement.textContent = '加载帖子失败，请稍后再试';
+            errorElement.textContent = '请先登入，才能加载帖子信息。';
             postsContainer.appendChild(errorElement);
         });
 }
