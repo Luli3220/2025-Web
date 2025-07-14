@@ -654,7 +654,8 @@ body {
 .ztjjbox .swiper-container {
     width: 100%;
     padding: 50px 0;
-    transform: translateZ(0); 
+    transform: translateZ(0);
+    perspective: 1200px;
 }
 
 .ztjjbox .swiper-slide {
@@ -668,10 +669,16 @@ body {
     backface-visibility: hidden; 
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .ztjjbox .swiper-slide-active {
     z-index: 2;
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 .ztjjbox .swiper-slide img {
@@ -679,6 +686,11 @@ body {
     width: 100%;
     height: 320px; 
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ztjjbox .swiper-slide:hover img {
+    transform: scale(1.05);
 }
 
 .ztjjbox .swiper-slide p {
@@ -689,6 +701,16 @@ body {
     font-size: 18px;
     background: #fff;
     font-weight: 500;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05) inset;
+}
+
+.ztjjbox .swiper-slide:hover p {
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .ztjjbox .swiper-button-next,
