@@ -391,6 +391,9 @@ function submitComment() {
             
             // 重新加载帖子列表
             loadPosts(currentCategoryId);
+            
+            // 获取当前帖子的最新数据并更新详情模态框
+            refreshPostDetail(postId);
         } else {
             alert(data.message || '评论失败，请稍后再试');
         }
@@ -437,6 +440,67 @@ function openPostDetailModal(post, comments) {
     // 显示模态框
     const postDetailModal = new bootstrap.Modal(document.getElementById('postDetailModal'));
     postDetailModal.show();
+}
+
+// 刷新帖子详情模态框
+function refreshPostDetail(postId) {
+    // 获取帖子详情
+    fetch(`/api/forum/posts?page=1&limit=1&post_id=${postId}`)
+        .then(response => response.json())
+        .then(data => {
+            // 处理不同的数据结构
+            let post = null;
+            if (Array.isArray(data) && data.length > 0) {
+                post = data[0];
+            } else if (data.posts && Array.isArray(data.posts) && data.posts.length > 0) {
+                post = data.posts[0];
+            } else if (data.data && Array.isArray(data.data) && data.data.length > 0) {
+                post = data.data[0];
+            }
+            
+            if (!post) {
+                console.error('无法获取帖子详情');
+                return;
+            }
+            
+            // 解析评论
+            let comments = [];
+            try {
+                comments = post.comments ? JSON.parse(post.comments) : [];
+            } catch (e) {
+                console.error('解析评论失败:', e);
+                comments = [];
+            }
+            
+            // 更新帖子详情模态框
+            if (document.getElementById('postDetailModal').classList.contains('show')) {
+                // 更新评论数量
+                document.getElementById('commentCount').textContent = comments.length;
+                
+                // 更新评论列表
+                const commentsListElement = document.getElementById('commentsList');
+                commentsListElement.innerHTML = comments.map(comment => `
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div class="user-avatar rounded-circle me-2 d-flex align-items-center justify-content-center"
+                                     style="width: 32px; height: 32px; background: linear-gradient(135deg, #4e73df 0%, #1e3fa0 100%); color: white; font-size: 14px;">
+                                    ${comment.name ? comment.name[0] : '?'}
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">${comment.name || '匿名用户'}</h6>
+                                    <small class="text-muted">${new Date(comment.time).toLocaleString()}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-2 mb-0">${comment.content}</p>
+                    </div>
+                `).join('');
+            }
+        })
+        .catch(error => {
+            console.error('获取帖子详情失败:', error);
+        });
 }
 
 // 渲染分页
