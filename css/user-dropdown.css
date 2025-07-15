@@ -53,14 +53,15 @@
     transform: translateX(-50%);
 }
 
-.nav-link.dropdown-toggle:hover::after {
+.nav-link.dropdown-toggle:hover::after,
+.nav-link.dropdown-toggle.show::after {
     width: 70%;
 }
 
 /* 下拉菜单样式 */
 .dropdown-menu {
     position: absolute;
-    right: 0;
+    left: 50%;
     top: 120%;
     padding: 0;
     border: none;
@@ -72,17 +73,24 @@
     z-index: 1000;
     overflow: hidden;
     animation: dropdownFadeIn 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* 确保下拉菜单在显示状态下也居中 */
+.dropdown-menu.show {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 }
 
 .dropdown-menu::before {
     content: '';
     position: absolute;
     top: -8px;
-    right: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
     width: 16px;
     height: 16px;
     background: #fff;
-    transform: rotate(45deg);
     border-radius: 3px;
     box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.05);
 }
