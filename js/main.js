@@ -208,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         },
-        // 移除之前的问题参数
         watchSlidesProgress: false,
         watchSlidesVisibility: false,
         slideToClickedSlide: false

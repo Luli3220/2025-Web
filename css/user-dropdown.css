@@ -170,12 +170,10 @@
     text-decoration: none;
 }
 
-/* 下拉菜单项美化 */
 .dropdown-item {
     padding: 12px 20px;
 }
 
-/* 下划线美化 */
 .dropdown-item::after {
     content: '';
     position: absolute;
