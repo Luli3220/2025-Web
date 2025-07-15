@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // 绑定评论提交事件
     document.getElementById('submitComment').addEventListener('click', submitComment);
     
+    // 绑定帖子详情模态框中的评论按钮事件
+    document.getElementById('postDetailCommentBtn').addEventListener('click', function() {
+        const postId = document.getElementById('postDetailModal').getAttribute('data-post-id');
+        if (postId) {
+            openCommentModal(postId);
+        } else {
+            console.error('无法获取帖子ID');
+            alert('评论失败，请刷新页面后重试');
+        }
+    });
+    
     // 绑定分类筛选点击事件
     const categoryFilters = document.querySelectorAll('#category-filter li');
     categoryFilters.forEach(filter => {
@@ -360,7 +371,18 @@ function submitComment() {
         },
         body: JSON.stringify({ content })
     })
-    .then(response => response.json())
+    .then(response => {
+        // 检查响应状态
+        if (!response.ok) {
+            throw new Error(`服务器响应错误: ${response.status}`);
+        }
+        // 检查内容类型
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            throw new Error('服务器返回了非JSON格式的数据');
+        }
+        return response.json();
+    })
     .then(data => {
         if (data.success) {
             // 评论成功，关闭模态框
@@ -408,6 +430,9 @@ function openPostDetailModal(post, comments) {
             <p class="mt-2 mb-0">${comment.content}</p>
         </div>
     `).join('');
+    
+    // 保存当前帖子ID到模态框中，用于评论按钮使用
+    document.getElementById('postDetailModal').setAttribute('data-post-id', post.post_id);
     
     // 显示模态框
     const postDetailModal = new bootstrap.Modal(document.getElementById('postDetailModal'));
