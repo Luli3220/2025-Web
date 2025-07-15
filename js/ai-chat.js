@@ -5,6 +5,7 @@ class AIChatUI {
         this.chatMessages = document.getElementById('chatMessages');
         this.chatInput = document.getElementById('chatInput');
         this.sendButton = document.getElementById('sendMessage');
+        this.clearButton = document.getElementById('clearChat'); // 添加清除按钮引用
         this.messageHistory = [];
         this.storageKey = 'aiChatHistory'; // 用于localStorage的键名
 
@@ -20,6 +21,11 @@ class AIChatUI {
                 this.sendMessage();
             }
         });
+        
+        // 绑定清除聊天记录事件
+        if (this.clearButton) {
+            this.clearButton.addEventListener('click', () => this.clearChatHistory());
+        }
 
         // 从localStorage加载历史消息
         this.loadChatHistory();
@@ -260,5 +266,29 @@ AIChatUI.prototype.saveChatHistory = function() {
         localStorage.setItem(this.storageKey, JSON.stringify(historyToSave));
     } catch (error) {
         console.error('保存聊天历史失败:', error);
+    }
+};
+
+// 添加清除聊天历史记录的方法
+AIChatUI.prototype.clearChatHistory = function() {
+    try {
+        // 清除localStorage中的聊天记录
+        localStorage.removeItem(this.storageKey);
+        
+        // 清空消息历史数组
+        this.messageHistory = [];
+        
+        // 清空聊天界面
+        this.chatMessages.innerHTML = '';
+        
+        // 添加初始欢迎消息
+        this.addMessage({
+            role: 'assistant',
+            content: '聊天记录已清除。有什么我可以帮你的吗？'
+        });
+        
+        console.log('聊天记录已清除');
+    } catch (error) {
+        console.error('清除聊天历史失败:', error);
     }
 };

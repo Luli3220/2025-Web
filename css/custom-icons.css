@@ -85,6 +85,7 @@
 .fa-comment-slash:before { content: "\f4b3"; }
 .fa-spinner:before { content: "\f110"; }
 .fa-check-circle:before { content: "\f058"; }
+.fa-trash:before { content: "\f1f8"; }
 
 /* 登录页面图标样式 */
 .auth-sidebar .fas {
