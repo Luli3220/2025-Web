@@ -351,6 +351,11 @@ app.post('/api/chat', async (req, res) => {
       return res.status(400).json({ error: '消息不能为空' });
     }
     
+    // 设置响应头以支持流式输出和压缩
+    res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    res.flushHeaders();
     // 构建消息历史
     const messages = [
       { role: "system", content: "You are a helpful assistant." }
@@ -366,27 +371,62 @@ app.post('/api/chat', async (req, res) => {
     
     messages.push({ role: "user", content: message });
     
-    // 发送请求到 DeepSeek API
+    // 发送请求到 DeepSeek API，启用流式输出
     const response = await axios.post(DEEPSEEK_API_URL, {
       messages: messages,
       model: "deepseek-chat",
       temperature: 1,
       max_tokens: 2048,
-      stream: false  // 暂时关闭流式输出
+      stream: true
     }, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${DEEPSEEK_API_KEY}`
+      },
+      responseType: 'stream'
+    });
+
+    // 处理流式响应
+    response.data.on('data', chunk => {
+      const lines = chunk.toString().split('\n').filter(line => line.trim() !== '');
+      
+      for (const line of lines) {
+        if (line.startsWith('data: ')) {
+          const data = line.slice(6);
+          if (data === '[DONE]') {
+            res.write('data: [DONE]\n\n');
+            return;
+          }
+          
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.choices[0].delta.content) {
+              const chunk = `data: ${JSON.stringify({ content: parsed.choices[0].delta.content })}\n\n`;
+              res.write(chunk);
+            }
+          } catch (e) {
+            console.error('解析响应数据失败:', e);
+            // 不中断流式输出，继续处理下一个数据块
+            continue;
+          }
+        }
       }
     });
 
-    // 直接返回 AI 的回复
-    const aiMessage = response.data.choices[0].message.content;
-    res.json({ message: aiMessage });
+    response.data.on('error', error => {
+      console.error('流式响应出错:', error);
+      res.write(`data: ${JSON.stringify({ error: '服务器错误，请稍后再试' })}\n\n`);
+      res.end();
+    });
+
+    response.data.on('end', () => {
+      res.end();
+    });
     
   } catch (error) {
     console.error('AI聊天API错误:', error);
-    res.status(500).json({ error: '服务器错误，请稍后再试' });
+    res.write(`data: ${JSON.stringify({ error: '服务器错误，请稍后再试' })}\n\n`);
+    res.end();
   }
 });
 

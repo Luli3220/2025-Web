@@ -5,9 +5,9 @@ class AIChatUI {
         this.chatMessages = document.getElementById('chatMessages');
         this.chatInput = document.getElementById('chatInput');
         this.sendButton = document.getElementById('sendMessage');
-        this.clearButton = document.getElementById('clearChat'); // 添加清除按钮引用
+        this.clearButton = document.getElementById('clearChat'); 
         this.messageHistory = [];
-        this.storageKey = 'aiChatHistory'; // 用于localStorage的键名
+        this.storageKey = 'aiChatHistory'; 
 
         this.init();
     }
@@ -76,6 +76,7 @@ class AIChatUI {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'text/event-stream'
                 },
                 body: JSON.stringify({
                     message,
@@ -86,17 +87,19 @@ class AIChatUI {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let fullContent = '';
+            let buffer = '';
 
             while (true) {
                 const { done, value } = await reader.read();
                 if (done) break;
 
-                const chunk = decoder.decode(value);
-                const lines = chunk.split('\n');
+                buffer += decoder.decode(value, { stream: true });
+                const lines = buffer.split('\n');
+                buffer = lines.pop() || '';
                 
                 for (const line of lines) {
                     if (line.startsWith('data: ')) {
-                        const data = line.slice(6);
+                        const data = line.slice(6).trim();
                         if (data === '[DONE]') continue;
                         
                         try {
@@ -107,9 +110,12 @@ class AIChatUI {
                                 contentElement.innerHTML = marked.parse(fullContent);
                                 // 滚动到底部
                                 this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+                            } else if (parsed.error) {
+                                throw new Error(parsed.error);
                             }
                         } catch (e) {
                             console.error('解析响应数据失败:', e);
+                            contentElement.innerHTML = `<div class="error-message">${e.message}</div>`;
                         }
                     }
                 }
@@ -284,7 +290,7 @@ AIChatUI.prototype.clearChatHistory = function() {
         // 添加初始欢迎消息
         this.addMessage({
             role: 'assistant',
-            content: '聊天记录已清除。有什么我可以帮你的吗？'
+            content: '你好！我是AI助手，有什么我可以帮你的吗'
         });
         
         console.log('聊天记录已清除');
