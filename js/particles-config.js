@@ -1,7 +1,5 @@
 /**
- * particles-config.js
- * 启航专业志网站的粒子效果配置
- * 配色方案与网站主题色调一致
+ 粒子效果配置
  */
 
 document.addEventListener('DOMContentLoaded', function() {

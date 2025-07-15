@@ -356,73 +356,37 @@ app.post('/api/chat', async (req, res) => {
       { role: "system", content: "You are a helpful assistant." }
     ];
     
-    // 添加历史消息
     if (history && Array.isArray(history)) {
       history.forEach(msg => {
         if (msg.role && msg.content) {
-          messages.push({
-            role: msg.role,
-            content: msg.content
-          });
+          messages.push({ role: msg.role, content: msg.content });
         }
       });
     }
     
-    // 添加用户当前消息
     messages.push({ role: "user", content: message });
     
-    // 准备请求数据
-    const requestData = {
+    // 发送请求到 DeepSeek API
+    const response = await axios.post(DEEPSEEK_API_URL, {
       messages: messages,
       model: "deepseek-chat",
-      frequency_penalty: 0,
-      max_tokens: 2048,
-      presence_penalty: 0,
-      response_format: {
-        type: "text"
-      },
-      stop: null,
-      stream: false,
-      stream_options: null,
       temperature: 1,
-      top_p: 1,
-      tools: null,
-      tool_choice: "none",
-      logprobs: false,
-      top_logprobs: null
-    };
-    
-    // 调用DeepSeek API
-    const response = await axios.post(DEEPSEEK_API_URL, requestData, {
+      max_tokens: 2048,
+      stream: false  // 暂时关闭流式输出
+    }, {
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
         'Authorization': `Bearer ${DEEPSEEK_API_KEY}`
-      },
-      timeout: 60000 // 设置超时时间为60秒
+      }
     });
-    
-    // 提取AI回复
+
+    // 直接返回 AI 的回复
     const aiMessage = response.data.choices[0].message.content;
-    
-    // 返回响应
     res.json({ message: aiMessage });
+    
   } catch (error) {
     console.error('AI聊天API错误:', error);
-    
-    // 根据错误类型提供更友好的错误信息
-    let errorMessage = '服务器错误';
-    if (error.code === 'ECONNABORTED') {
-      errorMessage = 'AI服务连接超时，请稍后再试';
-    } else if (error.code === 'ECONNREFUSED') {
-      errorMessage = 'AI服务连接失败，请检查网络连接';
-    } else if (error.response && error.response.status === 429) {
-      errorMessage = 'AI服务请求过于频繁，请稍后再试';
-    } else if (error.response) {
-      errorMessage = `AI服务错误 (${error.response.status}): ${error.response.data.error || '未知错误'}`;
-    }
-    
-    res.status(500).json({ error: errorMessage, details: error.message });
+    res.status(500).json({ error: '服务器错误，请稍后再试' });
   }
 });
 

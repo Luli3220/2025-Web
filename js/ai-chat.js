@@ -50,12 +50,26 @@ class AIChatUI {
             // 显示加载状态
             this.setLoadingState(true);
 
-            // 修改为正确的API路径
-            const response = await fetch('/api/chat', {  
+            // 创建新的消息元素用于流式输出
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message assistant';
+            
+            const avatarElement = document.createElement('div');
+            avatarElement.className = 'message-avatar';
+            avatarElement.innerHTML = '<i class="fas fa-robot"></i>';
+            
+            const contentElement = document.createElement('div');
+            contentElement.className = 'message-content';
+            
+            messageElement.appendChild(avatarElement);
+            messageElement.appendChild(contentElement);
+            this.chatMessages.appendChild(messageElement);
+
+            // 创建 EventSource 连接
+            const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({
                     message,
@@ -63,21 +77,46 @@ class AIChatUI {
                 })
             });
 
-            if (!response.ok) {
-                throw new Error(`请求失败: ${response.status}`);
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let fullContent = '';
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                const chunk = decoder.decode(value);
+                const lines = chunk.split('\n');
+                
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        const data = line.slice(6);
+                        if (data === '[DONE]') continue;
+                        
+                        try {
+                            const parsed = JSON.parse(data);
+                            if (parsed.content) {
+                                fullContent += parsed.content;
+                                // 使用 marked 渲染 Markdown
+                                contentElement.innerHTML = marked.parse(fullContent);
+                                // 滚动到底部
+                                this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+                            }
+                        } catch (e) {
+                            console.error('解析响应数据失败:', e);
+                        }
+                    }
+                }
             }
 
-            const data = await response.json();
-            
-            if (!data.message) {
-                throw new Error('服务器响应格式错误');
-            }
-
-            // 添加AI回复到界面
-            this.addMessage({
+            // 保存完整的消息到历史记录
+            this.messageHistory.push({
                 role: 'assistant',
-                content: data.message
+                content: fullContent
             });
+            
+            // 保存到localStorage
+            this.saveChatHistory();
         } catch (error) {
             console.error('发送消息失败:', error);
             this.addMessage({
